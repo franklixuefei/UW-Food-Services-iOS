@@ -1,0 +1,2234 @@
+parsedData: {
+    "restaurants_menu" =     (
+                {
+            menu =             (
+                                {
+                    date = "2013-09-30";
+                    day = Monday;
+                    meals =                     {
+                        dinner =                         (
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = Halal;
+                                "product_id" = 2439;
+                                "product_name" = "Wild Olive - Speghattini chicken Florentine with pesto glaze";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                },
+                                {
+                    date = "2013-10-01";
+                    day = Tuesday;
+                    meals =                     {
+                        dinner =                         (
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = "<null>";
+                                "product_id" = "<null>";
+                                "product_name" = "Wild Olive - Shrimp lasagna served with a side";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                },
+                                {
+                    date = "2013-10-02";
+                    day = Wednesday;
+                    meals =                     {
+                        dinner =                         (
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = "<null>";
+                                "product_id" = "<null>";
+                                "product_name" = "Wild Olive - Breaded chicken with potato wedges served with a side";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                },
+                                {
+                    date = "2013-10-03";
+                    day = Thursday;
+                    meals =                     {
+                        dinner =                         (
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = Vegetarian;
+                                "product_id" = 2180;
+                                "product_name" = "Wild Olive - Meat ravioli with tomato sauce served with a side";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                },
+                                {
+                    date = "2013-10-04";
+                    day = Friday;
+                    meals =                     {
+                        dinner =                         (
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = "<null>";
+                                "product_id" = "<null>";
+                                "product_name" = "Wild Olive - TGIF special";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                }
+            );
+            "outlet_id" = 1;
+            "outlet_name" = Brubakers;
+        },
+                {
+            menu =             (
+                                {
+                    date = "2013-09-30";
+                    day = Monday;
+                    meals =                     {
+                        dinner =                         (
+                                                        {
+                                "diet_type" = "<null>";
+                                "product_id" = "<null>";
+                                "product_name" = "steamed spare ribs and chili bean sauce";
+                            }
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 1226;
+                                "product_name" = "Beef with ginger and green onion";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                },
+                                {
+                    date = "2013-10-01";
+                    day = Tuesday;
+                    meals =                     {
+                        dinner =                         (
+                                                        {
+                                "diet_type" = Halal;
+                                "product_id" = 1963;
+                                "product_name" = "Beef and Satay Sauce";
+                            }
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = "<null>";
+                                "product_id" = "<null>";
+                                "product_name" = "Steamed spare ribs with black bean sauce";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                },
+                                {
+                    date = "2013-10-02";
+                    day = Wednesday;
+                    meals =                     {
+                        dinner =                         (
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 1212;
+                                "product_name" = "Oriental Noodles with Spicy Thai Pork";
+                            }
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 747;
+                                "product_name" = "Steamed Chicken Wings with Chinese  Mushrooms";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                },
+                                {
+                    date = "2013-10-03";
+                    day = Thursday;
+                    meals =                     {
+                        dinner =                         (
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 745;
+                                "product_name" = "Roast Chicken with BBQ Sauce";
+                            }
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 1957;
+                                "product_name" = "BA Beef Brisket";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                },
+                                {
+                    date = "2013-10-04";
+                    day = Friday;
+                    meals =                     {
+                        dinner =                         (
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = "<null>";
+                                "product_id" = "<null>";
+                                "product_name" = "Chef's Special";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                }
+            );
+            "outlet_id" = 3;
+            "outlet_name" = "Bon Appetit";
+        },
+                {
+            menu =             (
+                                {
+                    date = "2013-09-30";
+                    day = Monday;
+                    meals =                     {
+                        dinner =                         (
+                                                        {
+                                "diet_type" = Halal;
+                                "product_id" = 2425;
+                                "product_name" = "Pan Fried White Fish w/ Lemon and Garlic Butter";
+                            },
+                                                        {
+                                "diet_type" = Vegetarian;
+                                "product_id" = 1030;
+                                "product_name" = "Vegetable Korma";
+                            }
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = Halal;
+                                "product_id" = 790;
+                                "product_name" = "Island Jerk Chicken Breast";
+                            },
+                                                        {
+                                "diet_type" = Vegan;
+                                "product_id" = 2419;
+                                "product_name" = "Moroccan Vegetable Ragout";
+                            },
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 2084;
+                                "product_name" = "Prime Rib Burger w/ Bacon and Swiss";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                },
+                                {
+                    date = "2013-10-01";
+                    day = Tuesday;
+                    meals =                     {
+                        dinner =                         (
+                                                        {
+                                "diet_type" = Halal;
+                                "product_id" = 2422;
+                                "product_name" = "Roasted Ontario Lamb Crusted w/ Dijon and Rosemary";
+                            },
+                                                        {
+                                "diet_type" = Vegetarian;
+                                "product_id" = 2416;
+                                "product_name" = "Squash Lasagna w/ Woolwich County Goat Cheese";
+                            },
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 339;
+                                "product_name" = "Veal Parmesan";
+                            }
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = Halal;
+                                "product_id" = 1218;
+                                "product_name" = "Asian Beef Noodles";
+                            },
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 1754;
+                                "product_name" = "BBQ Pulled Pork Wrap.";
+                            },
+                                                        {
+                                "diet_type" = Vegetarian;
+                                "product_id" = 2512;
+                                "product_name" = "Quinoa and Vegetable Stuffed Peppers";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                },
+                                {
+                    date = "2013-10-02";
+                    day = Wednesday;
+                    meals =                     {
+                        dinner =                         (
+                                                        {
+                                "diet_type" = Halal;
+                                "product_id" = 2409;
+                                "product_name" = "1/4 Chicken w/ Apple Butter and Sage Glaze";
+                            },
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 1323;
+                                "product_name" = "New York Striploin Steak";
+                            },
+                                                        {
+                                "diet_type" = Vegetarian;
+                                "product_id" = 2415;
+                                "product_name" = "Portabella Mushroom w/ Creamy Spinach-Artichoke Filling";
+                            }
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = Halal;
+                                "product_id" = 2496;
+                                "product_name" = "Cajun Chicken Wings";
+                            },
+                                                        {
+                                "diet_type" = Vegan;
+                                "product_id" = 2509;
+                                "product_name" = "Malibu Burger";
+                            },
+                                                        {
+                                "diet_type" = Halal;
+                                "product_id" = 2410;
+                                "product_name" = "Tuscan Baked Ziti";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                },
+                                {
+                    date = "2013-10-03";
+                    day = Thursday;
+                    meals =                     {
+                        dinner =                         (
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 2408;
+                                "product_name" = "BBQ Ribs w/ Apple-Bacon BBQ Sauce";
+                            },
+                                                        {
+                                "diet_type" = Halal;
+                                "product_id" = 2414;
+                                "product_name" = "Oven Baked Salmon w/ Local Maple Syrup & Dijon Glazed";
+                            },
+                                                        {
+                                "diet_type" = Vegetarian;
+                                "product_id" = 1313;
+                                "product_name" = "Roma Eggplant Parmesan";
+                            }
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = Halal;
+                                "product_id" = 1343;
+                                "product_name" = "Indian Butter Chicken";
+                            },
+                                                        {
+                                "diet_type" = Vegetarian;
+                                "product_id" = 2473;
+                                "product_name" = "Linguine with Roasted Vegetables and Pesto";
+                            },
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 1363;
+                                "product_name" = "Waterloo Region  Sausage on a Toasted Garlic Bun w/ Toppings";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                },
+                                {
+                    date = "2013-10-04";
+                    day = Friday;
+                    meals =                     {
+                        dinner =                         (
+                                                        {
+                                "diet_type" = Vegetarian;
+                                "product_id" = 1369;
+                                "product_name" = "Macaroni and Cheese";
+                            },
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 1520;
+                                "product_name" = "Popcorn Chicken Bowl";
+                            },
+                                                        {
+                                "diet_type" = Halal;
+                                "product_id" = 1382;
+                                "product_name" = "South Asian Beef and Broccoli";
+                            }
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = "<null>";
+                                "product_id" = "<null>";
+                                "product_name" = "Chef's Feature";
+                            },
+                                                        {
+                                "diet_type" = Halal;
+                                "product_id" = 2376;
+                                "product_name" = "English Style Fish";
+                            },
+                                                        {
+                                "diet_type" = Vegetarian;
+                                "product_id" = 2353;
+                                "product_name" = "Portabella Club on Fresh Baked 5 Grain Bread";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                }
+            );
+            "outlet_id" = 5;
+            "outlet_name" = "Mudie's";
+        },
+                {
+            menu =             (
+                                {
+                    date = "2013-09-30";
+                    day = Monday;
+                    meals =                     {
+                        dinner =                         (
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 2518;
+                                "product_name" = "FF B.Y.O. salad with pesto chicken";
+                            },
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 2445;
+                                "product_name" = "FF, Forty Creek Pulled Pork Sandwich";
+                            },
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 2515;
+                                "product_name" = "FF, memories of Middle East Lamb stew";
+                            },
+                                                        {
+                                "diet_type" = Vegan;
+                                "product_id" = 2041;
+                                "product_name" = "Vegetable lasagna";
+                            }
+                        );
+                    };
+                    notes = "Daily Fish";
+                },
+                                {
+                    date = "2013-10-01";
+                    day = Tuesday;
+                    meals =                     {
+                        dinner =                         (
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = "<null>";
+                                "product_id" = "<null>";
+                                "product_name" = "BYO sasame salmon salad";
+                            },
+                                                        {
+                                "diet_type" = Vegan;
+                                "product_id" = 2041;
+                                "product_name" = "Chicken and Ribs combo";
+                            },
+                                                        {
+                                "diet_type" = Vegetarian;
+                                "product_id" = 2435;
+                                "product_name" = "Festival Fare, Cheese and Feta Pie";
+                            },
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 2445;
+                                "product_name" = "FF, Forty Creek Pulled Pork Sandwich";
+                            }
+                        );
+                    };
+                    notes = "Daily fish";
+                },
+                                {
+                    date = "2013-10-02";
+                    day = Wednesday;
+                    meals =                     {
+                        dinner =                         (
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 2445;
+                                "product_name" = "FF, Forty Creek Pulled Pork Sandwich";
+                            },
+                                                        {
+                                "diet_type" = "<null>";
+                                "product_id" = "<null>";
+                                "product_name" = "Pasta bar/cheese stick";
+                            }
+                        );
+                    };
+                    notes = "Daily Fish";
+                },
+                                {
+                    date = "2013-10-03";
+                    day = Thursday;
+                    meals =                     {
+                        dinner =                         (
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = Vegetarian;
+                                "product_id" = 2520;
+                                "product_name" = "FF cajun shrimp salad with corn and raspberry vinegrette";
+                            },
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 2521;
+                                "product_name" = "FF chicken pot pie";
+                            },
+                                                        {
+                                "diet_type" = Vegetarian;
+                                "product_id" = 2519;
+                                "product_name" = "FF curry tofu and pineapple";
+                            },
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 2445;
+                                "product_name" = "FF, Forty Creek Pulled Pork Sandwich";
+                            }
+                        );
+                    };
+                    notes = "Daily Fish";
+                },
+                                {
+                    date = "2013-10-04";
+                    day = Friday;
+                    meals =                     {
+                        dinner =                         (
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 2492;
+                                "product_name" = "FF, BBQ Day";
+                            },
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 2445;
+                                "product_name" = "FF, Forty Creek Pulled Pork Sandwich";
+                            }
+                        );
+                    };
+                    notes = "Daily Fish";
+                }
+            );
+            "outlet_id" = 6;
+            "outlet_name" = "Festival Fare";
+        },
+                {
+            menu =             (
+                                {
+                    date = "2013-09-30";
+                    day = Monday;
+                    meals =                     {
+                        dinner =                         (
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 2482;
+                                "product_name" = "Bacon Wrapped Turkey w/ Stuffing";
+                            },
+                                                        {
+                                "diet_type" = "<null>";
+                                "product_id" = "<null>";
+                                "product_name" = "Chef's Feature";
+                            },
+                                                        {
+                                "diet_type" = Halal;
+                                "product_id" = 1811;
+                                "product_name" = "Penne w/ Meat Sauce";
+                            }
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 2167;
+                                "product_name" = "Buffalo Style Chicken Tenders w/ Blue Cheese Dressing";
+                            },
+                                                        {
+                                "diet_type" = Vegan;
+                                "product_id" = 731;
+                                "product_name" = "Chick Pea Curry";
+                            },
+                                                        {
+                                "diet_type" = Halal;
+                                "product_id" = 1484;
+                                "product_name" = "Taco Salad in a Tortilla Bowl";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                },
+                                {
+                    date = "2013-10-01";
+                    day = Tuesday;
+                    meals =                     {
+                        dinner =                         (
+                                                        {
+                                "diet_type" = Halal;
+                                "product_id" = 2465;
+                                "product_name" = "1/4 Chicken w/Hoisin Maple BBQ Sauce";
+                            },
+                                                        {
+                                "diet_type" = Vegetarian;
+                                "product_id" = 2311;
+                                "product_name" = "Margarita Goat Cheese Pasta";
+                            },
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 2475;
+                                "product_name" = "Pork Schnitzel w/ Hunter Sauce";
+                            }
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = Halal;
+                                "product_id" = 1886;
+                                "product_name" = "Chicken Korma";
+                            },
+                                                        {
+                                "diet_type" = "<null>";
+                                "product_id" = "<null>";
+                                "product_name" = "Polenta Parmesan";
+                            },
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 1320;
+                                "product_name" = "Pork Souvlaki on a Flatbread";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                },
+                                {
+                    date = "2013-10-02";
+                    day = Wednesday;
+                    meals =                     {
+                        dinner =                         (
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 1879;
+                                "product_name" = "Orange and Ginger Popcorn Chicken";
+                            },
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 1216;
+                                "product_name" = "Sour Cream Crusted Basa";
+                            },
+                                                        {
+                                "diet_type" = Vegetarian;
+                                "product_id" = 842;
+                                "product_name" = "Tofu Parmesan";
+                            }
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = Halal;
+                                "product_id" = 2027;
+                                "product_name" = "Beef Vindaloo";
+                            },
+                                                        {
+                                "diet_type" = Vegetarian;
+                                "product_id" = 2059;
+                                "product_name" = "Potato Pancakes";
+                            },
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 1175;
+                                "product_name" = "Turkey, Swiss cheese and Guacamole on Marble Rye";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                },
+                                {
+                    date = "2013-10-03";
+                    day = Thursday;
+                    meals =                     {
+                        dinner =                         (
+                                                        {
+                                "diet_type" = Vegan;
+                                "product_id" = 1472;
+                                "product_name" = Channa;
+                            },
+                                                        {
+                                "diet_type" = Halal;
+                                "product_id" = 2121;
+                                "product_name" = "Grilled Flank Steak and Bok Choy";
+                            },
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 868;
+                                "product_name" = "Waterloo Region Smoked Pork Chop";
+                            }
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 1241;
+                                "product_name" = "Beef Quesadilla";
+                            },
+                                                        {
+                                "diet_type" = Halal;
+                                "product_id" = 66;
+                                "product_name" = "Grilled Chicken Breast Caesar Salad";
+                            },
+                                                        {
+                                "diet_type" = Vegetarian;
+                                "product_id" = 1388;
+                                "product_name" = "Vegetable Samosa w/ Tamarind Sauce";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                },
+                                {
+                    date = "2013-10-04";
+                    day = Friday;
+                    meals =                     {
+                        dinner =                         (
+                                                        {
+                                "diet_type" = Halal;
+                                "product_id" = 1330;
+                                "product_name" = "Chicken  fettucine Alfredo";
+                            },
+                                                        {
+                                "diet_type" = Vegetarian;
+                                "product_id" = 1505;
+                                "product_name" = "Eggplant Wrap";
+                            },
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 1521;
+                                "product_name" = "Teriyaki Meatballs";
+                            }
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = Vegetarian;
+                                "product_id" = 2468;
+                                "product_name" = "Caprese Melt on Foccacia";
+                            },
+                                                        {
+                                "diet_type" = "<null>";
+                                "product_id" = "<null>";
+                                "product_name" = "Chef's Feature";
+                            },
+                                                        {
+                                "diet_type" = Halal;
+                                "product_id" = 2495;
+                                "product_name" = "Fish Taco w/ Guacamole";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                }
+            );
+            "outlet_id" = 7;
+            "outlet_name" = REVelation;
+        },
+                {
+            menu =             (
+                                {
+                    date = "2013-09-30";
+                    day = Monday;
+                    meals =                     {
+                        dinner =                         (
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = "<null>";
+                                "product_id" = "<null>";
+                                "product_name" = "Coconut curry beef";
+                            },
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 666;
+                                "product_name" = "Shanghai Noodles,";
+                            },
+                                                        {
+                                "diet_type" = Vegetarian;
+                                "product_id" = 1676;
+                                "product_name" = "Tofu and vegetable stir fry";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                },
+                                {
+                    date = "2013-10-01";
+                    day = Tuesday;
+                    meals =                     {
+                        dinner =                         (
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 1454;
+                                "product_name" = "Popcorn Chicken with honey garlic sauce";
+                            },
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 666;
+                                "product_name" = "Shanghai Noodles,";
+                            },
+                                                        {
+                                "diet_type" = "<null>";
+                                "product_id" = "<null>";
+                                "product_name" = "Tofu and stir fry vegetabels";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                },
+                                {
+                    date = "2013-10-02";
+                    day = Wednesday;
+                    meals =                     {
+                        dinner =                         (
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = "<null>";
+                                "product_id" = "<null>";
+                                "product_name" = "7 bean mix";
+                            },
+                                                        {
+                                "diet_type" = "<null>";
+                                "product_id" = "<null>";
+                                "product_name" = "Italian sausage and marinara sauce";
+                            },
+                                                        {
+                                "diet_type" = "<null>";
+                                "product_id" = "<null>";
+                                "product_name" = "Pasta noodle";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                },
+                                {
+                    date = "2013-10-03";
+                    day = Thursday;
+                    meals =                     {
+                        dinner =                         (
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = "<null>";
+                                "product_id" = "<null>";
+                                "product_name" = "Chicken korma";
+                            },
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 666;
+                                "product_name" = "Shanghai Noodles,";
+                            },
+                                                        {
+                                "diet_type" = Vegetarian;
+                                "product_id" = 1030;
+                                "product_name" = "Vegetable Korma";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                },
+                                {
+                    date = "2013-10-04";
+                    day = Friday;
+                    meals =                     {
+                        dinner =                         (
+                        );
+                        lunch =                         (
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 1280;
+                                "product_name" = "Meatballs with Baja sauce";
+                            },
+                                                        {
+                                "diet_type" = Vegetarian;
+                                "product_id" = 1903;
+                                "product_name" = "Mock beef and Baja jalapeno sauce";
+                            },
+                                                        {
+                                "diet_type" = "Non Vegetarian";
+                                "product_id" = 666;
+                                "product_name" = "Shanghai Noodles,";
+                            }
+                        );
+                    };
+                    notes = "<null>";
+                }
+            );
+            "outlet_id" = 25;
+            "outlet_name" = "Liquid Assets";
+        }
+    );
+    "restaurants_menu_date_info" =     {
+        end = "2013-10-04";
+        start = "2013-09-30";
+        week = 40;
+        year = 2013;
+    };
+    "restaurants_with_menu" =     (
+                {
+            building = DC;
+            "dates_closed" =             (
+                "2014-01-01",
+                "2014-01-02",
+                "2014-01-03",
+                "2014-01-04",
+                "2014-01-05"
+            );
+            description = "Bon App\U00e9tit offers fantastic Chinese food, salads, fruit, beverages, soup, and grill items. Check out the new Waterloo Burger Company featuring a 12oz sirloin burger and loaded fries.";
+            "has_breakfast" = 0;
+            "has_dinner" = 1;
+            "has_lunch" = 1;
+            "is_open_now" = 1;
+            latitude = "43.472839";
+            logo = "https://uwaterloo.ca/food-services/sites/ca.food-services/files/BA.gif";
+            longitude = "-80.54318499999999";
+            notice = "Chopsticks opens at 10:30am, Jolly Chef at 11am.";
+            "opening_hours" =             {
+                friday =                 {
+                    "closing_hour" = "14:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "10:30";
+                };
+                monday =                 {
+                    "closing_hour" = "19:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "10:30";
+                };
+                saturday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                sunday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                thursday =                 {
+                    "closing_hour" = "19:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "10:30";
+                };
+                tuesday =                 {
+                    "closing_hour" = "19:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "10:30";
+                };
+                wednesday =                 {
+                    "closing_hour" = "19:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "10:30";
+                };
+            };
+            "outlet_id" = 3;
+            "outlet_name" = "Bon App\U00e9tit - Davis Centre";
+            "special_hours" =             (
+            );
+        },
+                {
+            building = SLC;
+            "dates_closed" =             (
+                "2014-01-01",
+                "2014-01-02",
+                "2014-01-03",
+                "2014-01-04",
+                "2014-01-05"
+            );
+            description = "We&rsquo;ve got something for everyone under one roof! You can choose from Pita Pit,&nbsp; Pizza Pizza, Made in Japan Teriyaki, Wild Olive Pasta Bar, Booster Juice, Freestyle Coke Machine, Grab n&rsquo; Go, and lots more.";
+            "has_breakfast" = 0;
+            "has_dinner" = 1;
+            "has_lunch" = 1;
+            "is_open_now" = 1;
+            latitude = "43.472037";
+            logo = "https://uwaterloo.ca/food-services/sites/ca.food-services/files/brubakers.gif";
+            longitude = "-80.54541999999999";
+            notice = "<null>";
+            "opening_hours" =             {
+                friday =                 {
+                    "closing_hour" = "15:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "09:00";
+                };
+                monday =                 {
+                    "closing_hour" = "19:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "09:00";
+                };
+                saturday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                sunday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                thursday =                 {
+                    "closing_hour" = "19:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "09:00";
+                };
+                tuesday =                 {
+                    "closing_hour" = "19:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "09:00";
+                };
+                wednesday =                 {
+                    "closing_hour" = "19:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "09:00";
+                };
+            };
+            "outlet_id" = 1;
+            "outlet_name" = "Brubakers - Student Life Centre";
+            "special_hours" =             (
+            );
+        },
+                {
+            building = HH;
+            "dates_closed" =             (
+                "2014-01-01",
+                "2014-01-02",
+                "2014-01-03",
+                "2014-01-04",
+                "2014-01-05"
+            );
+            description = "Serving a mix of Asian and Indian noodle bowls and salads. As well as fresh coffee, pastries and Grab n&#39; Go items.";
+            "has_breakfast" = 0;
+            "has_dinner" = 0;
+            "has_lunch" = 1;
+            "is_open_now" = 0;
+            latitude = "43.468541";
+            logo = "https://uwaterloo.ca/food-services/sites/ca.food-services/files/la.gif";
+            longitude = "-80.54170000000001";
+            notice = "<null>";
+            "opening_hours" =             {
+                friday =                 {
+                    "closing_hour" = "14:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                monday =                 {
+                    "closing_hour" = "14:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                saturday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                sunday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                thursday =                 {
+                    "closing_hour" = "14:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                tuesday =                 {
+                    "closing_hour" = "14:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                wednesday =                 {
+                    "closing_hour" = "14:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+            };
+            "outlet_id" = 25;
+            "outlet_name" = "Liquid Assets Cafe - Hagey Hall";
+            "special_hours" =             (
+            );
+        },
+                {
+            building = SCH;
+            "dates_closed" =             (
+                "2014-01-01",
+                "2014-01-02",
+                "2014-01-03",
+                "2014-01-04",
+                "2014-01-05"
+            );
+            description = "A hot entr\U00e9e is available every day and weekly specialty menu items will make this one of your hot spots. It&#39;s one of our best kept secrets! Shhh, don&#39;t tell anyone.";
+            "has_breakfast" = 0;
+            "has_dinner" = 0;
+            "has_lunch" = 1;
+            "is_open_now" = 0;
+            latitude = "43.469222";
+            logo = "https://uwaterloo.ca/food-services/sites/ca.food-services/files/festivalfare.gif";
+            longitude = "-80.54036000000001";
+            notice = "<null>";
+            "opening_hours" =             {
+                friday =                 {
+                    "closing_hour" = "13:45";
+                    "is_closed" = 0;
+                    "opening_hour" = "11:00";
+                };
+                monday =                 {
+                    "closing_hour" = "13:45";
+                    "is_closed" = 0;
+                    "opening_hour" = "11:00";
+                };
+                saturday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                sunday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                thursday =                 {
+                    "closing_hour" = "13:45";
+                    "is_closed" = 0;
+                    "opening_hour" = "11:00";
+                };
+                tuesday =                 {
+                    "closing_hour" = "13:45";
+                    "is_closed" = 0;
+                    "opening_hour" = "11:00";
+                };
+                wednesday =                 {
+                    "closing_hour" = "13:45";
+                    "is_closed" = 0;
+                    "opening_hour" = "11:00";
+                };
+            };
+            "outlet_id" = 6;
+            "outlet_name" = "Festival Fare - above the Bookstore in South Campus Hall";
+            "special_hours" =             (
+            );
+        },
+                {
+            building = V1;
+            "dates_closed" =             (
+                "2014-01-01",
+                "2014-01-02",
+                "2014-01-03",
+                "2014-01-04"
+            );
+            description = "This is a great place to meet your friends! The aroma of fresh baked breads and pastries from our in-house UW Bakery will surely make you take a deep breath. Mudie&rsquo;s offers a large selection of vegetarian foods, grab n&rsquo; go items, salad bar, grill items, made-to-order deli sandwiches and pitas, full breakfast, and convenience foods. A hot entr\U00e9e item and side dishes are available every lunch and dinner hour.";
+            "has_breakfast" = 0;
+            "has_dinner" = 1;
+            "has_lunch" = 1;
+            "is_open_now" = 1;
+            latitude = "43.471582";
+            logo = "https://uwaterloo.ca/food-services/sites/ca.food-services/files/untitled-3-01.png";
+            longitude = "-80.549741";
+            notice = "<null>";
+            "opening_hours" =             {
+                friday =                 {
+                    "closing_hour" = "00:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:00";
+                };
+                monday =                 {
+                    "closing_hour" = "00:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:00";
+                };
+                saturday =                 {
+                    "closing_hour" = "00:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                sunday =                 {
+                    "closing_hour" = "00:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                thursday =                 {
+                    "closing_hour" = "00:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:00";
+                };
+                tuesday =                 {
+                    "closing_hour" = "00:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:00";
+                };
+                wednesday =                 {
+                    "closing_hour" = "00:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:00";
+                };
+            };
+            "outlet_id" = 5;
+            "outlet_name" = "Mudie\U2019s - Village 1";
+            "special_hours" =             (
+                                {
+                    "closing_hour" = "00:30";
+                    date = "2014-01-05";
+                    "opening_hour" = "11:00";
+                }
+            );
+        },
+                {
+            building = REV;
+            "dates_closed" =             (
+                "2014-01-01",
+                "2014-01-02",
+                "2014-01-03",
+                "2014-01-04"
+            );
+            description = "Meet your friends and have a fantastic meal at the same time. Our stir-fry meals will entice your taste buds, made-to-order deli sandwiches will be hard to resist, fantastic hot entr\U00e9es will lure you, and a great full breakfast will get your day off to a great start. A vegetarian hot entr\U00e9e is available every lunch and dinner plus there&rsquo;s a large selection of grab n&rsquo; go items to ensure you can always find something to eat.";
+            "has_breakfast" = 0;
+            "has_dinner" = 1;
+            "has_lunch" = 1;
+            "is_open_now" = 1;
+            latitude = "43.470296";
+            logo = "https://uwaterloo.ca/food-services/sites/ca.food-services/files/revelation.gif";
+            longitude = "-80.554306";
+            notice = "<null>";
+            "opening_hours" =             {
+                friday =                 {
+                    "closing_hour" = "19:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:00";
+                };
+                monday =                 {
+                    "closing_hour" = "22:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:00";
+                };
+                saturday =                 {
+                    "closing_hour" = "19:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "09:00";
+                };
+                sunday =                 {
+                    "closing_hour" = "22:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "09:00";
+                };
+                thursday =                 {
+                    "closing_hour" = "22:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:00";
+                };
+                tuesday =                 {
+                    "closing_hour" = "22:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:00";
+                };
+                wednesday =                 {
+                    "closing_hour" = "22:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:00";
+                };
+            };
+            "outlet_id" = 7;
+            "outlet_name" = "REVelation - Ron Eydt Village";
+            "special_hours" =             (
+                                {
+                    "closing_hour" = "19:00";
+                    date = "2014-01-05";
+                    "opening_hour" = "15:00";
+                }
+            );
+        }
+    );
+    "restaurants_without_menu" =     (
+                {
+            building = DP;
+            "dates_closed" =             (
+                "2014-01-01",
+                "2014-01-02",
+                "2014-01-03",
+                "2014-01-04",
+                "2014-01-05"
+            );
+            description = "Come and taste our exclusive new coffee roasts from freshly ground Baden Coffee Co. beans.
+\nA selection of pastries, grab n&rsquo; go items, and hot and cold beverages will satisfy your thirst and hungry tummy while you&rsquo;re browsing the books.";
+            "has_breakfast" = 1;
+            "has_dinner" = 1;
+            "has_lunch" = 1;
+            "is_open_now" = 1;
+            latitude = "43.469665";
+            logo = "https://uwaterloo.ca/food-services/sites/ca.food-services/files/browsers.gif";
+            longitude = "-80.542338";
+            notice = "<null>";
+            "opening_hours" =             {
+                friday =                 {
+                    "closing_hour" = "19:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                monday =                 {
+                    "closing_hour" = "21:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                saturday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                sunday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                thursday =                 {
+                    "closing_hour" = "21:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                tuesday =                 {
+                    "closing_hour" = "21:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                wednesday =                 {
+                    "closing_hour" = "21:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+            };
+            "outlet_id" = 20;
+            "outlet_name" = "Browsers Caf\U00e9 - Dana Porter Library";
+            "special_hours" =             (
+                                {
+                    "closing_hour" = "16:30";
+                    date = "2014-01-18";
+                    "opening_hour" = "11:30";
+                },
+                                {
+                    "closing_hour" = "16:30";
+                    date = "2014-01-19";
+                    "opening_hour" = "11:30";
+                },
+                                {
+                    "closing_hour" = "16:30";
+                    date = "2014-01-25";
+                    "opening_hour" = "11:30";
+                },
+                                {
+                    "closing_hour" = "16:30";
+                    date = "2014-01-26";
+                    "opening_hour" = "11:30";
+                }
+            );
+        },
+                {
+            building = SLC;
+            "dates_closed" =             (
+                "2014-01-01",
+                "2014-01-02",
+                "2014-01-03",
+                "2014-01-04",
+                "2014-01-05"
+            );
+            description = "<null>";
+            "is_open_now" = 1;
+            latitude = "43.471324";
+            logo = "https://uwaterloo.ca/food-services/sites/ca.food-services/files/tims.gif";
+            longitude = "-80.545186";
+            notice = "<null>";
+            "opening_hours" =             {
+                friday =                 {
+                    "closing_hour" = "21:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:30";
+                };
+                monday =                 {
+                    "closing_hour" = "23:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:30";
+                };
+                saturday =                 {
+                    "closing_hour" = "21:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "10:30";
+                };
+                sunday =                 {
+                    "closing_hour" = "21:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "10:30";
+                };
+                thursday =                 {
+                    "closing_hour" = "23:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:30";
+                };
+                tuesday =                 {
+                    "closing_hour" = "23:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:30";
+                };
+                wednesday =                 {
+                    "closing_hour" = "23:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:30";
+                };
+            };
+            "outlet_id" = "<null>";
+            "outlet_name" = "Tim Hortons - Student Life Centre";
+            "special_hours" =             (
+            );
+        },
+                {
+            building = ML;
+            "dates_closed" =             (
+                "2014-01-01",
+                "2014-01-02",
+                "2014-01-03",
+                "2014-01-04",
+                "2014-01-05"
+            );
+            description = "Famous for its diner-style menu, ML&rsquo;s will lure your taste buds.";
+            "is_open_now" = 0;
+            latitude = "43.468897";
+            logo = "https://uwaterloo.ca/food-services/sites/ca.food-services/files/mls.jpg";
+            longitude = "-80.54272400000001";
+            notice = "<null>";
+            "opening_hours" =             {
+                friday =                 {
+                    "closing_hour" = "14:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "09:00";
+                };
+                monday =                 {
+                    "closing_hour" = "14:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "09:00";
+                };
+                saturday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                sunday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                thursday =                 {
+                    "closing_hour" = "14:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "09:00";
+                };
+                tuesday =                 {
+                    "closing_hour" = "14:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "09:00";
+                };
+                wednesday =                 {
+                    "closing_hour" = "14:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "09:00";
+                };
+            };
+            "outlet_id" = "<null>";
+            "outlet_name" = "ML\U2019s Coffee Shop - Modern Languages";
+            "special_hours" =             (
+            );
+        },
+                {
+            building = SLC;
+            "dates_closed" =             (
+                "2014-01-01"
+            );
+            description = "Located beside Brubakers.";
+            "is_open_now" = 1;
+            latitude = "43.472138";
+            logo = "https://uwaterloo.ca/food-services/sites/ca.food-services/files/subway.gif";
+            longitude = "-80.545219";
+            notice = "<null>";
+            "opening_hours" =             {
+                friday =                 {
+                    "closing_hour" = "19:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "09:00";
+                };
+                monday =                 {
+                    "closing_hour" = "19:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "09:00";
+                };
+                saturday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                sunday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                thursday =                 {
+                    "closing_hour" = "19:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "09:00";
+                };
+                tuesday =                 {
+                    "closing_hour" = "19:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "09:00";
+                };
+                wednesday =                 {
+                    "closing_hour" = "19:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "09:00";
+                };
+            };
+            "outlet_id" = "<null>";
+            "outlet_name" = "Subway - Student Life Centre";
+            "special_hours" =             (
+                                {
+                    "closing_hour" = "14:30";
+                    date = "2014-01-02";
+                    "opening_hour" = "08:00";
+                },
+                                {
+                    "closing_hour" = "14:30";
+                    date = "2014-01-03";
+                    "opening_hour" = "08:00";
+                }
+            );
+        },
+                {
+            building = EIT;
+            "dates_closed" =             (
+                "2014-01-01",
+                "2014-01-02",
+                "2014-01-03",
+                "2014-01-04",
+                "2014-01-05"
+            );
+            description = "Look for us under the dinosaur &ndash; we&rsquo;ll be ready to serve you from our selection of fresh pastries, hot soup, specialty beverages, and grab n&rsquo; go foods.";
+            "is_open_now" = 0;
+            latitude = "43.471713";
+            logo = "https://uwaterloo.ca/food-services/sites/ca.food-services/files/ceit.gif";
+            longitude = "-80.542231";
+            notice = "<null>";
+            "opening_hours" =             {
+                friday =                 {
+                    "closing_hour" = "15:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                monday =                 {
+                    "closing_hour" = "15:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                saturday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                sunday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                thursday =                 {
+                    "closing_hour" = "15:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                tuesday =                 {
+                    "closing_hour" = "15:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                wednesday =                 {
+                    "closing_hour" = "15:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+            };
+            "outlet_id" = "<null>";
+            "outlet_name" = "CEIT Caf\U00e9 - CEIT Building";
+            "special_hours" =             (
+            );
+        },
+                {
+            building = OPT;
+            "dates_closed" =             (
+                "2014-01-01",
+                "2014-01-02",
+                "2014-01-03",
+                "2014-01-04",
+                "2014-01-05"
+            );
+            description = "Visit our cafe and try one of our Panino sandwiches or start your day off right with a fresh-ground, house blend, coffee.";
+            "has_breakfast" = 1;
+            "has_dinner" = 1;
+            "has_lunch" = 1;
+            "is_open_now" = 0;
+            latitude = "43.475552";
+            logo = "https://uwaterloo.ca/food-services/sites/ca.food-services/files/eye_opener.gif";
+            longitude = "-80.545455";
+            notice = "<null>";
+            "opening_hours" =             {
+                friday =                 {
+                    "closing_hour" = "14:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                monday =                 {
+                    "closing_hour" = "14:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                saturday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                sunday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                thursday =                 {
+                    "closing_hour" = "14:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                tuesday =                 {
+                    "closing_hour" = "14:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                wednesday =                 {
+                    "closing_hour" = "14:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+            };
+            "outlet_id" = 21;
+            "outlet_name" = "Eye Opener Caf\U00e9 - Optometry Building";
+            "special_hours" =             (
+            );
+        },
+                {
+            building = EV3;
+            "dates_closed" =             (
+                "2014-01-01",
+                "2014-01-02",
+                "2014-01-03",
+                "2014-01-04",
+                "2014-01-05"
+            );
+            description = "<null>";
+            "is_open_now" = 1;
+            latitude = "43.468202";
+            logo = "https://uwaterloo.ca/food-services/sites/ca.food-services/files/williams_0.gif";
+            longitude = "-80.543561";
+            notice = "<null>";
+            "opening_hours" =             {
+                friday =                 {
+                    "closing_hour" = "15:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:30";
+                };
+                monday =                 {
+                    "closing_hour" = "18:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:30";
+                };
+                saturday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                sunday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                thursday =                 {
+                    "closing_hour" = "18:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:30";
+                };
+                tuesday =                 {
+                    "closing_hour" = "18:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:30";
+                };
+                wednesday =                 {
+                    "closing_hour" = "18:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:30";
+                };
+            };
+            "outlet_id" = "<null>";
+            "outlet_name" = "Williams Fresh Cafe - Environment 3";
+            "special_hours" =             (
+            );
+        },
+                {
+            building = PAS;
+            "dates_closed" =             (
+                "2014-01-01",
+                "2014-01-02",
+                "2014-01-03",
+                "2014-01-04",
+                "2014-01-05"
+            );
+            description = "Located on the 3rd floor, we offer an assortment of fresh pastries, grab n&rsquo; go items, soup, salads, and sandwiches.";
+            "has_breakfast" = 1;
+            "has_dinner" = 1;
+            "has_lunch" = 1;
+            "is_open_now" = 0;
+            latitude = "43.467077";
+            logo = "https://uwaterloo.ca/food-services/sites/ca.food-services/files/pas.gif";
+            longitude = "-80.5427";
+            notice = "<null>";
+            "opening_hours" =             {
+                friday =                 {
+                    "closing_hour" = "15:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:30";
+                };
+                monday =                 {
+                    "closing_hour" = "15:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:30";
+                };
+                saturday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                sunday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                thursday =                 {
+                    "closing_hour" = "15:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:30";
+                };
+                tuesday =                 {
+                    "closing_hour" = "15:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:30";
+                };
+                wednesday =                 {
+                    "closing_hour" = "15:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:30";
+                };
+            };
+            "outlet_id" = 22;
+            "outlet_name" = "PAS Lounge - PAS Building";
+            "special_hours" =             (
+            );
+        },
+                {
+            building = BMH;
+            "dates_closed" =             (
+                "2014-01-01",
+                "2014-01-02",
+                "2014-01-03",
+                "2014-01-04",
+                "2014-01-05"
+            );
+            description = "Although we&rsquo;re small and tucked away &ndash; we offer pastries, hot and cold beverages, soup, and grab n&rsquo; go items for a quick &ldquo;pick-me-up&rdquo; between classes.";
+            "has_breakfast" = 1;
+            "has_dinner" = 1;
+            "has_lunch" = 1;
+            "is_open_now" = 0;
+            latitude = "43.473559";
+            logo = "https://uwaterloo.ca/food-services/sites/ca.food-services/files/pastryplus.gif";
+            longitude = "-80.545648";
+            notice = "<null>";
+            "opening_hours" =             {
+                friday =                 {
+                    "closing_hour" = "13:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:15";
+                };
+                monday =                 {
+                    "closing_hour" = "13:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:15";
+                };
+                saturday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                sunday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                thursday =                 {
+                    "closing_hour" = "13:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:15";
+                };
+                tuesday =                 {
+                    "closing_hour" = "13:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:15";
+                };
+                wednesday =                 {
+                    "closing_hour" = "13:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:15";
+                };
+            };
+            "outlet_id" = 23;
+            "outlet_name" = "Pastry Plus - B. C. Matthews Hall";
+            "special_hours" =             (
+            );
+        },
+                {
+            building = NH;
+            "dates_closed" =             (
+                "2014-01-01"
+            );
+            description = "To save you time, we have grab n&rsquo; go sandwiches, soup, fresh pastries, hot and cold beverages, and convenience items.";
+            "has_breakfast" = 1;
+            "has_dinner" = 1;
+            "has_lunch" = 1;
+            "is_open_now" = 0;
+            latitude = "43.469578";
+            logo = "https://uwaterloo.ca/food-services/sites/ca.food-services/files/pastryplus_0.gif";
+            longitude = "-80.543599";
+            notice = "<null>";
+            "opening_hours" =             {
+                friday =                 {
+                    "closing_hour" = "15:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:30";
+                };
+                monday =                 {
+                    "closing_hour" = "15:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:30";
+                };
+                saturday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                sunday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                thursday =                 {
+                    "closing_hour" = "15:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:30";
+                };
+                tuesday =                 {
+                    "closing_hour" = "15:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:30";
+                };
+                wednesday =                 {
+                    "closing_hour" = "15:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:30";
+                };
+            };
+            "outlet_id" = 23;
+            "outlet_name" = "Pastry Plus - Needles Hall";
+            "special_hours" =             (
+            );
+        },
+                {
+            building = TC;
+            "dates_closed" =             (
+            );
+            description = "Open during employer interviews; look for us behind the paging counter. Our selection of snacking foods will invigorate you for your interview.";
+            "has_breakfast" = 1;
+            "has_dinner" = 1;
+            "has_lunch" = 1;
+            "is_open_now" = 0;
+            latitude = "43.468842";
+            logo = "https://uwaterloo.ca/food-services/sites/ca.food-services/files/pastryplus_1.gif";
+            longitude = "-80.54117100000001";
+            notice = "Open during employer interviews only.";
+            "opening_hours" =             {
+                friday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                monday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                saturday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                sunday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                thursday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                tuesday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                wednesday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+            };
+            "outlet_id" = 23;
+            "outlet_name" = "Pastry Plus - Tatham Centre";
+            "special_hours" =             (
+            );
+        },
+                {
+            building = ML;
+            "dates_closed" =             (
+                "2014-01-01",
+                "2014-01-02",
+                "2014-01-03",
+                "2014-01-04",
+                "2014-01-05"
+            );
+            description = "<null>";
+            "is_open_now" = 0;
+            latitude = "43.468778";
+            logo = "https://uwaterloo.ca/food-services/sites/ca.food-services/files/tims_0.gif";
+            longitude = "-80.543153";
+            notice = "<null>";
+            "opening_hours" =             {
+                friday =                 {
+                    "closing_hour" = "14:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                monday =                 {
+                    "closing_hour" = "15:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                saturday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                sunday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                thursday =                 {
+                    "closing_hour" = "15:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                tuesday =                 {
+                    "closing_hour" = "15:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                wednesday =                 {
+                    "closing_hour" = "15:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+            };
+            "outlet_id" = "<null>";
+            "outlet_name" = "Tim Hortons - Modern Languages";
+            "special_hours" =             (
+            );
+        },
+                {
+            building = DC;
+            "dates_closed" =             (
+                "2014-01-01"
+            );
+            description = "<null>";
+            "is_open_now" = 1;
+            latitude = "43.472901";
+            logo = "https://uwaterloo.ca/food-services/sites/ca.food-services/files/tims_1.gif";
+            longitude = "-80.542992";
+            notice = "<null>";
+            "opening_hours" =             {
+                friday =                 {
+                    "closing_hour" = "15:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:30";
+                };
+                monday =                 {
+                    "closing_hour" = "19:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:30";
+                };
+                saturday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                sunday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                thursday =                 {
+                    "closing_hour" = "19:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:30";
+                };
+                tuesday =                 {
+                    "closing_hour" = "19:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:30";
+                };
+                wednesday =                 {
+                    "closing_hour" = "19:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "07:30";
+                };
+            };
+            "outlet_id" = "<null>";
+            "outlet_name" = "Tim Hortons - Davis Centre";
+            "special_hours" =             (
+                                {
+                    "closing_hour" = "15:30";
+                    date = "2014-01-02";
+                    "opening_hour" = "07:30";
+                },
+                                {
+                    "closing_hour" = "15:30";
+                    date = "2014-01-03";
+                    "opening_hour" = "07:30";
+                }
+            );
+        },
+                {
+            building = SCH;
+            "dates_closed" =             (
+                "2014-01-01"
+            );
+            description = "<null>";
+            "is_open_now" = 1;
+            latitude = "43.469183";
+            logo = "https://uwaterloo.ca/food-services/sites/ca.food-services/files/tims_2.gif";
+            longitude = "-80.540133";
+            notice = "<null>";
+            "opening_hours" =             {
+                friday =                 {
+                    "closing_hour" = "16:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                monday =                 {
+                    "closing_hour" = "19:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                saturday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                sunday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                thursday =                 {
+                    "closing_hour" = "19:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                tuesday =                 {
+                    "closing_hour" = "19:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+                wednesday =                 {
+                    "closing_hour" = "19:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "08:00";
+                };
+            };
+            "outlet_id" = "<null>";
+            "outlet_name" = "Tim Hortons - South Campus Hall";
+            "special_hours" =             (
+                                {
+                    "closing_hour" = "16:00";
+                    date = "2014-01-02";
+                    "opening_hour" = "08:00";
+                },
+                                {
+                    "closing_hour" = "16:00";
+                    date = "2014-01-03";
+                    "opening_hour" = "08:00";
+                }
+            );
+        },
+                {
+            building = UC;
+            "dates_closed" =             (
+                "2014-01-01",
+                "2014-01-02",
+                "2014-01-03",
+                "2014-01-04",
+                "2014-01-05"
+            );
+            description = "Good food - good times - visit the Club.
+\nReservations recommended.
+\n\tPlease call 888-4567 extension 33801
+\n\t
+\n\tVisit the University Club website to view our daily menu and see what theme events we have happening
+\n\t
+\n\t(WATCARD discounts do not apply at the University Club)";
+            "is_open_now" = 0;
+            latitude = "43.472272";
+            logo = "https://uwaterloo.ca/food-services/sites/ca.food-services/files/university-club.gif";
+            longitude = "-80.54745";
+            notice = "<null>";
+            "opening_hours" =             {
+                friday =                 {
+                    "closing_hour" = "14:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "11:30";
+                };
+                monday =                 {
+                    "closing_hour" = "14:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "11:30";
+                };
+                saturday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                sunday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                thursday =                 {
+                    "closing_hour" = "14:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "11:30";
+                };
+                tuesday =                 {
+                    "closing_hour" = "14:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "11:30";
+                };
+                wednesday =                 {
+                    "closing_hour" = "14:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "11:30";
+                };
+            };
+            "outlet_id" = "<null>";
+            "outlet_name" = "University Club";
+            "special_hours" =             (
+            );
+        },
+                {
+            building = DC;
+            "dates_closed" =             (
+                "2014-01-01",
+                "2014-01-02",
+                "2014-01-03",
+                "2014-01-04",
+                "2014-01-05"
+            );
+            description = "<null>";
+            "is_open_now" = 0;
+            latitude = "43.473115";
+            logo = "https://uwaterloo.ca/food-services/sites/ca.food-services/files/tims_1.gif";
+            longitude = "-80.542145";
+            notice = "<null>";
+            "opening_hours" =             {
+                friday =                 {
+                    "closing_hour" = "18:00";
+                    "is_closed" = 0;
+                    "opening_hour" = "09:00";
+                };
+                monday =                 {
+                    "closing_hour" = "15:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "09:00";
+                };
+                saturday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                sunday =                 {
+                    "closing_hour" = "<null>";
+                    "is_closed" = 1;
+                    "opening_hour" = "<null>";
+                };
+                thursday =                 {
+                    "closing_hour" = "15:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "09:00";
+                };
+                tuesday =                 {
+                    "closing_hour" = "15:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "09:00";
+                };
+                wednesday =                 {
+                    "closing_hour" = "15:30";
+                    "is_closed" = 0;
+                    "opening_hour" = "09:00";
+                };
+            };
+            "outlet_id" = "<null>";
+            "outlet_name" = "Tim Hortons - Davis Centre Library";
+            "special_hours" =             (
+            );
+        }
+    );
+}

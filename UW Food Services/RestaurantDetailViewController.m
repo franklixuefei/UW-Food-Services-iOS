@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 Xuefei Li. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "RestaurantDetailViewController.h"
 
-@interface DetailViewController ()
+@interface RestaurantDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 - (void)configureView;
 @end
 
-@implementation DetailViewController
+@implementation RestaurantDetailViewController
 
 #pragma mark - Managing the detail item
 

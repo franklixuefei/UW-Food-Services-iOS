@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD38F73EF7DF4B08891B6F0B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2DBA44E7C8D47E0804EE5AE /* libPods.a */; };
+		F14D1E421869167600391AC8 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = F14D1E411869167600391AC8 /* Menu.m */; };
+		F14D1E461869201E00391AC8 /* FoodServer.m in Sources */ = {isa = PBXBuildFile; fileRef = F14D1E451869201E00391AC8 /* FoodServer.m */; };
+		F14D1E4C18694A7600391AC8 /* OpeningHours.m in Sources */ = {isa = PBXBuildFile; fileRef = F14D1E4B18694A7500391AC8 /* OpeningHours.m */; };
+		F14D1E4F186953FF00391AC8 /* DailyOpeningHours.m in Sources */ = {isa = PBXBuildFile; fileRef = F14D1E4E186953FF00391AC8 /* DailyOpeningHours.m */; };
+		F14D1E52186964A900391AC8 /* SpecialHours.m in Sources */ = {isa = PBXBuildFile; fileRef = F14D1E51186964A800391AC8 /* SpecialHours.m */; };
+		F14D1E541869661500391AC8 /* parsed_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = F14D1E531869661500391AC8 /* parsed_data.txt */; };
+		F14D1E581869794A00391AC8 /* FoodNull.m in Sources */ = {isa = PBXBuildFile; fileRef = F14D1E571869794A00391AC8 /* FoodNull.m */; };
+		F14D1EB3187633DA00391AC8 /* RestaurantCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F14D1EB2187633DA00391AC8 /* RestaurantCollectionViewCell.m */; };
+		F14D1EB81877641100391AC8 /* RestaurantCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14D1EB71877641000391AC8 /* RestaurantCollectionViewCell.xib */; };
+		F14D1EC118776D6700391AC8 /* resta_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = F14D1EBF18776D6700391AC8 /* resta_placeholder.png */; };
+		F14D1EC218776D6700391AC8 /* resta_placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F14D1EC018776D6700391AC8 /* resta_placeholder@2x.png */; };
+		F14D1EC51877859500391AC8 /* UIColor+RGBColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F14D1EC41877859500391AC8 /* UIColor+RGBColor.m */; };
+		F14D1EC8187785A600391AC8 /* UIColor+HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F14D1EC7187785A600391AC8 /* UIColor+HexColor.m */; };
+		F1997B7F1867D7F4006B9231 /* NSDate+ISO8601WeekNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = F1997B7E1867D7F4006B9231 /* NSDate+ISO8601WeekNumber.m */; };
 		F1B3E626185D08B6008EC150 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B3E625185D08B6008EC150 /* Foundation.framework */; };
 		F1B3E628185D08B6008EC150 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B3E627185D08B6008EC150 /* CoreGraphics.framework */; };
 		F1B3E62A185D08B6008EC150 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B3E629185D08B6008EC150 /* UIKit.framework */; };
@@ -17,8 +32,8 @@
 		F1B3E63B185D08B6008EC150 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1B3E639185D08B6008EC150 /* Main_iPhone.storyboard */; };
 		F1B3E63E185D08B6008EC150 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1B3E63C185D08B6008EC150 /* Main_iPad.storyboard */; };
 		F1B3E641185D08B6008EC150 /* UW_Food_Services.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F1B3E63F185D08B6008EC150 /* UW_Food_Services.xcdatamodeld */; };
-		F1B3E644185D08B7008EC150 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B3E643185D08B7008EC150 /* MasterViewController.m */; };
-		F1B3E647185D08B7008EC150 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B3E646185D08B7008EC150 /* DetailViewController.m */; };
+		F1B3E644185D08B7008EC150 /* RestaurantListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B3E643185D08B7008EC150 /* RestaurantListViewController.m */; };
+		F1B3E647185D08B7008EC150 /* RestaurantDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B3E646185D08B7008EC150 /* RestaurantDetailViewController.m */; };
 		F1B3E649185D08B7008EC150 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1B3E648185D08B7008EC150 /* Images.xcassets */; };
 		F1B3E650185D08B7008EC150 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B3E64F185D08B7008EC150 /* XCTest.framework */; };
 		F1B3E651185D08B7008EC150 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B3E625185D08B6008EC150 /* Foundation.framework */; };
@@ -26,6 +41,9 @@
 		F1B3E653185D08B7008EC150 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B3E62B185D08B6008EC150 /* CoreData.framework */; };
 		F1B3E65B185D08B7008EC150 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1B3E659185D08B7008EC150 /* InfoPlist.strings */; };
 		F1B3E65D185D08B7008EC150 /* UW_Food_ServicesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B3E65C185D08B7008EC150 /* UW_Food_ServicesTests.m */; };
+		F1FC75A81866A99E00133C82 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FC75A71866A99E00133C82 /* Restaurant.m */; };
+		F1FC75AC1866AE0E00133C82 /* UWServerAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FC75AB1866AE0E00133C82 /* UWServerAPIClient.m */; };
+		F1FC75AF1866B80900133C82 /* RestaurantTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FC75AE1866B80900133C82 /* RestaurantTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +57,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00F99C2330194D76BD5A2989 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		E2DBA44E7C8D47E0804EE5AE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F14D1E401869167600391AC8 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
+		F14D1E411869167600391AC8 /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menu.m; sourceTree = "<group>"; };
+		F14D1E441869201E00391AC8 /* FoodServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodServer.h; sourceTree = "<group>"; };
+		F14D1E451869201E00391AC8 /* FoodServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodServer.m; sourceTree = "<group>"; };
+		F14D1E48186929E500391AC8 /* ModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelProtocol.h; sourceTree = "<group>"; };
+		F14D1E4A18694A7500391AC8 /* OpeningHours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpeningHours.h; sourceTree = "<group>"; };
+		F14D1E4B18694A7500391AC8 /* OpeningHours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpeningHours.m; sourceTree = "<group>"; };
+		F14D1E4D186953FF00391AC8 /* DailyOpeningHours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyOpeningHours.h; sourceTree = "<group>"; };
+		F14D1E4E186953FF00391AC8 /* DailyOpeningHours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyOpeningHours.m; sourceTree = "<group>"; };
+		F14D1E50186964A800391AC8 /* SpecialHours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialHours.h; sourceTree = "<group>"; };
+		F14D1E51186964A800391AC8 /* SpecialHours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialHours.m; sourceTree = "<group>"; };
+		F14D1E531869661500391AC8 /* parsed_data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = parsed_data.txt; sourceTree = "<group>"; };
+		F14D1E561869794A00391AC8 /* FoodNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodNull.h; sourceTree = "<group>"; };
+		F14D1E571869794A00391AC8 /* FoodNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodNull.m; sourceTree = "<group>"; };
+		F14D1EB1187633DA00391AC8 /* RestaurantCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantCollectionViewCell.h; sourceTree = "<group>"; };
+		F14D1EB2187633DA00391AC8 /* RestaurantCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantCollectionViewCell.m; sourceTree = "<group>"; };
+		F14D1EB71877641000391AC8 /* RestaurantCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantCollectionViewCell.xib; sourceTree = "<group>"; };
+		F14D1EBF18776D6700391AC8 /* resta_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resta_placeholder.png; sourceTree = "<group>"; };
+		F14D1EC018776D6700391AC8 /* resta_placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "resta_placeholder@2x.png"; sourceTree = "<group>"; };
+		F14D1EC31877859500391AC8 /* UIColor+RGBColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RGBColor.h"; sourceTree = "<group>"; };
+		F14D1EC41877859500391AC8 /* UIColor+RGBColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RGBColor.m"; sourceTree = "<group>"; };
+		F14D1EC6187785A600391AC8 /* UIColor+HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexColor.h"; sourceTree = "<group>"; };
+		F14D1EC7187785A600391AC8 /* UIColor+HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexColor.m"; sourceTree = "<group>"; };
+		F1997B7D1867D7F4006B9231 /* NSDate+ISO8601WeekNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601WeekNumber.h"; sourceTree = "<group>"; };
+		F1997B7E1867D7F4006B9231 /* NSDate+ISO8601WeekNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601WeekNumber.m"; sourceTree = "<group>"; };
 		F1B3E622185D08B6008EC150 /* UW Food Services.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UW Food Services.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B3E625185D08B6008EC150 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F1B3E627185D08B6008EC150 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,16 +98,23 @@
 		F1B3E63A185D08B6008EC150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		F1B3E63D185D08B6008EC150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		F1B3E640185D08B6008EC150 /* UW_Food_Services.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UW_Food_Services.xcdatamodel; sourceTree = "<group>"; };
-		F1B3E642185D08B6008EC150 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		F1B3E643185D08B7008EC150 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		F1B3E645185D08B7008EC150 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		F1B3E646185D08B7008EC150 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		F1B3E642185D08B6008EC150 /* RestaurantListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestaurantListViewController.h; sourceTree = "<group>"; };
+		F1B3E643185D08B7008EC150 /* RestaurantListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestaurantListViewController.m; sourceTree = "<group>"; };
+		F1B3E645185D08B7008EC150 /* RestaurantDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestaurantDetailViewController.h; sourceTree = "<group>"; };
+		F1B3E646185D08B7008EC150 /* RestaurantDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestaurantDetailViewController.m; sourceTree = "<group>"; };
 		F1B3E648185D08B7008EC150 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F1B3E64E185D08B7008EC150 /* UW Food ServicesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UW Food ServicesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B3E64F185D08B7008EC150 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F1B3E658185D08B7008EC150 /* UW Food ServicesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UW Food ServicesTests-Info.plist"; sourceTree = "<group>"; };
 		F1B3E65A185D08B7008EC150 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F1B3E65C185D08B7008EC150 /* UW_Food_ServicesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UW_Food_ServicesTests.m; sourceTree = "<group>"; };
+		F1FC75A61866A99E00133C82 /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
+		F1FC75A71866A99E00133C82 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
+		F1FC75AA1866AE0E00133C82 /* UWServerAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UWServerAPIClient.h; sourceTree = "<group>"; };
+		F1FC75AB1866AE0E00133C82 /* UWServerAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UWServerAPIClient.m; sourceTree = "<group>"; };
+		F1FC75AD1866B80900133C82 /* RestaurantTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantTableViewCell.h; sourceTree = "<group>"; };
+		F1FC75AE1866B80900133C82 /* RestaurantTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantTableViewCell.m; sourceTree = "<group>"; };
+		F1FC75D91867BC6100133C82 /* GlobalConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalConstants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +126,7 @@
 				F1B3E62C185D08B6008EC150 /* CoreData.framework in Frameworks */,
 				F1B3E62A185D08B6008EC150 /* UIKit.framework in Frameworks */,
 				F1B3E626185D08B6008EC150 /* Foundation.framework in Frameworks */,
+				BD38F73EF7DF4B08891B6F0B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +144,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F14D1E4318691FEA00391AC8 /* FoodServer */ = {
+			isa = PBXGroup;
+			children = (
+				F14D1E441869201E00391AC8 /* FoodServer.h */,
+				F14D1E451869201E00391AC8 /* FoodServer.m */,
+			);
+			name = FoodServer;
+			sourceTree = "<group>";
+		};
+		F14D1E4918694A4300391AC8 /* DataStructures */ = {
+			isa = PBXGroup;
+			children = (
+				F14D1E4A18694A7500391AC8 /* OpeningHours.h */,
+				F14D1E4B18694A7500391AC8 /* OpeningHours.m */,
+				F14D1E4D186953FF00391AC8 /* DailyOpeningHours.h */,
+				F14D1E4E186953FF00391AC8 /* DailyOpeningHours.m */,
+				F14D1E50186964A800391AC8 /* SpecialHours.h */,
+				F14D1E51186964A800391AC8 /* SpecialHours.m */,
+			);
+			name = DataStructures;
+			sourceTree = "<group>";
+		};
+		F14D1E551869792300391AC8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F14D1E561869794A00391AC8 /* FoodNull.h */,
+				F14D1E571869794A00391AC8 /* FoodNull.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		F14D1EB918776AD500391AC8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F14D1EBA18776AF000391AC8 /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F14D1EBA18776AF000391AC8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F14D1EBF18776D6700391AC8 /* resta_placeholder.png */,
+				F14D1EC018776D6700391AC8 /* resta_placeholder@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		F1997B7C1867D797006B9231 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F14D1EC31877859500391AC8 /* UIColor+RGBColor.h */,
+				F14D1EC41877859500391AC8 /* UIColor+RGBColor.m */,
+				F14D1EC6187785A600391AC8 /* UIColor+HexColor.h */,
+				F14D1EC7187785A600391AC8 /* UIColor+HexColor.m */,
+				F1997B7D1867D7F4006B9231 /* NSDate+ISO8601WeekNumber.h */,
+				F1997B7E1867D7F4006B9231 /* NSDate+ISO8601WeekNumber.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		F1B3E619185D08B5008EC150 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +212,7 @@
 				F1B3E656185D08B7008EC150 /* UW Food ServicesTests */,
 				F1B3E624185D08B6008EC150 /* Frameworks */,
 				F1B3E623185D08B6008EC150 /* Products */,
+				00F99C2330194D76BD5A2989 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,6 +233,7 @@
 				F1B3E629185D08B6008EC150 /* UIKit.framework */,
 				F1B3E62B185D08B6008EC150 /* CoreData.framework */,
 				F1B3E64F185D08B7008EC150 /* XCTest.framework */,
+				E2DBA44E7C8D47E0804EE5AE /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -125,17 +241,22 @@
 		F1B3E62D185D08B6008EC150 /* UW Food Services */ = {
 			isa = PBXGroup;
 			children = (
+				F14D1EB918776AD500391AC8 /* Resources */,
+				F14D1E551869792300391AC8 /* Utils */,
+				F1997B7C1867D797006B9231 /* Categories */,
+				F1FC75B01867BC1C00133C82 /* Defines */,
+				F1FC75A91866ADDD00133C82 /* Networking Extensions */,
+				F1FC75A41866A6FC00133C82 /* Controllers */,
+				F1FC75A31866A6F600133C82 /* Views */,
+				F1FC75A21866A6EC00133C82 /* Models */,
 				F1B3E636185D08B6008EC150 /* AppDelegate.h */,
 				F1B3E637185D08B6008EC150 /* AppDelegate.m */,
 				F1B3E639185D08B6008EC150 /* Main_iPhone.storyboard */,
 				F1B3E63C185D08B6008EC150 /* Main_iPad.storyboard */,
-				F1B3E642185D08B6008EC150 /* MasterViewController.h */,
-				F1B3E643185D08B7008EC150 /* MasterViewController.m */,
-				F1B3E645185D08B7008EC150 /* DetailViewController.h */,
-				F1B3E646185D08B7008EC150 /* DetailViewController.m */,
 				F1B3E648185D08B7008EC150 /* Images.xcassets */,
 				F1B3E63F185D08B6008EC150 /* UW_Food_Services.xcdatamodeld */,
 				F1B3E62E185D08B6008EC150 /* Supporting Files */,
+				F14D1E531869661500391AC8 /* parsed_data.txt */,
 			);
 			path = "UW Food Services";
 			sourceTree = "<group>";
@@ -169,6 +290,60 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F1FC75A21866A6EC00133C82 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F14D1E4918694A4300391AC8 /* DataStructures */,
+				F14D1E4318691FEA00391AC8 /* FoodServer */,
+				F1FC75A61866A99E00133C82 /* Restaurant.h */,
+				F1FC75A71866A99E00133C82 /* Restaurant.m */,
+				F14D1E401869167600391AC8 /* Menu.h */,
+				F14D1E411869167600391AC8 /* Menu.m */,
+				F14D1E48186929E500391AC8 /* ModelProtocol.h */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		F1FC75A31866A6F600133C82 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1FC75AD1866B80900133C82 /* RestaurantTableViewCell.h */,
+				F1FC75AE1866B80900133C82 /* RestaurantTableViewCell.m */,
+				F14D1EB1187633DA00391AC8 /* RestaurantCollectionViewCell.h */,
+				F14D1EB2187633DA00391AC8 /* RestaurantCollectionViewCell.m */,
+				F14D1EB71877641000391AC8 /* RestaurantCollectionViewCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F1FC75A41866A6FC00133C82 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F1B3E642185D08B6008EC150 /* RestaurantListViewController.h */,
+				F1B3E643185D08B7008EC150 /* RestaurantListViewController.m */,
+				F1B3E645185D08B7008EC150 /* RestaurantDetailViewController.h */,
+				F1B3E646185D08B7008EC150 /* RestaurantDetailViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		F1FC75A91866ADDD00133C82 /* Networking Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F1FC75AA1866AE0E00133C82 /* UWServerAPIClient.h */,
+				F1FC75AB1866AE0E00133C82 /* UWServerAPIClient.m */,
+			);
+			name = "Networking Extensions";
+			sourceTree = "<group>";
+		};
+		F1FC75B01867BC1C00133C82 /* Defines */ = {
+			isa = PBXGroup;
+			children = (
+				F1FC75D91867BC6100133C82 /* GlobalConstants.h */,
+			);
+			name = Defines;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -176,9 +351,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1B3E660185D08B7008EC150 /* Build configuration list for PBXNativeTarget "UW Food Services" */;
 			buildPhases = (
+				122C63805EBB4AD3AF9345F7 /* Check Pods Manifest.lock */,
 				F1B3E61E185D08B5008EC150 /* Sources */,
 				F1B3E61F185D08B5008EC150 /* Frameworks */,
 				F1B3E620185D08B5008EC150 /* Resources */,
+				893D320FC8984233B00C1A13 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -216,6 +393,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Xuefei Li";
 				TargetAttributes = {
+					F1B3E621185D08B5008EC150 = {
+						DevelopmentTeam = Q4U75G4JJ6;
+					};
 					F1B3E64D185D08B7008EC150 = {
 						TestTargetID = F1B3E621185D08B5008EC150;
 					};
@@ -245,10 +425,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F14D1EB81877641100391AC8 /* RestaurantCollectionViewCell.xib in Resources */,
 				F1B3E63E185D08B6008EC150 /* Main_iPad.storyboard in Resources */,
+				F14D1EC118776D6700391AC8 /* resta_placeholder.png in Resources */,
 				F1B3E649185D08B7008EC150 /* Images.xcassets in Resources */,
 				F1B3E63B185D08B6008EC150 /* Main_iPhone.storyboard in Resources */,
 				F1B3E632185D08B6008EC150 /* InfoPlist.strings in Resources */,
+				F14D1EC218776D6700391AC8 /* resta_placeholder@2x.png in Resources */,
+				F14D1E541869661500391AC8 /* parsed_data.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,16 +446,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		122C63805EBB4AD3AF9345F7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		893D320FC8984233B00C1A13 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F1B3E61E185D08B5008EC150 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1B3E647185D08B7008EC150 /* DetailViewController.m in Sources */,
-				F1B3E644185D08B7008EC150 /* MasterViewController.m in Sources */,
+				F14D1E421869167600391AC8 /* Menu.m in Sources */,
+				F14D1E461869201E00391AC8 /* FoodServer.m in Sources */,
+				F14D1EC8187785A600391AC8 /* UIColor+HexColor.m in Sources */,
+				F14D1E581869794A00391AC8 /* FoodNull.m in Sources */,
+				F14D1E4C18694A7600391AC8 /* OpeningHours.m in Sources */,
+				F1FC75AF1866B80900133C82 /* RestaurantTableViewCell.m in Sources */,
+				F1B3E647185D08B7008EC150 /* RestaurantDetailViewController.m in Sources */,
+				F14D1EC51877859500391AC8 /* UIColor+RGBColor.m in Sources */,
+				F1B3E644185D08B7008EC150 /* RestaurantListViewController.m in Sources */,
 				F1B3E641185D08B6008EC150 /* UW_Food_Services.xcdatamodeld in Sources */,
 				F1B3E638185D08B6008EC150 /* AppDelegate.m in Sources */,
+				F14D1EB3187633DA00391AC8 /* RestaurantCollectionViewCell.m in Sources */,
+				F1FC75A81866A99E00133C82 /* Restaurant.m in Sources */,
+				F1FC75AC1866AE0E00133C82 /* UWServerAPIClient.m in Sources */,
 				F1B3E634185D08B6008EC150 /* main.m in Sources */,
+				F1997B7F1867D7F4006B9231 /* NSDate+ISO8601WeekNumber.m in Sources */,
+				F14D1E4F186953FF00391AC8 /* DailyOpeningHours.m in Sources */,
+				F14D1E52186964A900391AC8 /* SpecialHours.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,9 +635,11 @@
 		};
 		F1B3E661185D08B7008EC150 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00F99C2330194D76BD5A2989 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UW Food Services/UW Food Services-Prefix.pch";
 				INFOPLIST_FILE = "UW Food Services/UW Food Services-Info.plist";
@@ -418,9 +650,11 @@
 		};
 		F1B3E662185D08B7008EC150 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00F99C2330194D76BD5A2989 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UW Food Services/UW Food Services-Prefix.pch";
 				INFOPLIST_FILE = "UW Food Services/UW Food Services-Info.plist";
@@ -490,6 +724,7 @@
 				F1B3E662185D08B7008EC150 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F1B3E663185D08B7008EC150 /* Build configuration list for PBXNativeTarget "UW Food ServicesTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +733,7 @@
 				F1B3E665185D08B7008EC150 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
