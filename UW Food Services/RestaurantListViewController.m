@@ -17,7 +17,7 @@
 #import "UIColor+HexColor.h"
 #import <UIKit/UIKit.h>
 
-enum State {Grid = 0, SmallList, LargeList};
+enum State {Grid = 0, SmallList, DetailedList, TotalNumLayouts};
 
 enum RestaurantsTableSection {
     RestaurantsTableWithMenuSection = 0,
@@ -30,14 +30,27 @@ enum RestaurantsTableSection {
 @property (readwrite, nonatomic, strong) NSArray *restaurantsWithoutMenu;
 @property (readwrite, nonatomic, strong) NSArray *restaurantsMenu;
 @property (readwrite, nonatomic, strong) NSArray *menuDate;
+@property (readwrite, nonatomic) enum State nextLayoutState;
 - (void)configureCell:(RestaurantCollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)reload:(__unused id)sender;
 - (void)initBasicUI;
+- (void)changeLayout:(__unused id)sender;
+- (void)mapThem:(__unused id)sender;
 @end
 
 @implementation RestaurantListViewController {
     NSMutableArray *_cells;
+    UIImage *_listLayout;
+    UIImage *_gridLayout;
+    UIImage *_gridDetailLayout;
+    enum State _currentLayoutState;
 }
+
+@synthesize restaurantsWithMenu = _restaurantsWithMenu;
+@synthesize restaurantsWithoutMenu = _restaurantsWithoutMenu;
+@synthesize restaurantsMenu = _restaurantsMenu;
+@synthesize menuDate = _menuDate;
+@synthesize nextLayoutState = _nextLayoutState;
 
 - (void)awakeFromNib
 {
@@ -75,7 +88,7 @@ enum RestaurantsTableSection {
         // TODO: initiate Menu objects.
         [_cells removeAllObjects];
         for (int i = 0; i < [_restaurantsWithMenu count] + [_restaurantsWithoutMenu count]; ++i) {
-            [_cells addObject:[NSValue valueWithCGSize:CGSizeMake(RESTAURANT_COLLECTION_VIEW_CELL_WIDTH, RESTAURANT_COLLECTION_VIEW_CELL_HEIGHT)]];
+            [_cells addObject:[NSValue valueWithCGSize:RESTAURANT_COLLECTION_VIEW_CELL_SIZE_GRID]]; // grid layout by default.
         }
         
         dispatch_async(dispatch_get_main_queue(), ^
@@ -95,24 +108,87 @@ enum RestaurantsTableSection {
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-//    self.navigationItem.leftBarButtonItem = self.editButtonItem;
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     _cells = [NSMutableArray array];
-//    [self.collectionView registerClass:RestaurantCollectionViewCell.class forCellWithReuseIdentifier:RESTAURANT_COLLECTION_VIEW_CELL_ID];
     UINib *cellNib = [UINib nibWithNibName:@"RestaurantCollectionViewCell" bundle:nil];
     [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:RESTAURANT_COLLECTION_VIEW_CELL_ID];
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     [self initBasicUI];
-//    self.navigationItem.rightBarButtonItem = addButton;
 //    self.detailViewController = (RestaurantDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+
     [self reload:nil];
 }
 
 - (void)initBasicUI
 {
+    _listLayout = [UIImage imageNamed:@"listlayout"];
+    _gridLayout = [UIImage imageNamed:@"gridlayout"];
+    _gridDetailLayout = [UIImage imageNamed:@"griddetaillayout"];
+    _nextLayoutState = SmallList;
+    _currentLayoutState = Grid;
+    UIBarButtonItem *layoutButton = [[UIBarButtonItem alloc] initWithImage:_listLayout style:UIBarButtonItemStylePlain target:self action:@selector(changeLayout:)];
+    self.navigationItem.leftBarButtonItem = layoutButton;
+    UIBarButtonItem *mapThemButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mapthem"] style:UIBarButtonItemStylePlain target:self action:@selector(mapThem:)];
+    self.navigationItem.rightBarButtonItem = mapThemButton;
     self.collectionView.backgroundColor = [UIColor colorWithHexValue:0xdddddd andAlpha:1];
     self.title = SCREEN_NAME_RESTAURANT_LIST;
+}
+
+- (void)setNextLayoutState:(enum State)nextLayoutState
+{
+    _nextLayoutState = nextLayoutState;
+    switch (_nextLayoutState) {
+        case Grid:
+            [self.navigationItem.leftBarButtonItem setImage:_gridLayout];
+            break;
+        case SmallList:
+            [self.navigationItem.leftBarButtonItem setImage:_listLayout];
+            break;
+        case DetailedList:
+            [self.navigationItem.leftBarButtonItem setImage:_gridDetailLayout];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)changeLayout:(id)sender
+{
+    NSLog(@"change layout button pressed.");
+    _currentLayoutState = _nextLayoutState;
+    [self.collectionView performBatchUpdates:^{
+        for (int i = 0; i < [_cells count]; ++i) { // reset cell size corresponding to current layout
+            switch (_currentLayoutState) {
+                case Grid:
+                    [_cells setObject:[NSValue valueWithCGSize:RESTAURANT_COLLECTION_VIEW_CELL_SIZE_GRID] atIndexedSubscript:i];
+                    break;
+                case DetailedList:
+                    [_cells setObject:[NSValue valueWithCGSize:RESTAURANT_COLLECTION_VIEW_CELL_SIZE_DETAILED_LIST] atIndexedSubscript:i];
+                    break;
+                case SmallList:
+                    [_cells setObject:[NSValue valueWithCGSize:RESTAURANT_COLLECTION_VIEW_CELL_SIZE_LIST] atIndexedSubscript:i];
+                    break;
+                default:
+                    break;
+            }
+        }
+        for (RestaurantCollectionViewCell *cell in self.collectionView.visibleCells) {
+            cell.layer.shadowOpacity = 0.0f;
+        }
+    } completion:^(BOOL finished) {
+        for (RestaurantCollectionViewCell *cell in self.collectionView.visibleCells) {
+            cell.layer.shadowPath = [UIBezierPath bezierPathWithRect:cell.bounds].CGPath;
+            cell.layer.shadowOpacity = 0.8f;
+        }
+    }];
+    self.nextLayoutState = (_nextLayoutState + 1) % TotalNumLayouts;
+    
+}
+
+
+- (void)mapThem:(id)sender
+{
+    NSLog(@"mapThem button pressed.");
 }
 
 - (void)didReceiveMemoryWarning
@@ -191,6 +267,7 @@ enum RestaurantsTableSection {
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     RestaurantCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:RESTAURANT_COLLECTION_VIEW_CELL_ID forIndexPath:indexPath];
+    cell.layer.shadowPath = [UIBezierPath bezierPathWithRect:cell.bounds].CGPath;
     [self configureCell:cell atIndexPath:indexPath];
     // TODO: add data here.
     return cell;
@@ -233,12 +310,40 @@ enum RestaurantsTableSection {
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return RESTAURANT_COLLECTION_VIEW_INSET;
+    UIEdgeInsets insets;
+    switch (_currentLayoutState) {
+        case Grid:
+            insets = RESTAURANT_COLLECTION_VIEW_INSETS_GRID;
+            break;
+        case DetailedList:
+            insets = RESTAURANT_COLLECTION_VIEW_INSETS_DETAILED_LIST;
+            break;
+        case SmallList:
+            insets = RESTAURANT_COLLECTION_VIEW_INSETS_LIST;
+            break;
+        default:
+            break;
+    }
+    return insets;
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
-    return RESTAURANT_COLLECTION_VIEW_MIN_LINE_SPACING;
+    CGFloat minLineSpacing = 0;
+    switch (_currentLayoutState) {
+        case Grid:
+            minLineSpacing = RESTAURANT_COLLECTION_VIEW_MIN_LINE_SPACING_GRID;
+            break;
+        case DetailedList:
+            minLineSpacing = RESTAURANT_COLLECTION_VIEW_MIN_LINE_SPACING_DETAILED_LIST;
+            break;
+        case SmallList:
+            minLineSpacing = RESTAURANT_COLLECTION_VIEW_MIN_LINE_SPACING_LIST;
+            break;
+        default:
+            break;
+    }
+    return minLineSpacing;
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
