@@ -10,6 +10,7 @@
 #import "AFNetworking.h"
 #import "GlobalConstants.h"
 #import "NSDate+ISO8601WeekNumber.h"
+#import "FoodNull.h"
 
 @interface FoodServer ()
 
@@ -63,7 +64,7 @@
     for (NSDictionary *location in locations) {
         bool found = false;
         for (NSDictionary *menuOutlet in menuOutlets) {
-            if ([location valueForKey:@"outlet_id"] == [menuOutlet valueForKey:@"outlet_id"]) {
+            if (![FoodNull isNSNullOrNil:[location valueForKey:@"outlet_id"]] && ![FoodNull isNSNullOrNil:[menuOutlet valueForKey:@"outlet_id"]] && [[location valueForKey:@"outlet_id"] intValue] == [[menuOutlet valueForKey:@"outlet_id"] intValue]) {
                 found = true;
                 break;
             }
