@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		BD38F73EF7DF4B08891B6F0B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2DBA44E7C8D47E0804EE5AE /* libPods.a */; };
+		F134F6E91879240200207650 /* quote.png in Resources */ = {isa = PBXBuildFile; fileRef = F134F6E71879240200207650 /* quote.png */; };
+		F134F6EA1879240200207650 /* quote@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F134F6E81879240200207650 /* quote@2x.png */; };
+		F134F6EC187929E900207650 /* listLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = F134F6EB187929E900207650 /* listLayout.xib */; };
+		F134F6F018792A2F00207650 /* DetailLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = F134F6EF18792A2F00207650 /* DetailLayout.xib */; };
 		F14D1E421869167600391AC8 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = F14D1E411869167600391AC8 /* Menu.m */; };
 		F14D1E461869201E00391AC8 /* FoodServer.m in Sources */ = {isa = PBXBuildFile; fileRef = F14D1E451869201E00391AC8 /* FoodServer.m */; };
 		F14D1E4C18694A7600391AC8 /* OpeningHours.m in Sources */ = {isa = PBXBuildFile; fileRef = F14D1E4B18694A7500391AC8 /* OpeningHours.m */; };
@@ -69,6 +73,10 @@
 /* Begin PBXFileReference section */
 		00F99C2330194D76BD5A2989 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E2DBA44E7C8D47E0804EE5AE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F134F6E71879240200207650 /* quote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quote.png; sourceTree = "<group>"; };
+		F134F6E81879240200207650 /* quote@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "quote@2x.png"; sourceTree = "<group>"; };
+		F134F6EB187929E900207650 /* listLayout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = listLayout.xib; sourceTree = "<group>"; };
+		F134F6EF18792A2F00207650 /* DetailLayout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailLayout.xib; sourceTree = "<group>"; };
 		F14D1E401869167600391AC8 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
 		F14D1E411869167600391AC8 /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menu.m; sourceTree = "<group>"; };
 		F14D1E441869201E00391AC8 /* FoodServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodServer.h; sourceTree = "<group>"; };
@@ -211,6 +219,8 @@
 				F14D1EBF18776D6700391AC8 /* resta_placeholder.png */,
 				F14D1EE11877C44F00391AC8 /* mapit@2x.png */,
 				F14D1EE21877C44F00391AC8 /* mapit.png */,
+				F134F6E71879240200207650 /* quote.png */,
+				F134F6E81879240200207650 /* quote@2x.png */,
 				F14D1ED51877C0AE00391AC8 /* gridlayout@2x.png */,
 				F14D1EDD1877C39E00391AC8 /* mapthem.png */,
 				F14D1EDE1877C39E00391AC8 /* mapthem@2x.png */,
@@ -342,6 +352,8 @@
 				F14D1EB1187633DA00391AC8 /* RestaurantCollectionViewCell.h */,
 				F14D1EB2187633DA00391AC8 /* RestaurantCollectionViewCell.m */,
 				F14D1EB71877641000391AC8 /* RestaurantCollectionViewCell.xib */,
+				F134F6EB187929E900207650 /* listLayout.xib */,
+				F134F6EF18792A2F00207650 /* DetailLayout.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -461,13 +473,17 @@
 				F1B3E649185D08B7008EC150 /* Images.xcassets in Resources */,
 				F1B3E63B185D08B6008EC150 /* Main_iPhone.storyboard in Resources */,
 				F1B3E632185D08B6008EC150 /* InfoPlist.strings in Resources */,
+				F134F6F018792A2F00207650 /* DetailLayout.xib in Resources */,
 				F14D1EDF1877C39E00391AC8 /* mapthem.png in Resources */,
+				F134F6EA1879240200207650 /* quote@2x.png in Resources */,
 				F14D1EE01877C39E00391AC8 /* mapthem@2x.png in Resources */,
 				F14D1ED71877C0AF00391AC8 /* gridlayout@2x.png in Resources */,
 				F14D1EE41877C44F00391AC8 /* mapit.png in Resources */,
 				F14D1ED41877BD2300391AC8 /* listlayout@2x.png in Resources */,
 				F14D1ED31877BD2300391AC8 /* listlayout.png in Resources */,
+				F134F6E91879240200207650 /* quote.png in Resources */,
 				F14D1ED81877C0AF00391AC8 /* gridlayout.png in Resources */,
+				F134F6EC187929E900207650 /* listLayout.xib in Resources */,
 				F14D1EE31877C44F00391AC8 /* mapit@2x.png in Resources */,
 				F14D1EC218776D6700391AC8 /* resta_placeholder@2x.png in Resources */,
 				F14D1E541869661500391AC8 /* parsed_data.txt in Resources */,
