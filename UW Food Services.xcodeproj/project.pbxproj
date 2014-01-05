@@ -12,6 +12,10 @@
 		F134F6EA1879240200207650 /* quote@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F134F6E81879240200207650 /* quote@2x.png */; };
 		F134F6EC187929E900207650 /* listLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = F134F6EB187929E900207650 /* listLayout.xib */; };
 		F134F6F018792A2F00207650 /* DetailLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = F134F6EF18792A2F00207650 /* DetailLayout.xib */; };
+		F134F6F318796EA300207650 /* building.png in Resources */ = {isa = PBXBuildFile; fileRef = F134F6F118796EA300207650 /* building.png */; };
+		F134F6F418796EA300207650 /* building@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F134F6F218796EA300207650 /* building@2x.png */; };
+		F134F6F718796F7900207650 /* hours@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F134F6F518796F7900207650 /* hours@2x.png */; };
+		F134F6F818796F7900207650 /* hours.png in Resources */ = {isa = PBXBuildFile; fileRef = F134F6F618796F7900207650 /* hours.png */; };
 		F14D1E421869167600391AC8 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = F14D1E411869167600391AC8 /* Menu.m */; };
 		F14D1E461869201E00391AC8 /* FoodServer.m in Sources */ = {isa = PBXBuildFile; fileRef = F14D1E451869201E00391AC8 /* FoodServer.m */; };
 		F14D1E4C18694A7600391AC8 /* OpeningHours.m in Sources */ = {isa = PBXBuildFile; fileRef = F14D1E4B18694A7500391AC8 /* OpeningHours.m */; };
@@ -77,6 +81,10 @@
 		F134F6E81879240200207650 /* quote@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "quote@2x.png"; sourceTree = "<group>"; };
 		F134F6EB187929E900207650 /* listLayout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = listLayout.xib; sourceTree = "<group>"; };
 		F134F6EF18792A2F00207650 /* DetailLayout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailLayout.xib; sourceTree = "<group>"; };
+		F134F6F118796EA300207650 /* building.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = building.png; sourceTree = "<group>"; };
+		F134F6F218796EA300207650 /* building@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "building@2x.png"; sourceTree = "<group>"; };
+		F134F6F518796F7900207650 /* hours@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hours@2x.png"; sourceTree = "<group>"; };
+		F134F6F618796F7900207650 /* hours.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hours.png; sourceTree = "<group>"; };
 		F14D1E401869167600391AC8 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
 		F14D1E411869167600391AC8 /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menu.m; sourceTree = "<group>"; };
 		F14D1E441869201E00391AC8 /* FoodServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodServer.h; sourceTree = "<group>"; };
@@ -221,8 +229,12 @@
 				F14D1EE21877C44F00391AC8 /* mapit.png */,
 				F134F6E71879240200207650 /* quote.png */,
 				F134F6E81879240200207650 /* quote@2x.png */,
+				F134F6F118796EA300207650 /* building.png */,
+				F134F6F218796EA300207650 /* building@2x.png */,
 				F14D1ED51877C0AE00391AC8 /* gridlayout@2x.png */,
 				F14D1EDD1877C39E00391AC8 /* mapthem.png */,
+				F134F6F518796F7900207650 /* hours@2x.png */,
+				F134F6F618796F7900207650 /* hours.png */,
 				F14D1EDE1877C39E00391AC8 /* mapthem@2x.png */,
 				F14D1ED61877C0AF00391AC8 /* gridlayout.png */,
 				F14D1EC018776D6700391AC8 /* resta_placeholder@2x.png */,
@@ -471,9 +483,12 @@
 				F1B3E63E185D08B6008EC150 /* Main_iPad.storyboard in Resources */,
 				F14D1EC118776D6700391AC8 /* resta_placeholder.png in Resources */,
 				F1B3E649185D08B7008EC150 /* Images.xcassets in Resources */,
+				F134F6F718796F7900207650 /* hours@2x.png in Resources */,
+				F134F6F818796F7900207650 /* hours.png in Resources */,
 				F1B3E63B185D08B6008EC150 /* Main_iPhone.storyboard in Resources */,
 				F1B3E632185D08B6008EC150 /* InfoPlist.strings in Resources */,
 				F134F6F018792A2F00207650 /* DetailLayout.xib in Resources */,
+				F134F6F318796EA300207650 /* building.png in Resources */,
 				F14D1EDF1877C39E00391AC8 /* mapthem.png in Resources */,
 				F134F6EA1879240200207650 /* quote@2x.png in Resources */,
 				F14D1EE01877C39E00391AC8 /* mapthem@2x.png in Resources */,
@@ -484,6 +499,7 @@
 				F134F6E91879240200207650 /* quote.png in Resources */,
 				F14D1ED81877C0AF00391AC8 /* gridlayout.png in Resources */,
 				F134F6EC187929E900207650 /* listLayout.xib in Resources */,
+				F134F6F418796EA300207650 /* building@2x.png in Resources */,
 				F14D1EE31877C44F00391AC8 /* mapit@2x.png in Resources */,
 				F14D1EC218776D6700391AC8 /* resta_placeholder@2x.png in Resources */,
 				F14D1E541869661500391AC8 /* parsed_data.txt in Resources */,

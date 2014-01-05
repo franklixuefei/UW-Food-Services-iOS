@@ -36,6 +36,8 @@ enum RestaurantsTableSection {
 - (void)initBasicUI;
 - (void)changeLayout:(__unused id)sender;
 - (void)mapThem:(__unused id)sender;
+- (void)handleSubviewsLayoutForCell:(RestaurantCollectionViewCell *)cell;
+- (void)handleShadowAndCornerRadiusForCell:(RestaurantCollectionViewCell *)cell animated:(BOOL)animated;
 @end
 
 @implementation RestaurantListViewController {
@@ -44,6 +46,8 @@ enum RestaurantsTableSection {
     UIImage *_gridLayout;
     UIImage *_gridDetailLayout;
     enum State _currentLayoutState;
+    BOOL _layoutAnimating;
+    CGRect _cellImageViewFrame;
 }
 
 @synthesize restaurantsWithMenu = _restaurantsWithMenu;
@@ -111,6 +115,7 @@ enum RestaurantsTableSection {
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     _cells = [NSMutableArray array];
+    _layoutAnimating = NO;
     UINib *cellNib = [UINib nibWithNibName:@"RestaurantCollectionViewCell" bundle:nil];
     [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:RESTAURANT_COLLECTION_VIEW_CELL_ID];
     [self initBasicUI];
@@ -127,9 +132,9 @@ enum RestaurantsTableSection {
     _nextLayoutState = SmallList;
     _currentLayoutState = Grid;
     UIBarButtonItem *layoutButton = [[UIBarButtonItem alloc] initWithImage:_listLayout style:UIBarButtonItemStylePlain target:self action:@selector(changeLayout:)];
-    self.navigationItem.leftBarButtonItem = layoutButton;
+    self.navigationItem.rightBarButtonItem = layoutButton;
     UIBarButtonItem *mapThemButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mapthem"] style:UIBarButtonItemStylePlain target:self action:@selector(mapThem:)];
-    self.navigationItem.rightBarButtonItem = mapThemButton;
+    self.navigationItem.leftBarButtonItem = mapThemButton;
     self.collectionView.backgroundColor = [UIColor colorWithHexValue:0xdddddd andAlpha:1];
     self.title = SCREEN_NAME_RESTAURANT_LIST;
 }
@@ -139,13 +144,13 @@ enum RestaurantsTableSection {
     _nextLayoutState = nextLayoutState;
     switch (_nextLayoutState) {
         case Grid:
-            [self.navigationItem.leftBarButtonItem setImage:_gridLayout];
+            [self.navigationItem.rightBarButtonItem setImage:_gridLayout];
             break;
         case SmallList:
-            [self.navigationItem.leftBarButtonItem setImage:_listLayout];
+            [self.navigationItem.rightBarButtonItem setImage:_listLayout];
             break;
         case DetailedList:
-            [self.navigationItem.leftBarButtonItem setImage:_gridDetailLayout];
+            [self.navigationItem.rightBarButtonItem setImage:_gridDetailLayout];
             break;
         default:
             break;
@@ -154,6 +159,8 @@ enum RestaurantsTableSection {
 
 - (void)changeLayout:(id)sender
 {
+    if (_layoutAnimating) return;
+    [self.collectionView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
     NSLog(@"change layout button pressed.");
     _currentLayoutState = _nextLayoutState;
     [self.collectionView performBatchUpdates:^{
@@ -172,17 +179,131 @@ enum RestaurantsTableSection {
                     break;
             }
         }
+        _layoutAnimating = YES;
+
         for (RestaurantCollectionViewCell *cell in self.collectionView.visibleCells) {
             cell.layer.shadowOpacity = 0.0f;
+            [self handleSubviewsLayoutForCell:cell];
+            [self handleShadowAndCornerRadiusForCell:cell animated:YES];
         }
+        
     } completion:^(BOOL finished) {
+        _layoutAnimating = NO;
         for (RestaurantCollectionViewCell *cell in self.collectionView.visibleCells) {
-            cell.layer.shadowPath = [UIBezierPath bezierPathWithRect:cell.bounds].CGPath;
-            cell.layer.shadowOpacity = 0.8f;
+            [self handleShadowAndCornerRadiusForCell:cell animated:NO];
         }
     }];
     self.nextLayoutState = (_nextLayoutState + 1) % TotalNumLayouts;
     
+}
+
+- (void)handleSubviewsLayoutForCell:(RestaurantCollectionViewCell *)cell
+{
+    CGRect newLogoFrame = CGRectZero;
+    CGRect newSeparatorFrame = CGRectZero;
+    CGFloat separatorAlpha = 0.0f;
+    CGRect newTitleFrame = CGRectZero;
+    CGFloat titleAlpha = 0.0f;
+    CGRect newBuildingIconFrame = CGRectZero;
+    CGRect newBuildingFrame = CGRectZero;
+    CGRect newHourIconFrame = CGRectZero;
+    CGRect newHourFrame = CGRectZero;
+    CGRect newDotFrame = CGRectZero;
+    CGRect newQuoteFrame = CGRectZero;
+    CGFloat quoteAlpha = 0.0f;
+    CGRect newDescriptionFrame = CGRectZero;
+    CGFloat descriptionAlpha = 0.0f;
+    switch (_currentLayoutState) {
+        case Grid:
+            newLogoFrame = GRID_LAYOUT_LOGO_FRAME;
+            newSeparatorFrame = GRID_LAYOUT_SEPARATOR_FRAME;
+            separatorAlpha = 0.0f;
+            newTitleFrame = GRID_LAYOUT_TITLE_FRAME;
+            titleAlpha = 0.0f;
+            newBuildingFrame = GRID_LAYOUT_BUILDING_FRAME;
+            newBuildingIconFrame = GRID_LAYOUT_BUILDING_ICON_FRAME;
+            newHourFrame = GRID_LAYOUT_HOURS_FRAME;
+            newHourIconFrame = GRID_LAYOUT_HOURS_ICON_FRAME;
+            newDotFrame = GRID_LAYOUT_DOT_FRAME;
+            newQuoteFrame = GRID_LAYOUT_QUOTE_FRAME;
+            quoteAlpha = 0.0f;
+            newDescriptionFrame = GRID_LAYOUT_DESCRIPTION_FRAME;
+            descriptionAlpha = 0.0f;
+            break;
+        case SmallList:
+            newLogoFrame = LIST_LAYOUT_LOGO_FRAME;
+            newSeparatorFrame = LIST_LAYOUT_SEPARATOR_FRAME;
+            separatorAlpha = 1.0f;
+            newTitleFrame = LIST_LAYOUT_TITLE_FRAME;
+            titleAlpha = 1.0f;
+            newBuildingFrame = LIST_LAYOUT_BUILDING_FRAME;
+            newBuildingIconFrame = LIST_LAYOUT_BUILDING_ICON_FRAME;
+            newHourFrame = LIST_LAYOUT_HOURS_FRAME;
+            newHourIconFrame = LIST_LAYOUT_HOURS_ICON_FRAME;
+            newDotFrame = LIST_LAYOUT_DOT_FRAME;
+            newQuoteFrame = LIST_LAYOUT_QUOTE_FRAME;
+            quoteAlpha = 0.0f;
+            newDescriptionFrame = LIST_LAYOUT_DESCRIPTION_FRAME;
+            descriptionAlpha = 0.0f;
+            break;
+        case DetailedList:
+            newLogoFrame = DETAIL_LAYOUT_LOGO_FRAME;
+            newSeparatorFrame = DETAIL_LAYOUT_SEPARATOR_FRAME;
+            separatorAlpha = 1.0f;
+            newTitleFrame = DETAIL_LAYOUT_TITLE_FRAME;
+            titleAlpha = 1.0f;
+            newBuildingFrame = DETAIL_LAYOUT_BUILDING_FRAME;
+            newBuildingIconFrame = DETAIL_LAYOUT_BUILDING_ICON_FRAME;
+            newHourFrame = DETAIL_LAYOUT_HOURS_FRAME;
+            newHourIconFrame = DETAIL_LAYOUT_HOURS_ICON_FRAME;
+            newDotFrame = DETAIL_LAYOUT_DOT_FRAME;
+            newQuoteFrame = DETAIL_LAYOUT_QUOTE_FRAME;
+            quoteAlpha = 1.0f;
+            newDescriptionFrame = DETAIL_LAYOUT_DESCRIPTION_FRAME;
+            descriptionAlpha = 1.0f;
+            break;
+        default:
+            break;
+    }
+    [UIView animateWithDuration:0.3f animations:^{
+        cell.restaurantImageView.frame = newLogoFrame;
+        cell.separator.frame = newSeparatorFrame;
+        cell.separator.alpha = separatorAlpha;
+        cell.titleLabel.frame = newTitleFrame;
+        cell.titleLabel.alpha = titleAlpha;
+        cell.buildingLabel.frame = newBuildingFrame;
+        cell.buildingIcon.frame = newBuildingIconFrame;
+        cell.hoursLabel.frame = newHourFrame;
+        cell.hoursIcon.frame = newHourIconFrame;
+        cell.openCloseLabel.frame = newDotFrame;
+        cell.quote.frame = newQuoteFrame;
+        cell.quote.alpha = quoteAlpha;
+        cell.descriptionLabel.frame = newDescriptionFrame;
+        cell.descriptionLabel.alpha = descriptionAlpha;
+    }];
+}
+
+- (void)handleShadowAndCornerRadiusForCell:(RestaurantCollectionViewCell *)cell animated:(BOOL)animated
+{
+    [UIView animateWithDuration:animated?0.3f:0 animations:^{
+        cell.layer.shadowPath = [UIBezierPath bezierPathWithRect:cell.bounds].CGPath;
+        if (_layoutAnimating) {
+            cell.layer.shadowOpacity = 0.0f;
+            cell.layer.cornerRadius = 2.0f;
+        } else if (_currentLayoutState != SmallList) {
+            cell.layer.shadowOpacity = 0.8f;
+            cell.layer.cornerRadius = 2.0f;
+        } else {
+            cell.layer.cornerRadius = 0.0f;
+        }
+        
+        if (_currentLayoutState == SmallList) {
+            cell.restaurantImageView.layer.cornerRadius = 2.0f;
+        } else {
+            cell.restaurantImageView.layer.cornerRadius = 0.0f;
+        }
+        
+    }];
 }
 
 
@@ -223,6 +344,7 @@ enum RestaurantsTableSection {
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"collectionView: %@ didSelectItemAtIndexPath: %@", collectionView, indexPath);
+    RestaurantCollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -267,7 +389,8 @@ enum RestaurantsTableSection {
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     RestaurantCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:RESTAURANT_COLLECTION_VIEW_CELL_ID forIndexPath:indexPath];
-    cell.layer.shadowPath = [UIBezierPath bezierPathWithRect:cell.bounds].CGPath;
+    [self handleSubviewsLayoutForCell:cell];
+    [self handleShadowAndCornerRadiusForCell:cell animated:YES];
     [self configureCell:cell atIndexPath:indexPath];
     // TODO: add data here.
     return cell;

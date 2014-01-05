@@ -20,12 +20,20 @@
 
 
 @implementation RestaurantCollectionViewCell {
-    IBOutlet UIImageView *_restaurantImageView;
+
     UIImage *_placeholder;
 }
 
 @synthesize expanded = _expanded;
 @synthesize imageURL = _imageURL;
+@synthesize restaurantImageView = _restaurantImageView;
+@synthesize buildingLabel = _buildingLabel;
+@synthesize hoursLabel = _hoursLabel;
+@synthesize openCloseLabel = _openCloseLabel;
+@synthesize titleLabel = _titleLabel;
+@synthesize separator = _separator;
+@synthesize quote = _quote;
+@synthesize descriptionLabel = _descriptionLabel;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -52,6 +60,9 @@
 
 - (void)initBasicUI
 {
+    self.clipsToBounds = YES;
+    self.restaurantImageView.clipsToBounds = YES;
+    self.descriptionLabel.textAlignment = NSTextAlignmentJustified;
     self.backgroundColor = [UIColor colorWithHexValue:0xfefefe andAlpha:1.0];
     self.layer.cornerRadius = 2.0f;
     self.layer.masksToBounds = NO;
