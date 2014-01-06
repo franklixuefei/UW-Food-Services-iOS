@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 
 #import "RestaurantListViewController.h"
+#import <GoogleMaps/GoogleMaps.h>
+#import "GlobalConstants.h"
 
 @implementation AppDelegate
 
@@ -38,6 +40,7 @@
         UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
         splitViewController.delegate = (id)navigationController.topViewController;
     }
+    [GMSServices provideAPIKey:GMAP_API_KEY];
     return YES;
 }
 							
