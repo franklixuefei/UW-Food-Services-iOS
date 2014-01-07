@@ -5,11 +5,12 @@ TODO:
 
 		1. Maybe use a titleView for the navigation bar instead of a simple title text.
 		2. Push to detail view controller when tapped on cells.
-		3. Add restaurant list section headers (just a simple lightGray line with "featured" and "more" in its center)
+		3. Add restaurant list section headers (just a simple lightGray line with "featured" and "more" in its center.)
 		4. Add an activity indicator while loading data from server.
 		5. Disable map and layout bar buttons while loading data from server.
 		6. Maybe add an activity indicator while tapped on map bar button.
-		7. Polish UI
+        7. Add pull-to-refresh control.
+		7. Polish UI.
 
 	- MapThem! Page:
 
