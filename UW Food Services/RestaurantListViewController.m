@@ -35,6 +35,7 @@ enum RestaurantsTableSection {
 @property (readwrite, nonatomic, strong) NSArray *restaurantsMenu;
 @property (readwrite, nonatomic, strong) NSArray *menuDate;
 @property (readwrite, nonatomic) enum State nextLayoutState;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 - (void)configureCell:(RestaurantCollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)reload:(__unused id)sender;
 - (void)initBasicUI;
@@ -59,6 +60,7 @@ enum RestaurantsTableSection {
 @synthesize restaurantsMenu = _restaurantsMenu;
 @synthesize menuDate = _menuDate;
 @synthesize nextLayoutState = _nextLayoutState;
+@synthesize refreshControl = _refreshControl;
 
 - (void)awakeFromNib
 {
@@ -102,7 +104,6 @@ enum RestaurantsTableSection {
         dispatch_async(dispatch_get_main_queue(), ^
                        {
                            [self.collectionView reloadData];
-                           
                        });
         
     } andFailureBlock:^(NSError *error) {
@@ -144,6 +145,11 @@ enum RestaurantsTableSection {
     self.collectionView.backgroundColor = [UIColor colorWithHexValue:0xdddddd andAlpha:1];
     self.title = SCREEN_NAME_RESTAURANT_LIST;
     self.navigationItem.title = SCREEN_NAME_RESTAURANT_LIST;
+    if (!_refreshControl) { // init refresh control
+        _refreshControl = [[UIRefreshControl alloc] init];
+//        [_refreshControl addTarget:self action:<#(SEL)#> forControlEvents:<#(UIControlEvents)#>]
+        [self.collectionView addSubview:_refreshControl];
+    }
 }
 
 - (void)setNextLayoutState:(enum State)nextLayoutState
@@ -403,6 +409,9 @@ enum RestaurantsTableSection {
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+//        NSLog(@"collectionView subviews: %@", self.collectionView.subviews);
+    [_refreshControl removeFromSuperview];
+    [self.collectionView insertSubview:_refreshControl atIndex:0];
     RestaurantCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:RESTAURANT_COLLECTION_VIEW_CELL_ID forIndexPath:indexPath];
     [self handleSubviewsLayoutForCell:cell];
     [self handleShadowAndCornerRadiusForCell:cell animated:YES];
