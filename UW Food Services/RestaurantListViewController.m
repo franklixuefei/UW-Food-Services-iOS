@@ -10,11 +10,15 @@
 
 #import "RestaurantDetailViewController.h"
 #import "Restaurant.h"
-#import "GlobalConstants.h"
 #import "AFNetworking.h"
 #import "FoodServer.h"
 #import "RestaurantCollectionViewCell.h"
 #import "UIColor+HexColor.h"
+#import "OpeningHours.h"
+#import "FoodNull.h"
+#import "NSString+HTML.h"
+#import "RestaurantMapViewController.h"
+#import "NSDate+dateToHHmmString.h"
 #import <UIKit/UIKit.h>
 
 enum State {Grid = 0, SmallList, DetailedList, TotalNumLayouts};
@@ -126,17 +130,20 @@ enum RestaurantsTableSection {
 
 - (void)initBasicUI
 {
-    _listLayout = [UIImage imageNamed:@"listlayout"];
-    _gridLayout = [UIImage imageNamed:@"gridlayout"];
-    _gridDetailLayout = [UIImage imageNamed:@"griddetaillayout"];
+    _listLayout = [[UIImage imageNamed:@"listlayout"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    _gridLayout = [[UIImage imageNamed:@"gridlayout"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    _gridDetailLayout = [[UIImage imageNamed:@"griddetaillayout"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     _nextLayoutState = SmallList;
     _currentLayoutState = Grid;
     UIBarButtonItem *layoutButton = [[UIBarButtonItem alloc] initWithImage:_listLayout style:UIBarButtonItemStylePlain target:self action:@selector(changeLayout:)];
     self.navigationItem.rightBarButtonItem = layoutButton;
-    UIBarButtonItem *mapThemButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mapthem"] style:UIBarButtonItemStylePlain target:self action:@selector(mapThem:)];
+    UIBarButtonItem *mapThemButton = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"mapthem"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(mapThem:)];
+    [layoutButton setImageInsets:BAR_BUTTON_ITEM_INSETS];
+    [mapThemButton setImageInsets:BAR_BUTTON_ITEM_INSETS];
     self.navigationItem.leftBarButtonItem = mapThemButton;
     self.collectionView.backgroundColor = [UIColor colorWithHexValue:0xdddddd andAlpha:1];
     self.title = SCREEN_NAME_RESTAURANT_LIST;
+    self.navigationItem.title = SCREEN_NAME_RESTAURANT_LIST;
 }
 
 - (void)setNextLayoutState:(enum State)nextLayoutState
@@ -285,8 +292,9 @@ enum RestaurantsTableSection {
 
 - (void)handleShadowAndCornerRadiusForCell:(RestaurantCollectionViewCell *)cell animated:(BOOL)animated
 {
+    cell.layer.shadowPath = [UIBezierPath bezierPathWithRect:cell.bounds].CGPath;
     [UIView animateWithDuration:animated?0.3f:0 animations:^{
-        cell.layer.shadowPath = [UIBezierPath bezierPathWithRect:cell.bounds].CGPath;
+        
         if (_layoutAnimating) {
             cell.layer.shadowOpacity = 0.0f;
             cell.layer.cornerRadius = 2.0f;
@@ -310,6 +318,14 @@ enum RestaurantsTableSection {
 - (void)mapThem:(id)sender
 {
     NSLog(@"mapThem button pressed.");
+    
+    /* First way */
+//    RestaurantMapViewController *mapController = [self.storyboard instantiateViewControllerWithIdentifier:@"showMap"];
+//	[self.navigationController popToRootViewControllerAnimated:NO];
+//	[self.navigationController pushViewController:mapController animated:YES];
+    
+    /* Second way */
+    [self performSegueWithIdentifier:@"showMap" sender:sender];
 }
 
 - (void)didReceiveMemoryWarning
@@ -344,7 +360,6 @@ enum RestaurantsTableSection {
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"collectionView: %@ didSelectItemAtIndexPath: %@", collectionView, indexPath);
-    RestaurantCollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -392,7 +407,6 @@ enum RestaurantsTableSection {
     [self handleSubviewsLayoutForCell:cell];
     [self handleShadowAndCornerRadiusForCell:cell animated:YES];
     [self configureCell:cell atIndexPath:indexPath];
-    // TODO: add data here.
     return cell;
 }
 
@@ -405,22 +419,40 @@ enum RestaurantsTableSection {
 
 - (void)configureCell:(RestaurantCollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-//    NSLog(@"configuring collection view cells...");
-    NSURL *url = nil;
     Restaurant *r = nil;
     switch (indexPath.section) {
         case RestaurantsTableWithMenuSection:
             r = [_restaurantsWithMenu objectAtIndex:indexPath.item];
-            url = r.logoURL;
             break;
         case RestaurantsTableWithoutMenuSection:
             r = [_restaurantsWithoutMenu objectAtIndex:indexPath.item];
-            url = r.logoURL;
             break;
         default:
             break;
     }
-    [cell setImageURL:url];
+    [cell setImageURL:r.logoURL];
+    [cell.buildingLabel setText:[NSString stringWithFormat:@"Today @ %@", r.building]];
+    [cell.hoursLabel setTextColor:[UIColor blackColor]];
+    [cell.hoursLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:12.0f]];
+    [cell.titleLabel setText:r.outletName];
+    [cell.openCloseLabel setTextColor:r.is_open_now?[UIColor greenColor]:[UIColor lightGrayColor]];
+    [cell.descriptionLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:12.0f]];
+    [cell.descriptionLabel setTextColor:[UIColor darkGrayColor]];
+    if ([FoodNull isNSNullOrNil:r.outletDescription]) {
+        [cell.descriptionLabel setText:[NSString stringWithFormat:@"There is no description available for %@.", r.outletName]];
+        [cell.descriptionLabel setFont:[UIFont fontWithName:@"HelveticaNeue-LightItalic" size:12.0f]];
+        [cell.descriptionLabel setTextColor:[UIColor lightGrayColor]];
+    } else {
+        [cell.descriptionLabel setText:[r.outletDescription stringByDecodingHTMLEntities]];
+    }
+    if (!r.opening_hours.today.is_closed) {
+        [cell.hoursLabel setText:[NSString stringWithFormat:@"%@ - %@", r.opening_hours.today.opening_hour.dateToStringWithHHmmFormat, r.opening_hours.today.closing_hour.dateToStringWithHHmmFormat]];
+    } else {
+        [cell.hoursLabel setText:@"Closed today"];
+        [cell.hoursLabel setFont:[UIFont fontWithName:@"HelveticaNeue-LightItalic" size:12.0f]];
+        [cell.hoursLabel setTextColor:[UIColor lightGrayColor]];
+    }
+    
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
@@ -473,6 +505,20 @@ enum RestaurantsTableSection {
 {
     return RESTAURANT_COLLECTION_VIEW_MIN_CELL_SPACING;
 }
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showMap"]) {
+        RestaurantMapViewController *mapViewController = [segue destinationViewController];
+        mapViewController.restaurantsInfo = [_restaurantsWithMenu arrayByAddingObjectsFromArray:_restaurantsWithoutMenu];
+    }
+}
+
+//-(void) performSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+//{
+//    
+//}
+
 //
 //- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 //{
