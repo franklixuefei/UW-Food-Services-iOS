@@ -8,7 +8,6 @@
 
 #import "FoodServer.h"
 #import "AFNetworking.h"
-#import "GlobalConstants.h"
 #import "NSDate+ISO8601WeekNumber.h"
 #import "FoodNull.h"
 
@@ -36,7 +35,7 @@
         [formatter setDateFormat:@"yyyy"];
         NSUInteger currentYear = [[formatter stringFromDate:today] integerValue];
         NSUInteger weekNumber = [today iso8601WeeksForYear:currentYear];
-        request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"GET" URLString:[API_BASE_URL stringByAppendingString:[NSString stringWithFormat:@"%lu/%lu/%@", (unsigned long)2013, (unsigned long)40, API_MENU_URL]] parameters:params]; // FIXME: change to weekNumber
+        request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"GET" URLString:[API_BASE_URL stringByAppendingString:[NSString stringWithFormat:@"%lu/%lu/%@", (unsigned long)currentYear, (unsigned long)weekNumber, API_MENU_URL]] parameters:params]; // FIXME: change to weekNumber
         
     } else if ([type isEqualToString:API_LOCATIONS_TYPE]) {
         request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"GET" URLString:[API_BASE_URL stringByAppendingString:API_LOCATIONS_URL] parameters:params];
@@ -139,7 +138,7 @@
     }
     
     NSArray *operations = [AFURLConnectionOperation batchOfRequestOperations:mutableOperations progressBlock:^(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations) {
-        NSLog(@"%lu of %lu complete", numberOfFinishedOperations, totalNumberOfOperations);
+        NSLog(@"%lu of %lu complete", (unsigned long)numberOfFinishedOperations, (unsigned long)totalNumberOfOperations);
         progressBlock(numberOfFinishedOperations, totalNumberOfOperations);
     } completionBlock:^(NSArray *operations) {
         NSLog(@"All operations in batch complete");
