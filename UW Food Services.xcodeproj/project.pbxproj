@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		BD38F73EF7DF4B08891B6F0B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2DBA44E7C8D47E0804EE5AE /* libPods.a */; };
+		F13469A3187BB2490050CAD2 /* NSDate+dateToHHmmString.m in Sources */ = {isa = PBXBuildFile; fileRef = F13469A2187BB2490050CAD2 /* NSDate+dateToHHmmString.m */; };
+		F13469AA187BC4420050CAD2 /* satellite.png in Resources */ = {isa = PBXBuildFile; fileRef = F13469A8187BC4420050CAD2 /* satellite.png */; };
+		F13469AB187BC4420050CAD2 /* satellite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F13469A9187BC4420050CAD2 /* satellite@2x.png */; };
+		F13469AE187BCBC90050CAD2 /* fitBound.png in Resources */ = {isa = PBXBuildFile; fileRef = F13469AC187BCBC90050CAD2 /* fitBound.png */; };
+		F13469AF187BCBC90050CAD2 /* fitBound@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F13469AD187BCBC90050CAD2 /* fitBound@2x.png */; };
+		F13469B6187BE8130050CAD2 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F13469B5187BE8130050CAD2 /* GoogleMaps.bundle */; };
+		F13469B8187BF5280050CAD2 /* todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = F13469B7187BF5280050CAD2 /* todo.txt */; };
 		F134F6E91879240200207650 /* quote.png in Resources */ = {isa = PBXBuildFile; fileRef = F134F6E71879240200207650 /* quote.png */; };
 		F134F6EA1879240200207650 /* quote@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F134F6E81879240200207650 /* quote@2x.png */; };
 		F134F6EC187929E900207650 /* listLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = F134F6EB187929E900207650 /* listLayout.xib */; };
@@ -40,6 +47,22 @@
 		F14D1EE31877C44F00391AC8 /* mapit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F14D1EE11877C44F00391AC8 /* mapit@2x.png */; };
 		F14D1EE41877C44F00391AC8 /* mapit.png in Resources */ = {isa = PBXBuildFile; fileRef = F14D1EE21877C44F00391AC8 /* mapit.png */; };
 		F1997B7F1867D7F4006B9231 /* NSDate+ISO8601WeekNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = F1997B7E1867D7F4006B9231 /* NSDate+ISO8601WeekNumber.m */; };
+		F1AA1DEB187A20A100173A2C /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AA1DEA187A20A100173A2C /* NSString+HTML.m */; };
+		F1AA1DF0187A213600173A2C /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AA1DED187A213600173A2C /* GTMNSString+HTML.m */; };
+		F1AA1DF1187A213600173A2C /* NSString+XMLEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AA1DEF187A213600173A2C /* NSString+XMLEntities.m */; };
+		F1AA1DFE187A514700173A2C /* RestaurantMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AA1DFD187A514700173A2C /* RestaurantMapViewController.m */; };
+		F1AA1E06187A55CD00173A2C /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AA1E05187A55CD00173A2C /* GoogleMaps.framework */; };
+		F1AA1E08187A55FC00173A2C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AA1E07187A55FC00173A2C /* AVFoundation.framework */; };
+		F1AA1E0A187A560F00173A2C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AA1E09187A560F00173A2C /* CoreLocation.framework */; };
+		F1AA1E0C187A561B00173A2C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AA1E0B187A561B00173A2C /* CoreText.framework */; };
+		F1AA1E0E187A562900173A2C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AA1E0D187A562900173A2C /* GLKit.framework */; };
+		F1AA1E10187A56B000173A2C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AA1E0F187A56B000173A2C /* ImageIO.framework */; };
+		F1AA1E12187A56BD00173A2C /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AA1E11187A56BD00173A2C /* libc++.dylib */; };
+		F1AA1E14187A56CE00173A2C /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AA1E13187A56CE00173A2C /* libicucore.dylib */; };
+		F1AA1E16187A56DC00173A2C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AA1E15187A56DC00173A2C /* libz.dylib */; };
+		F1AA1E18187A56E800173A2C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AA1E17187A56E800173A2C /* OpenGLES.framework */; };
+		F1AA1E1A187A56F800173A2C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AA1E19187A56F800173A2C /* QuartzCore.framework */; };
+		F1AA1E1C187A570400173A2C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AA1E1B187A570400173A2C /* SystemConfiguration.framework */; };
 		F1B3E626185D08B6008EC150 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B3E625185D08B6008EC150 /* Foundation.framework */; };
 		F1B3E628185D08B6008EC150 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B3E627185D08B6008EC150 /* CoreGraphics.framework */; };
 		F1B3E62A185D08B6008EC150 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B3E629185D08B6008EC150 /* UIKit.framework */; };
@@ -77,6 +100,14 @@
 /* Begin PBXFileReference section */
 		00F99C2330194D76BD5A2989 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E2DBA44E7C8D47E0804EE5AE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F13469A1187BB2490050CAD2 /* NSDate+dateToHHmmString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+dateToHHmmString.h"; sourceTree = "<group>"; };
+		F13469A2187BB2490050CAD2 /* NSDate+dateToHHmmString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+dateToHHmmString.m"; sourceTree = "<group>"; };
+		F13469A8187BC4420050CAD2 /* satellite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = satellite.png; sourceTree = "<group>"; };
+		F13469A9187BC4420050CAD2 /* satellite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "satellite@2x.png"; sourceTree = "<group>"; };
+		F13469AC187BCBC90050CAD2 /* fitBound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fitBound.png; sourceTree = "<group>"; };
+		F13469AD187BCBC90050CAD2 /* fitBound@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fitBound@2x.png"; sourceTree = "<group>"; };
+		F13469B5187BE8130050CAD2 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		F13469B7187BF5280050CAD2 /* todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = todo.txt; sourceTree = "<group>"; };
 		F134F6E71879240200207650 /* quote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quote.png; sourceTree = "<group>"; };
 		F134F6E81879240200207650 /* quote@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "quote@2x.png"; sourceTree = "<group>"; };
 		F134F6EB187929E900207650 /* listLayout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = listLayout.xib; sourceTree = "<group>"; };
@@ -120,6 +151,26 @@
 		F14D1EE21877C44F00391AC8 /* mapit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapit.png; sourceTree = "<group>"; };
 		F1997B7D1867D7F4006B9231 /* NSDate+ISO8601WeekNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601WeekNumber.h"; sourceTree = "<group>"; };
 		F1997B7E1867D7F4006B9231 /* NSDate+ISO8601WeekNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601WeekNumber.m"; sourceTree = "<group>"; };
+		F1AA1DE9187A20A100173A2C /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
+		F1AA1DEA187A20A100173A2C /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
+		F1AA1DEC187A213600173A2C /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		F1AA1DED187A213600173A2C /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		F1AA1DEE187A213600173A2C /* NSString+XMLEntities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XMLEntities.h"; sourceTree = "<group>"; };
+		F1AA1DEF187A213600173A2C /* NSString+XMLEntities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XMLEntities.m"; sourceTree = "<group>"; };
+		F1AA1DFC187A514700173A2C /* RestaurantMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantMapViewController.h; sourceTree = "<group>"; };
+		F1AA1DFD187A514700173A2C /* RestaurantMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantMapViewController.m; sourceTree = "<group>"; };
+		F1AA1E05187A55CD00173A2C /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		F1AA1E07187A55FC00173A2C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F1AA1E09187A560F00173A2C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F1AA1E0B187A561B00173A2C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		F1AA1E0D187A562900173A2C /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		F1AA1E0F187A56B000173A2C /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		F1AA1E11187A56BD00173A2C /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		F1AA1E13187A56CE00173A2C /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		F1AA1E15187A56DC00173A2C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		F1AA1E17187A56E800173A2C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		F1AA1E19187A56F800173A2C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F1AA1E1B187A570400173A2C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F1B3E622185D08B6008EC150 /* UW Food Services.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UW Food Services.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B3E625185D08B6008EC150 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F1B3E627185D08B6008EC150 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -158,6 +209,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1AA1E1C187A570400173A2C /* SystemConfiguration.framework in Frameworks */,
+				F1AA1E1A187A56F800173A2C /* QuartzCore.framework in Frameworks */,
+				F1AA1E18187A56E800173A2C /* OpenGLES.framework in Frameworks */,
+				F1AA1E16187A56DC00173A2C /* libz.dylib in Frameworks */,
+				F1AA1E14187A56CE00173A2C /* libicucore.dylib in Frameworks */,
+				F1AA1E12187A56BD00173A2C /* libc++.dylib in Frameworks */,
+				F1AA1E10187A56B000173A2C /* ImageIO.framework in Frameworks */,
+				F1AA1E0E187A562900173A2C /* GLKit.framework in Frameworks */,
+				F1AA1E0C187A561B00173A2C /* CoreText.framework in Frameworks */,
+				F1AA1E0A187A560F00173A2C /* CoreLocation.framework in Frameworks */,
+				F1AA1E08187A55FC00173A2C /* AVFoundation.framework in Frameworks */,
+				F1AA1E06187A55CD00173A2C /* GoogleMaps.framework in Frameworks */,
 				F1B3E628185D08B6008EC150 /* CoreGraphics.framework in Frameworks */,
 				F1B3E62C185D08B6008EC150 /* CoreData.framework in Frameworks */,
 				F1B3E62A185D08B6008EC150 /* UIKit.framework in Frameworks */,
@@ -236,10 +299,14 @@
 				F134F6F518796F7900207650 /* hours@2x.png */,
 				F134F6F618796F7900207650 /* hours.png */,
 				F14D1EDE1877C39E00391AC8 /* mapthem@2x.png */,
+				F13469A8187BC4420050CAD2 /* satellite.png */,
+				F13469A9187BC4420050CAD2 /* satellite@2x.png */,
 				F14D1ED61877C0AF00391AC8 /* gridlayout.png */,
 				F14D1EC018776D6700391AC8 /* resta_placeholder@2x.png */,
 				F14D1ED91877C10600391AC8 /* griddetaillayout.png */,
 				F14D1EDA1877C10600391AC8 /* griddetaillayout@2x.png */,
+				F13469AC187BCBC90050CAD2 /* fitBound.png */,
+				F13469AD187BCBC90050CAD2 /* fitBound@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -249,10 +316,18 @@
 			children = (
 				F14D1EC31877859500391AC8 /* UIColor+RGBColor.h */,
 				F14D1EC41877859500391AC8 /* UIColor+RGBColor.m */,
+				F1AA1DE9187A20A100173A2C /* NSString+HTML.h */,
+				F1AA1DEA187A20A100173A2C /* NSString+HTML.m */,
 				F14D1EC6187785A600391AC8 /* UIColor+HexColor.h */,
 				F14D1EC7187785A600391AC8 /* UIColor+HexColor.m */,
+				F1AA1DEC187A213600173A2C /* GTMNSString+HTML.h */,
+				F1AA1DED187A213600173A2C /* GTMNSString+HTML.m */,
+				F1AA1DEE187A213600173A2C /* NSString+XMLEntities.h */,
+				F1AA1DEF187A213600173A2C /* NSString+XMLEntities.m */,
 				F1997B7D1867D7F4006B9231 /* NSDate+ISO8601WeekNumber.h */,
 				F1997B7E1867D7F4006B9231 /* NSDate+ISO8601WeekNumber.m */,
+				F13469A1187BB2490050CAD2 /* NSDate+dateToHHmmString.h */,
+				F13469A2187BB2490050CAD2 /* NSDate+dateToHHmmString.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -280,6 +355,19 @@
 		F1B3E624185D08B6008EC150 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F13469B5187BE8130050CAD2 /* GoogleMaps.bundle */,
+				F1AA1E1B187A570400173A2C /* SystemConfiguration.framework */,
+				F1AA1E19187A56F800173A2C /* QuartzCore.framework */,
+				F1AA1E17187A56E800173A2C /* OpenGLES.framework */,
+				F1AA1E15187A56DC00173A2C /* libz.dylib */,
+				F1AA1E13187A56CE00173A2C /* libicucore.dylib */,
+				F1AA1E11187A56BD00173A2C /* libc++.dylib */,
+				F1AA1E0F187A56B000173A2C /* ImageIO.framework */,
+				F1AA1E0D187A562900173A2C /* GLKit.framework */,
+				F1AA1E0B187A561B00173A2C /* CoreText.framework */,
+				F1AA1E09187A560F00173A2C /* CoreLocation.framework */,
+				F1AA1E07187A55FC00173A2C /* AVFoundation.framework */,
+				F1AA1E05187A55CD00173A2C /* GoogleMaps.framework */,
 				F1B3E625185D08B6008EC150 /* Foundation.framework */,
 				F1B3E627185D08B6008EC150 /* CoreGraphics.framework */,
 				F1B3E629185D08B6008EC150 /* UIKit.framework */,
@@ -309,6 +397,7 @@
 				F1B3E63F185D08B6008EC150 /* UW_Food_Services.xcdatamodeld */,
 				F1B3E62E185D08B6008EC150 /* Supporting Files */,
 				F14D1E531869661500391AC8 /* parsed_data.txt */,
+				F13469B7187BF5280050CAD2 /* todo.txt */,
 			);
 			path = "UW Food Services";
 			sourceTree = "<group>";
@@ -377,6 +466,8 @@
 				F1B3E643185D08B7008EC150 /* RestaurantListViewController.m */,
 				F1B3E645185D08B7008EC150 /* RestaurantDetailViewController.h */,
 				F1B3E646185D08B7008EC150 /* RestaurantDetailViewController.m */,
+				F1AA1DFC187A514700173A2C /* RestaurantMapViewController.h */,
+				F1AA1DFD187A514700173A2C /* RestaurantMapViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -479,14 +570,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F13469B6187BE8130050CAD2 /* GoogleMaps.bundle in Resources */,
 				F14D1EB81877641100391AC8 /* RestaurantCollectionViewCell.xib in Resources */,
 				F1B3E63E185D08B6008EC150 /* Main_iPad.storyboard in Resources */,
 				F14D1EC118776D6700391AC8 /* resta_placeholder.png in Resources */,
 				F1B3E649185D08B7008EC150 /* Images.xcassets in Resources */,
 				F134F6F718796F7900207650 /* hours@2x.png in Resources */,
 				F134F6F818796F7900207650 /* hours.png in Resources */,
+				F13469AA187BC4420050CAD2 /* satellite.png in Resources */,
+				F13469AF187BCBC90050CAD2 /* fitBound@2x.png in Resources */,
 				F1B3E63B185D08B6008EC150 /* Main_iPhone.storyboard in Resources */,
 				F1B3E632185D08B6008EC150 /* InfoPlist.strings in Resources */,
+				F13469AE187BCBC90050CAD2 /* fitBound.png in Resources */,
+				F13469B8187BF5280050CAD2 /* todo.txt in Resources */,
 				F134F6F018792A2F00207650 /* DetailLayout.xib in Resources */,
 				F134F6F318796EA300207650 /* building.png in Resources */,
 				F14D1EDF1877C39E00391AC8 /* mapthem.png in Resources */,
@@ -497,6 +593,7 @@
 				F14D1ED41877BD2300391AC8 /* listlayout@2x.png in Resources */,
 				F14D1ED31877BD2300391AC8 /* listlayout.png in Resources */,
 				F134F6E91879240200207650 /* quote.png in Resources */,
+				F13469AB187BC4420050CAD2 /* satellite@2x.png in Resources */,
 				F14D1ED81877C0AF00391AC8 /* gridlayout.png in Resources */,
 				F134F6EC187929E900207650 /* listLayout.xib in Resources */,
 				F134F6F418796EA300207650 /* building@2x.png in Resources */,
@@ -556,6 +653,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1AA1DF1187A213600173A2C /* NSString+XMLEntities.m in Sources */,
 				F14D1E421869167600391AC8 /* Menu.m in Sources */,
 				F14D1E461869201E00391AC8 /* FoodServer.m in Sources */,
 				F14D1EC8187785A600391AC8 /* UIColor+HexColor.m in Sources */,
@@ -568,11 +666,15 @@
 				F1B3E641185D08B6008EC150 /* UW_Food_Services.xcdatamodeld in Sources */,
 				F1B3E638185D08B6008EC150 /* AppDelegate.m in Sources */,
 				F14D1EB3187633DA00391AC8 /* RestaurantCollectionViewCell.m in Sources */,
+				F13469A3187BB2490050CAD2 /* NSDate+dateToHHmmString.m in Sources */,
 				F1FC75A81866A99E00133C82 /* Restaurant.m in Sources */,
 				F1FC75AC1866AE0E00133C82 /* UWServerAPIClient.m in Sources */,
+				F1AA1DEB187A20A100173A2C /* NSString+HTML.m in Sources */,
 				F1B3E634185D08B6008EC150 /* main.m in Sources */,
 				F1997B7F1867D7F4006B9231 /* NSDate+ISO8601WeekNumber.m in Sources */,
+				F1AA1DF0187A213600173A2C /* GTMNSString+HTML.m in Sources */,
 				F14D1E4F186953FF00391AC8 /* DailyOpeningHours.m in Sources */,
+				F1AA1DFE187A514700173A2C /* RestaurantMapViewController.m in Sources */,
 				F14D1E52186964A900391AC8 /* SpecialHours.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -666,6 +768,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -699,6 +802,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -712,6 +816,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/lxf20035/UW\\ Food\\ Services",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UW Food Services/UW Food Services-Prefix.pch";
 				INFOPLIST_FILE = "UW Food Services/UW Food Services-Info.plist";
@@ -727,6 +835,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/lxf20035/UW\\ Food\\ Services",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UW Food Services/UW Food Services-Prefix.pch";
 				INFOPLIST_FILE = "UW Food Services/UW Food Services-Info.plist";
