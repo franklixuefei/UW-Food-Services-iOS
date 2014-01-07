@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GoogleMaps/GoogleMaps.h>
 
-@interface RestaurantMapViewController : UIViewController
-
+@interface RestaurantMapViewController : UIViewController<GMSMapViewDelegate>
+    @property (nonatomic, strong) NSArray *restaurantsInfo;
 @end
