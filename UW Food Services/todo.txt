@@ -10,7 +10,7 @@ TODO:
 		5. Disable map and layout bar buttons while loading data from server.
 		6. Maybe add an activity indicator while tapped on map bar button.
         7. Add pull-to-refresh control.
-		7. Polish UI.
+		8. Polish UI.
 
 	- MapThem! Page:
 
