@@ -9,8 +9,12 @@
 #ifndef UW_Food_Services_constants_h
 #define UW_Food_Services_constants_h
 
+#define BAR_BUTTON_ITEM_INSETS (UIEdgeInsetsMake(4T, 0, 0, 0))
+
 #define API_KEY             @"d47fe3afb19f506f5a95e89e99527595"
 #define API_BASE_URL        @"https://api.uwaterloo.ca/v2/foodservices/"
+
+#define GMAP_API_KEY        @"AIzaSyB-mvt342bSpu3pMbGoiRRoa8tu538ygUE"
 
 #define API_OUTLETS_URL         @"outlets.json"
 #define API_MENU_URL            @"menu.json"
@@ -79,5 +83,7 @@
 #define DETAIL_LAYOUT_QUOTE_FRAME           (CGRectMake(14, 251, 24, 24))
 #define DETAIL_LAYOUT_DESCRIPTION_FRAME     (CGRectMake(41, 258, 225, 60))
 
-#define SCREEN_NAME_RESTAURANT_LIST         @"UW Food Services"
+#define SCREEN_NAME_RESTAURANT_LIST         @"Restaurants"
+#define SCREEN_NAME_MAP                     @"MapThem!"
+
 #endif
