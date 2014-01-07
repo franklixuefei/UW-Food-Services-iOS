@@ -9,7 +9,7 @@
 #ifndef UW_Food_Services_constants_h
 #define UW_Food_Services_constants_h
 
-#define BAR_BUTTON_ITEM_INSETS (UIEdgeInsetsMake(4T, 0, 0, 0))
+#define BAR_BUTTON_ITEM_INSETS (UIEdgeInsetsMake(4, 0, 0, 0))
 
 #define API_KEY             @"d47fe3afb19f506f5a95e89e99527595"
 #define API_BASE_URL        @"https://api.uwaterloo.ca/v2/foodservices/"
