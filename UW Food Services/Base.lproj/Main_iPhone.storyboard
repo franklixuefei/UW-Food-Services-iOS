@@ -19,10 +19,10 @@
             </objects>
             <point key="canvasLocation" x="-1" y="64"/>
         </scene>
-        <!--Restaurant List View Controller - Master-->
+        <!--Restaurant List View Controller - Restaurants-->
         <scene sceneID="omK-ym-xlO">
             <objects>
-                <collectionViewController autoresizesArchivedViewToFullSize="NO" title="Master" id="lq2-cM-sYv" customClass="RestaurantListViewController" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="root_controller" autoresizesArchivedViewToFullSize="NO" title="Restaurants" id="lq2-cM-sYv" customClass="RestaurantListViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="FQI-tm-hmk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,14 +94,37 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Food" id="kpV-U6-lEI"/>
+                    <connections>
+                        <segue destination="URP-JA-irk" kind="push" identifier="showMap" id="iyu-Yb-DFW"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u3l-ul-vez" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="459" y="438"/>
         </scene>
+        <!--Restaurant Map View Controller - MapThem!-->
+        <scene sceneID="3Kp-yN-aL5">
+            <objects>
+                <viewController storyboardIdentifier="showMap" id="URP-JA-irk" customClass="RestaurantMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZX8-H4-LlD"/>
+                        <viewControllerLayoutGuide type="bottom" id="LLY-Bg-dSO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j71-uv-h49">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="MapThem!" id="vYP-QQ-WpX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jig-EM-npJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1164" y="-91"/>
+        </scene>
         <!--Restaurant List View Controller - Master-->
         <scene sceneID="VgW-fR-Quf">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
                 <tableViewController title="Master" id="pGg-6v-bdr" customClass="RestaurantListViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mLL-gJ-YKr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -138,13 +161,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Restaurants" id="tQt-TN-PWz"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="623" y="-354"/>
+            <point key="canvasLocation" x="1867" y="-406"/>
         </scene>
         <!--Restaurant Detail View Controller - Detail-->
         <scene sceneID="Cn3-H9-jdl">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
                 <viewController title="Detail" id="Ah7-4n-0Wa" customClass="RestaurantDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xSv-CJ-PuH"/>
@@ -174,9 +197,8 @@
                         <outlet property="detailDescriptionLabel" destination="Lei-5M-9Gs" id="sCT-F7-F6f"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1158" y="-218"/>
+            <point key="canvasLocation" x="2242" y="64"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
