@@ -10,4 +10,12 @@
 
 @implementation NSDate (dateToHHmmString)
 
+- (NSString *)dateToStringWithHHmmFormat
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+    [formatter setDateFormat:@"HH:mm"];
+    return [formatter stringFromDate:self];
+}
+
 @end

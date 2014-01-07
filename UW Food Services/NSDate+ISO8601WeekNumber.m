@@ -10,25 +10,12 @@
 
 @implementation NSDate (ISO8601WeekNumber)
 
-- (NSUInteger)iso8601WeeksForYear:(NSUInteger)year {
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    
-    NSDateComponents *firstThursdayOfYearComponents = [[NSDateComponents alloc] init];
-    [firstThursdayOfYearComponents setWeekday:5]; // Thursday
-    [firstThursdayOfYearComponents setWeekdayOrdinal:1]; // The first Thursday of the month
-    [firstThursdayOfYearComponents setMonth:1]; // January
-    [firstThursdayOfYearComponents setYear:year];
-    NSDate *firstThursday = [calendar dateFromComponents:firstThursdayOfYearComponents];
-    
-    NSDateComponents *lastDayOfYearComponents = [[NSDateComponents alloc] init];
-    [lastDayOfYearComponents setDay:31];
-    [lastDayOfYearComponents setMonth:12];
-    [lastDayOfYearComponents setYear:year];
-    NSDate *lastDayOfYear = [calendar dateFromComponents:lastDayOfYearComponents];
-    
-    NSDateComponents *result = [calendar components:NSWeekCalendarUnit fromDate:firstThursday toDate:lastDayOfYear options:0];
-    
-    return result.week + 1;
+- (NSUInteger)iso8601WeeksForYear:(NSUInteger)year {    
+    NSDate *currDate = [NSDate date];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *components = [calendar components:NSWeekOfYearCalendarUnit fromDate:currDate];
+    NSLog(@"current week of year: %ld", (long)components.weekOfYear);
+    return components.weekOfYear;
 }
 
 @end

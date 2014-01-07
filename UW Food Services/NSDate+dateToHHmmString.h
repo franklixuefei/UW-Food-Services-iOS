@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface NSDate (dateToHHmmString)
-
+- (NSString *)dateToStringWithHHmmFormat;
 @end
