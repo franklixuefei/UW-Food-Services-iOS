@@ -10,7 +10,6 @@
 
 #import "RestaurantListViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
-#import "GlobalConstants.h"
 
 @implementation AppDelegate
 

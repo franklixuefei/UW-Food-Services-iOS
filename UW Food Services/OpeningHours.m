@@ -7,8 +7,6 @@
 //
 
 #import "OpeningHours.h"
-#import "DailyOpeningHours.h"
-#import "GlobalConstants.h"
 
 @interface OpeningHours ()
 
@@ -26,11 +24,13 @@
 @synthesize saturday = _saturday;
 @synthesize sunday = _sunday;
 
-- (DailyOpeningHours *)createDailyOpeningHoursWithDay:(NSDictionary *)day {
+- (DailyOpeningHours *)createDailyOpeningHoursWithDay:(NSDictionary *)day
+{
     return [[DailyOpeningHours alloc] initWithOpeningHourString:[day valueForKey:@"opening_hour"] closingHourString:[day valueForKey:@"closing_hour"] andIsClosed:[[day valueForKey:@"is_closed"] boolValue]];
 }
 
-- (instancetype)initOpeningHours:(NSDictionary *)openingHours {
+- (instancetype)initOpeningHours:(NSDictionary *)openingHours
+{
     self = [super init];
     if (!self) {
         return nil;
@@ -51,6 +51,30 @@
     _saturday = [self createDailyOpeningHoursWithDay:sat];
     _sunday = [self createDailyOpeningHoursWithDay:sun];
     return self;
+}
+
+- (DailyOpeningHours *)today
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEEE"];
+    NSString *day = [[dateFormatter stringFromDate:[NSDate date]] lowercaseString];
+    DailyOpeningHours *ret = nil;
+    if ([day isEqualToString:MONDAY]) {
+        ret = _monday;
+    } else if ([day isEqualToString:TUESDAY]) {
+        ret = _tuesday;
+    } else if ([day isEqualToString:WEDNESDAY]) {
+        ret = _wednesday;
+    } else if ([day isEqualToString:THURSDAY]) {
+        ret = _thursday;
+    } else if ([day isEqualToString:FRIDAY]) {
+        ret = _friday;
+    } else if ([day isEqualToString:SATURDAY]) {
+        ret = _saturday;
+    } else if ([day isEqualToString:SUNDAY]) {
+        ret = _sunday;
+    }
+    return ret;
 }
 
 @end

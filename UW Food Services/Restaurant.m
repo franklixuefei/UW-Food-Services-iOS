@@ -7,7 +7,6 @@
 //
 
 #import "Restaurant.h"
-#import "GlobalConstants.h"
 #import "AFNetworking.h"
 #import "NSDate+ISO8601WeekNumber.h"
 #import "OpeningHours.h"
@@ -25,11 +24,10 @@
 
 @synthesize outletID = _outletID;
 @synthesize outletName = _outletName;
-@synthesize description = _description;
+@synthesize outletDescription = _outletDescription;
 @synthesize building = _building;
 @synthesize notice = _notice;
-@synthesize latitude = _latitude;
-@synthesize longitude = _longitude;
+@synthesize coordinate = _coordinate;
 @synthesize logoURL = _logoURL;
 @synthesize has_breakfast = _has_breakfast;
 @synthesize has_lunch = _has_lunch;
@@ -71,13 +69,12 @@
     
     _building = [attributes valueForKey:@"building"];
     _dates_closed = [self createDatesClosedWithDates:[attributes valueForKey:@"dates_closed"]];
-    _description = [attributes valueForKey:@"description"];
+    _outletDescription = [attributes valueForKey:@"description"];
     _has_breakfast = [[attributes valueForKey:@"has_breakfast"] boolValue];
     _has_lunch = [[attributes valueForKey:@"has_lunch"] boolValue];
     _has_dinner = [[attributes valueForKey:@"has_dinner"] boolValue];
     _is_open_now = [[attributes valueForKey:@"is_open_now"] boolValue];
-    _latitude = [attributes valueForKey:@"latitude"];
-    _longitude = [attributes valueForKey:@"longitude"];
+    _coordinate = CLLocationCoordinate2DMake([[attributes valueForKey:@"latitude"] doubleValue], [[attributes valueForKey:@"longitude"] doubleValue]);
     _notice = [attributes valueForKey:@"notice"];
     _opening_hours = [[OpeningHours alloc] initOpeningHours:[attributes valueForKey:@"opening_hours"]];
     _outletID = [FoodNull isNSNullOrNil:[attributes valueForKey:@"outlet_id"]] ? 0 : [[attributes valueForKey:@"outlet_id"] unsignedIntValue];

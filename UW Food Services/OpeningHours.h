@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class DailyOpeningHours;
+#import "DailyOpeningHours.h"
 
 @interface OpeningHours : NSObject
 
@@ -21,5 +21,7 @@
 @property (nonatomic, strong) DailyOpeningHours *sunday;
 
 - (instancetype)initOpeningHours:(NSDictionary *)openingHours;
+
+- (DailyOpeningHours *)today;
 
 @end
