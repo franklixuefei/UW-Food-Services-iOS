@@ -1,0 +1,43 @@
+TODO:
+=====
+
+	- Restaurant List Page:
+
+		1. Maybe use a titleView for the navigation bar instead of a simple title text.
+		2. Push to detail view controller when tapped on cells.
+		3. Add restaurant list section headers (just a simple lightGray line with "featured" and "more" in its center)
+		4. Add an activity indicator while loading data from server.
+		5. Disable map and layout bar buttons while loading data from server.
+		6. Maybe add an activity indicator while tapped on map bar button.
+		7. Polish UI
+
+	- MapThem! Page:
+
+		1. Push to detail view controller when tapped on info windows.
+		2. Orient map according to current heading data (OPTIONAL)
+			Bearing (orientation)
+
+			The direction in which a vertical line on the map points, measured in degrees clockwise from north. Someone driving a car often turns a road map to align it with their direction of travel, while hikers using a map and compass usually orient the map so that a vertical line is pointing north. The Google Maps SDK for iOS lets you change a map's alignment or bearing. For example, a bearing of 90 degrees results in a map where the upwards direction points due east.
+
+			Users are able to change the bearing by using a two-finger gesture to rotate the orientation of the map. You can set the bearing programmatically with animateToBearing: on GMSMapView.
+
+			[mapView_ animateToBearing:0];
+
+			http://stackoverflow.com/questions/17446176/how-to-rotate-google-map-according-to-device-compass-value
+
+
+GLITCHES:
+=========
+
+	- Restaurant List Page:
+
+		1. Scrolling is choppy on iPhone 4 with iOS 7.0.3
+		2. Google Map page loading is slow on first load. (approx. 2 seconds for iPhone 4 and 1 second for iPhone 5S)
+		3. Placeholder images are abrupt.
+		4. View is for now scrolled to top on purpose in order to avoid ugly animation.
+			Maybe try asynced collectionView:layout:scrolltoitematindexpath: with custom animation duration for the first item in collectionView.visibleCells.
+
+	- MapThem! Page:
+
+		-
+
