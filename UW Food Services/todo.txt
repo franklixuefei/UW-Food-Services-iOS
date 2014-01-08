@@ -10,7 +10,13 @@ TODO:
 		5. Disable map and layout bar buttons while loading data from server.
 		6. Maybe add an activity indicator while tapped on map bar button.
         7. Add pull-to-refresh control.
-		8. Polish UI.
+            - on app launching, programmatically trigger refreshing.
+            - add background image to UICollectionView
+            - if data fetch failed, show relevant message to let user refresh again
+            - disable all bar buttons until data fetched completely and successfully
+        8. Add a [more] button at the end of the description text to show full description text and notice text.
+        9. Add highlight color for RestaurantCollectonViewCell.
+		10. Polish UI.
 
 	- MapThem! Page:
 
