@@ -26,43 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410774846.993014"
+            timestampString = "410822036.069737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "-reload:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[RestaurantListViewController reload:]_block_invoke_2"
-                  moduleName = "UW Food Services"
-                  urlString = "file:///Users/lxf20035/UW%20Food%20Services/UW%20Food%20Services/RestaurantListViewController.m"
-                  timestampString = "409471283.817686"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "58">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[RestaurantListViewController reload:]_block_invoke_3"
-                  moduleName = "UW Food Services"
-                  urlString = "file:///Users/lxf20035/UW%20Food%20Services/UW%20Food%20Services/RestaurantListViewController.m"
-                  timestampString = "409471283.817893"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "43">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -72,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410774846.993014"
+            timestampString = "410823414.24382"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "-reload:"
             landmarkType = "5">
             <Locations>
@@ -150,11 +120,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410774846.993014"
+            timestampString = "410822036.069737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "-reload:"
             landmarkType = "5">
          </BreakpointContent>
@@ -230,11 +200,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410774846.993014"
+            timestampString = "410822036.069737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "-reload:"
             landmarkType = "5">
             <Locations>
@@ -276,11 +246,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410774846.993014"
+            timestampString = "410822036.069737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "-reload:"
             landmarkType = "5">
             <Locations>
@@ -322,11 +292,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410774846.993014"
+            timestampString = "410822036.069737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "-reload:"
             landmarkType = "5">
          </BreakpointContent>
@@ -338,11 +308,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410774846.993014"
+            timestampString = "410822036.069737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "-reload:"
             landmarkType = "5">
          </BreakpointContent>
@@ -370,11 +340,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410775410.970143"
+            timestampString = "410835560.164874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "403"
-            endingLineNumber = "403"
+            startingLineNumber = "430"
+            endingLineNumber = "430"
             landmarkName = "@implementation RestaurantListViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -386,11 +356,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410774846.993014"
+            timestampString = "410835560.164874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -402,11 +372,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410774846.993014"
+            timestampString = "410822036.069737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "-reload:"
             landmarkType = "5">
          </BreakpointContent>
@@ -418,11 +388,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410775410.970143"
+            timestampString = "410835560.164874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "394"
-            endingLineNumber = "394"
+            startingLineNumber = "421"
+            endingLineNumber = "421"
             landmarkName = "-collectionView:numberOfItemsInSection:"
             landmarkType = "5">
          </BreakpointContent>
@@ -434,11 +404,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410775410.970143"
+            timestampString = "410835560.164874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "389"
-            endingLineNumber = "389"
+            startingLineNumber = "416"
+            endingLineNumber = "416"
             landmarkName = "-collectionView:numberOfItemsInSection:"
             landmarkType = "5">
          </BreakpointContent>
@@ -450,11 +420,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410775410.970143"
+            timestampString = "410835560.164874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "386"
-            endingLineNumber = "386"
+            startingLineNumber = "413"
+            endingLineNumber = "413"
             landmarkName = "-collectionView:numberOfItemsInSection:"
             landmarkType = "5">
          </BreakpointContent>
@@ -466,11 +436,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410775410.970143"
+            timestampString = "410835560.164874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "397"
-            endingLineNumber = "397"
+            startingLineNumber = "424"
+            endingLineNumber = "424"
             landmarkName = "-collectionView:numberOfItemsInSection:"
             landmarkType = "5">
          </BreakpointContent>
@@ -482,11 +452,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410775410.970143"
+            timestampString = "410835560.164874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "402"
-            endingLineNumber = "402"
+            startingLineNumber = "429"
+            endingLineNumber = "429"
             landmarkName = "-numberOfSectionsInCollectionView:"
             landmarkType = "5">
          </BreakpointContent>
@@ -498,11 +468,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410779046.534853"
+            timestampString = "410835560.164874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "458"
-            endingLineNumber = "458"
+            startingLineNumber = "488"
+            endingLineNumber = "488"
             landmarkName = "@implementation RestaurantListViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -514,11 +484,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410775410.970143"
+            timestampString = "410835560.164874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "393"
-            endingLineNumber = "393"
+            startingLineNumber = "420"
+            endingLineNumber = "420"
             landmarkName = "-collectionView:numberOfItemsInSection:"
             landmarkType = "5">
          </BreakpointContent>
@@ -594,11 +564,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410774846.993014"
+            timestampString = "410835560.164874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -642,11 +612,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410779046.534853"
+            timestampString = "410835560.164874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "430"
-            endingLineNumber = "430"
+            startingLineNumber = "460"
+            endingLineNumber = "460"
             landmarkName = "-configureCell:atIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -658,11 +628,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410779046.534853"
+            timestampString = "410835560.164874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "431"
-            endingLineNumber = "431"
+            startingLineNumber = "461"
+            endingLineNumber = "461"
             landmarkName = "-configureCell:atIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -674,11 +644,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410779046.534853"
+            timestampString = "410835560.164874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "423"
-            endingLineNumber = "423"
+            startingLineNumber = "453"
+            endingLineNumber = "453"
             landmarkName = "-configureCell:atIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -690,11 +660,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410775410.970143"
+            timestampString = "410835560.164874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "-changeLayout:"
             landmarkType = "5">
          </BreakpointContent>
@@ -706,11 +676,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410775410.970143"
+            timestampString = "410835560.164874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
             landmarkName = "-changeLayout:"
             landmarkType = "5">
          </BreakpointContent>
@@ -722,11 +692,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410775410.970143"
+            timestampString = "410835560.164874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
             landmarkName = "-changeLayout:"
             landmarkType = "5">
          </BreakpointContent>
@@ -738,11 +708,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410775410.970143"
+            timestampString = "410835560.164874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
             landmarkName = "-changeLayout:"
             landmarkType = "5">
          </BreakpointContent>
@@ -754,11 +724,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410774846.993014"
+            timestampString = "410822036.069737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "-reload:"
             landmarkType = "5">
          </BreakpointContent>
@@ -770,12 +740,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/FoodServer.m"
-            timestampString = "410774846.993014"
+            timestampString = "410834627.462428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "+parseData:"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "-parseData:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -786,12 +756,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/FoodServer.m"
-            timestampString = "410774846.993014"
+            timestampString = "410834627.462428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "+parseData:"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "-parseData:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -802,12 +772,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/FoodServer.m"
-            timestampString = "410774846.993014"
+            timestampString = "410834627.462428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "+parseData:"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "-parseData:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -818,11 +788,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410775410.970143"
+            timestampString = "410835560.164874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "361"
-            endingLineNumber = "361"
+            startingLineNumber = "388"
+            endingLineNumber = "388"
             landmarkName = "-collectionView:didSelectItemAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -834,11 +804,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410775410.970143"
+            timestampString = "410835560.164874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "362"
-            endingLineNumber = "362"
+            startingLineNumber = "389"
+            endingLineNumber = "389"
             landmarkName = "-collectionView:didSelectItemAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -866,11 +836,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410775410.970143"
+            timestampString = "410835560.164874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
             landmarkName = "-handleSubviewsLayoutForCell:"
             landmarkType = "5">
          </BreakpointContent>
@@ -882,11 +852,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410774846.993014"
+            timestampString = "410822036.069737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "-reload:"
             landmarkType = "5">
          </BreakpointContent>
@@ -898,11 +868,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410779046.534853"
+            timestampString = "410835560.164874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "508"
-            endingLineNumber = "508"
+            startingLineNumber = "538"
+            endingLineNumber = "538"
             landmarkName = "@implementation RestaurantListViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -914,11 +884,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410779046.534853"
+            timestampString = "410835560.164874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "509"
-            endingLineNumber = "509"
+            startingLineNumber = "539"
+            endingLineNumber = "539"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "5">
          </BreakpointContent>
@@ -930,11 +900,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410779046.534853"
+            timestampString = "410835560.164874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "510"
-            endingLineNumber = "510"
+            startingLineNumber = "540"
+            endingLineNumber = "540"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "5">
          </BreakpointContent>
@@ -946,11 +916,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantListViewController.m"
-            timestampString = "410774846.993014"
+            timestampString = "410822036.069737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "-reload:"
             landmarkType = "5">
             <Locations>
@@ -992,7 +962,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantMapViewController.m"
-            timestampString = "410774846.993014"
+            timestampString = "410819827.010158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
@@ -1008,7 +978,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantMapViewController.m"
-            timestampString = "410774846.993014"
+            timestampString = "410819827.010158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
@@ -1132,7 +1102,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/RestaurantMapViewController.m"
-            timestampString = "410775410.970143"
+            timestampString = "410819827.010158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "102"
@@ -1148,12 +1118,250 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UW Food Services/FoodServer.m"
-            timestampString = "410774846.993014"
+            timestampString = "410836039.559905"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "+restaurantsInfoWithTypeArray:andProgressBlock:andSuccessBlock:andFailureBlock:"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
+            landmarkName = "-restaurantsInfoWithTypeArray:andProgressBlock:andSuccessBlock:andFailureBlock:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UW Food Services/RestaurantListViewController.m"
+            timestampString = "410835560.164874"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "-initBasicUI"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UW Food Services/RestaurantListViewController.m"
+            timestampString = "410835560.164874"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "-initBasicUI"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UW Food Services/RestaurantListViewController.m"
+            timestampString = "410823414.24382"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "-reload:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UW Food Services/RestaurantListViewController.m"
+            timestampString = "410835560.164874"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
+            landmarkName = "-changeLayout:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UW Food Services/RestaurantListViewController.m"
+            timestampString = "410835560.164874"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "433"
+            endingLineNumber = "433"
+            landmarkName = "-collectionView:cellForItemAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UW Food Services/RestaurantListViewController.m"
+            timestampString = "410835560.164874"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "436"
+            endingLineNumber = "436"
+            landmarkName = "-collectionView:cellForItemAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UW Food Services/FoodServer.m"
+            timestampString = "410836039.559905"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
+            landmarkName = "-restaurantsInfoWithTypeArray:andProgressBlock:andSuccessBlock:andFailureBlock:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UW Food Services/FoodServer.m"
+            timestampString = "410834627.462428"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "-restaurantsInfoWithTypeArray:andProgressBlock:andSuccessBlock:andFailureBlock:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UW Food Services/FoodServer.m"
+            timestampString = "410836039.559905"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "-restaurantsInfoWithTypeArray:andProgressBlock:andSuccessBlock:andFailureBlock:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UW Food Services/RestaurantListViewController.h"
+            timestampString = "410831343.899796"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "@interface RestaurantListViewController"
+            landmarkType = "2">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UW Food Services/FoodServer.m"
+            timestampString = "410834627.462428"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "-restaurantsInfoWithTypeArray:andProgressBlock:andSuccessBlock:andFailureBlock:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__92+[FoodServer restaurantsInfoWithTypeArray:andProgressBlock:andSuccessBlock:andFailureBlock:]_block_invoke123"
+                  moduleName = "UW Food Services"
+                  urlString = "file:///Users/lxf20035/UW%20Food%20Services/UW%20Food%20Services/FoodServer.m"
+                  timestampString = "410832648.384258"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "136"
+                  endingLineNumber = "136"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__92+[FoodServer restaurantsInfoWithTypeArray:andProgressBlock:andSuccessBlock:andFailureBlock:]_block_invoke_2"
+                  moduleName = "UW Food Services"
+                  urlString = "file:///Users/lxf20035/UW%20Food%20Services/UW%20Food%20Services/FoodServer.m"
+                  timestampString = "410832648.384489"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "136"
+                  endingLineNumber = "136"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UW Food Services/FoodServer.m"
+            timestampString = "410836039.559905"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "-restaurantsInfoWithTypeArray:andProgressBlock:andSuccessBlock:andFailureBlock:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UW Food Services/RestaurantListViewController.m"
+            timestampString = "410835560.164874"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "423"
+            endingLineNumber = "423"
+            landmarkName = "-collectionView:numberOfItemsInSection:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

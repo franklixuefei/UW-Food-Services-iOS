@@ -124,7 +124,6 @@
         <!--Restaurant List View Controller - Master-->
         <scene sceneID="VgW-fR-Quf">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
                 <tableViewController title="Master" id="pGg-6v-bdr" customClass="RestaurantListViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mLL-gJ-YKr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -161,13 +160,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Restaurants" id="tQt-TN-PWz"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1867" y="-406"/>
         </scene>
         <!--Restaurant Detail View Controller - Detail-->
         <scene sceneID="Cn3-H9-jdl">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
                 <viewController title="Detail" id="Ah7-4n-0Wa" customClass="RestaurantDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xSv-CJ-PuH"/>
@@ -197,6 +196,7 @@
                         <outlet property="detailDescriptionLabel" destination="Lei-5M-9Gs" id="sCT-F7-F6f"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2242" y="64"/>
         </scene>

@@ -74,10 +74,10 @@ enum RestaurantsTableSection {
 - (void)reload:(__unused id)sender {
 
 //    self.navigationItem.rightBarButtonItem.enabled = NO;
-    [FoodServer restaurantsInfoWithTypeArray:@[API_OUTLETS_TYPE, API_LOCATIONS_TYPE, API_MENU_TYPE] andProgressBlock:^(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations) {
+    [[FoodServer defaultServer] restaurantsInfoWithTypeArray:@[API_OUTLETS_TYPE, API_LOCATIONS_TYPE, API_MENU_TYPE] andProgressBlock:^(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations) {
         
     } andSuccessBlock:^(NSDictionary *parsedData) {
-//        NSLog(@"parsedData: %@", parsedData);
+        NSLog(@"parsedData: %@", parsedData);
         NSArray *restaurants_menu = [parsedData valueForKey:RESTA_MENU];
         NSArray *restaurants_with_menu = [parsedData valueForKey:RESTA_WTIH_MENU];
         NSArray *restaurants_without_menu = [parsedData valueForKey:RESTA_WTIHOUT_MENU];
@@ -107,7 +107,28 @@ enum RestaurantsTableSection {
                        });
         
     } andFailureBlock:^(NSError *error) {
-        NSLog(@"error: %@", error);
+        NSLog(@"error: %@, with type: (see the following line) ", error);
+        if (error) {
+            switch (error.code) {
+                case NSURLErrorNetworkConnectionLost:
+                    NSLog(@"NSURLErrorNetworkConnectionLost");
+                    break;
+                case NSURLErrorNotConnectedToInternet:
+                    NSLog(@"NSURLErrorNotConnectedToInternet");
+                    break;
+                case NSURLErrorTimedOut:
+                    NSLog(@"NSURLErrorTimedOut");
+                    break;
+                case NSURLErrorCancelled:
+                    NSLog(@"NSURLErrorCancelled");
+                    break;
+                default: // unknown error
+                    NSLog(@"NSURLError - unknown with code %ld", (long)error.code);
+                    break;
+            }
+        } else { // All operations completed with error.
+            NSLog(@"All operations completed with error");
+        }
     }];
     
 }
