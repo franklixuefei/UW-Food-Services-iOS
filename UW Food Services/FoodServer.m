@@ -13,16 +13,39 @@
 
 @interface FoodServer ()
 
-+ (AFHTTPRequestOperation *)createOperationWithType:(NSString *)type andSuccessBlock:(void (^)(AFHTTPRequestOperation *operation, id responseObject))successBlock andFailureBlock:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failureBlock;
-+ (NSDictionary *)parseData:(NSMutableDictionary *)dataDict;
+- (AFHTTPRequestOperation *)createOperationWithType:(NSString *)type andSuccessBlock:(void (^)(AFHTTPRequestOperation *operation, id responseObject))successBlock andFailureBlock:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failureBlock;
+- (NSDictionary *)parseData:(NSMutableDictionary *)dataDict;
 
 @end
 
-@implementation FoodServer
+@implementation FoodServer {
+    BOOL _errorOccurred;
+}
+
+#pragma mark - defaultServer - singleton
++ (FoodServer *)defaultServer
+{
+    @synchronized([UIApplication sharedApplication]) {
+		static FoodServer *s_pFoodServer = nil;
+		if (!s_pFoodServer) {
+			s_pFoodServer = [[FoodServer alloc] init];
+		}
+		return s_pFoodServer;
+	}
+}
+
+#pragma mark - initialization
+- (FoodServer *)init
+{
+    if (self = [super init]) {
+        // initialization code here ...
+        _errorOccurred = NO;
+    }
+    return self;
+}
 
 #pragma mark - Restaurant Server Call Helper Methods
-
-+ (AFHTTPRequestOperation *)createOperationWithType:(NSString *)type andSuccessBlock:(void (^)(AFHTTPRequestOperation *operation, id responseObject))successBlock andFailureBlock:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failureBlock {
+- (AFHTTPRequestOperation *)createOperationWithType:(NSString *)type andSuccessBlock:(void (^)(AFHTTPRequestOperation *operation, id responseObject))successBlock andFailureBlock:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failureBlock {
     AFHTTPRequestOperation *operation = nil;
     NSURLRequest *request = nil;
     NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:API_KEY, @"key", nil];
@@ -50,7 +73,7 @@
 }
 
 
-+ (NSDictionary *)parseData:(NSMutableDictionary *)dataDict {
+- (NSDictionary *)parseData:(NSMutableDictionary *)dataDict {
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:4];
     
     NSMutableArray *restaurantsWithMenu = [NSMutableArray array];
@@ -120,20 +143,31 @@
 
 #pragma mark - Restaurant Server Call
 
-+ (void)restaurantsInfoWithTypeArray:(NSArray *)typeArray andProgressBlock:(void (^)(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations))progressBlock andSuccessBlock:(void (^)(NSDictionary *parsedData))successBlock andFailureBlock:(void (^)(NSError *error))failureBlock {
+- (void)restaurantsInfoWithTypeArray:(NSArray *)typeArray andProgressBlock:(void (^)(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations))progressBlock andSuccessBlock:(void (^)(NSDictionary *parsedData))successBlock andFailureBlock:(void (^)(NSError *error))failureBlock {
     NSMutableArray *mutableOperations = [NSMutableArray array];
     NSMutableDictionary *responseDict = [NSMutableDictionary dictionaryWithCapacity:[typeArray count]];
     for (NSString *type in typeArray) {
-        AFHTTPRequestOperation *operation = [FoodServer createOperationWithType:type andSuccessBlock:^(AFHTTPRequestOperation *operation, id responseObject) {
+        AFHTTPRequestOperation *operation = [self createOperationWithType:type andSuccessBlock:^(AFHTTPRequestOperation *operation, id responseObject) {
             operation.responseSerializer = [AFJSONResponseSerializer serializer];
             NSLog(@"Request URL: %@", operation.response.URL);
             //            NSLog(@"operation.responseObject %@", (NSDictionary *)operation.responseObject);
             [responseDict setObject:(NSDictionary *)operation.responseObject forKey:type];
         } andFailureBlock:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"failure operation: %@", operation);
-            failureBlock(error);
+            NSOperationQueue *q = [NSOperationQueue mainQueue];
+            // the following block of code cancels rest of the operations.
+            [[q.operations filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+                if ([evaluatedObject isKindOfClass:[AFHTTPRequestOperation class]]) {
+                    AFHTTPRequestOperation *op = evaluatedObject;
+                    return op.isExecuting;
+                }
+                return NO;
+            }]] makeObjectsPerformSelector:@selector(cancel)];
+            if (!_errorOccurred) { // only run failureBlock(error) once
+                _errorOccurred = YES;
+                failureBlock(error);
+            }
         }];
-        
         [mutableOperations addObject:operation];
     }
     
@@ -141,10 +175,24 @@
         NSLog(@"%lu of %lu complete", (unsigned long)numberOfFinishedOperations, (unsigned long)totalNumberOfOperations);
         progressBlock(numberOfFinishedOperations, totalNumberOfOperations);
     } completionBlock:^(NSArray *operations) {
-        NSLog(@"All operations in batch complete");
+
+        NSLog(@"All operations in batch complete (maybe with errors)");
+        NSLog(@"With operations: %@", operations);
         //        NSLog(@"response dict: %@", responseDict);
-        NSDictionary *parsedData = [FoodServer parseData:responseDict];
-        successBlock(parsedData);
+        if (_errorOccurred) {
+            NSLog(@"Error(s) or cancellation(s) occurred with operations");
+            failureBlock(nil);
+            _errorOccurred = NO;
+            return;
+        }
+        @try { // fail safe
+            NSDictionary *parsedData = [self parseData:responseDict];
+            successBlock(parsedData);
+        }
+        @catch (NSException *exception) {
+            NSLog(@"Exception catched with reason: %@", exception.reason);
+            failureBlock(nil);
+        }
     }];
     [[NSOperationQueue mainQueue] addOperations:operations waitUntilFinished:NO];
 }

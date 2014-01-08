@@ -10,6 +10,8 @@
 
 @interface FoodServer : NSObject
 
-+ (void)restaurantsInfoWithTypeArray:(NSArray *)URLArray andProgressBlock:(void (^)(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations))progressBlock andSuccessBlock:(void (^)(NSDictionary *parsedData))successBlock andFailureBlock:(void (^)(NSError *error))failureBlock;
++ (FoodServer *)defaultServer;
+
+- (void)restaurantsInfoWithTypeArray:(NSArray *)URLArray andProgressBlock:(void (^)(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations))progressBlock andSuccessBlock:(void (^)(NSDictionary *parsedData))successBlock andFailureBlock:(void (^)(NSError *error))failureBlock;
 
 @end
