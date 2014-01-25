@@ -9,7 +9,7 @@ TODO:
 		4. Add an activity indicator while loading data from server.
 		5. Disable map and layout bar buttons while loading data from server.
 		6. Maybe add an activity indicator while tapped on map bar button.
-        7. Add pull-to-refresh control.
+        7. [Added] Add pull-to-refresh control.
             - on app launching, programmatically trigger refreshing.
             - add background image to UICollectionView
             - if data fetch failed, show relevant message to let user refresh again
@@ -38,7 +38,8 @@ GLITCHES:
 
 	- Restaurant List Page:
 
-		1. Scrolling is choppy on iPhone 4 with iOS 7.0.3
+		1. [Investigated]Scrolling is choppy on iPhone 4 with iOS 7.0.3
+            -- because there are too much overhead for drawing views on each cell (UIImageView is not the major reason.)
 		2. Google Map page loading is slow on first load. (approx. 2 seconds for iPhone 4 and 1 second for iPhone 5S)
 		3. Placeholder images are abrupt.
 		4. View is for now scrolled to top on purpose in order to avoid ugly animation.
