@@ -46,6 +46,14 @@
 		F14D1EE01877C39E00391AC8 /* mapthem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F14D1EDE1877C39E00391AC8 /* mapthem@2x.png */; };
 		F14D1EE31877C44F00391AC8 /* mapit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F14D1EE11877C44F00391AC8 /* mapit@2x.png */; };
 		F14D1EE41877C44F00391AC8 /* mapit.png in Resources */ = {isa = PBXBuildFile; fileRef = F14D1EE21877C44F00391AC8 /* mapit.png */; };
+		F178BC1C187D1C55006E7EFE /* RestaurantListCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F178BC1B187D1C55006E7EFE /* RestaurantListCollectionView.m */; };
+		F178BC1F187D4AA5006E7EFE /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = F178BC1E187D4AA5006E7EFE /* UIImage+Scale.m */; };
+		F178BC21187D5C56006E7EFE /* fswatermark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F178BC20187D5C56006E7EFE /* fswatermark@2x.png */; };
+		F178BC23187D5D09006E7EFE /* fswatermark.png in Resources */ = {isa = PBXBuildFile; fileRef = F178BC22187D5D09006E7EFE /* fswatermark.png */; };
+		F178BC29187D79C2006E7EFE /* UINavigationController+Autorotate.m in Sources */ = {isa = PBXBuildFile; fileRef = F178BC28187D79C2006E7EFE /* UINavigationController+Autorotate.m */; };
+		F178BC2C187D7CA5006E7EFE /* UINavigationController+NoAutoRotate.m in Sources */ = {isa = PBXBuildFile; fileRef = F178BC2B187D7CA5006E7EFE /* UINavigationController+NoAutoRotate.m */; };
+		F178BC2F187E18D7006E7EFE /* RestaurantListSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F178BC2E187E18D7006E7EFE /* RestaurantListSectionHeaderView.m */; };
+		F17F4562187EBC62004F0ACE /* GreatVibes-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F17F4561187EBC62004F0ACE /* GreatVibes-Regular.ttf */; };
 		F1997B7F1867D7F4006B9231 /* NSDate+ISO8601WeekNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = F1997B7E1867D7F4006B9231 /* NSDate+ISO8601WeekNumber.m */; };
 		F1AA1DEB187A20A100173A2C /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AA1DEA187A20A100173A2C /* NSString+HTML.m */; };
 		F1AA1DF0187A213600173A2C /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AA1DED187A213600173A2C /* GTMNSString+HTML.m */; };
@@ -149,6 +157,20 @@
 		F14D1EDE1877C39E00391AC8 /* mapthem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapthem@2x.png"; sourceTree = "<group>"; };
 		F14D1EE11877C44F00391AC8 /* mapit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapit@2x.png"; sourceTree = "<group>"; };
 		F14D1EE21877C44F00391AC8 /* mapit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapit.png; sourceTree = "<group>"; };
+		F178BC1A187D1C55006E7EFE /* RestaurantListCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantListCollectionView.h; sourceTree = "<group>"; };
+		F178BC1B187D1C55006E7EFE /* RestaurantListCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantListCollectionView.m; sourceTree = "<group>"; };
+		F178BC1D187D4AA5006E7EFE /* UIImage+Scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Scale.h"; sourceTree = "<group>"; };
+		F178BC1E187D4AA5006E7EFE /* UIImage+Scale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Scale.m"; sourceTree = "<group>"; };
+		F178BC20187D5C56006E7EFE /* fswatermark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fswatermark@2x.png"; sourceTree = "<group>"; };
+		F178BC22187D5D09006E7EFE /* fswatermark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fswatermark.png; sourceTree = "<group>"; };
+		F178BC26187D67BD006E7EFE /* RestaurantMapViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantMapViewControllerDelegate.h; sourceTree = "<group>"; };
+		F178BC27187D79C2006E7EFE /* UINavigationController+Autorotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Autorotate.h"; sourceTree = "<group>"; };
+		F178BC28187D79C2006E7EFE /* UINavigationController+Autorotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Autorotate.m"; sourceTree = "<group>"; };
+		F178BC2A187D7CA5006E7EFE /* UINavigationController+NoAutoRotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+NoAutoRotate.h"; sourceTree = "<group>"; };
+		F178BC2B187D7CA5006E7EFE /* UINavigationController+NoAutoRotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+NoAutoRotate.m"; sourceTree = "<group>"; };
+		F178BC2D187E18D6006E7EFE /* RestaurantListSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantListSectionHeaderView.h; sourceTree = "<group>"; };
+		F178BC2E187E18D7006E7EFE /* RestaurantListSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantListSectionHeaderView.m; sourceTree = "<group>"; };
+		F17F4561187EBC62004F0ACE /* GreatVibes-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GreatVibes-Regular.ttf"; sourceTree = "<group>"; };
 		F1997B7D1867D7F4006B9231 /* NSDate+ISO8601WeekNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601WeekNumber.h"; sourceTree = "<group>"; };
 		F1997B7E1867D7F4006B9231 /* NSDate+ISO8601WeekNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601WeekNumber.m"; sourceTree = "<group>"; };
 		F1AA1DE9187A20A100173A2C /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
@@ -277,6 +299,7 @@
 		F14D1EB918776AD500391AC8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F17F4560187EBC43004F0ACE /* Fonts */,
 				F14D1EBA18776AF000391AC8 /* Images */,
 			);
 			name = Resources;
@@ -285,6 +308,8 @@
 		F14D1EBA18776AF000391AC8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F178BC22187D5D09006E7EFE /* fswatermark.png */,
+				F178BC20187D5C56006E7EFE /* fswatermark@2x.png */,
 				F14D1ED11877BD2300391AC8 /* listlayout.png */,
 				F14D1ED21877BD2300391AC8 /* listlayout@2x.png */,
 				F14D1EBF18776D6700391AC8 /* resta_placeholder.png */,
@@ -311,6 +336,14 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		F17F4560187EBC43004F0ACE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F17F4561187EBC62004F0ACE /* GreatVibes-Regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		F1997B7C1867D797006B9231 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +361,12 @@
 				F1997B7E1867D7F4006B9231 /* NSDate+ISO8601WeekNumber.m */,
 				F13469A1187BB2490050CAD2 /* NSDate+dateToHHmmString.h */,
 				F13469A2187BB2490050CAD2 /* NSDate+dateToHHmmString.m */,
+				F178BC1D187D4AA5006E7EFE /* UIImage+Scale.h */,
+				F178BC1E187D4AA5006E7EFE /* UIImage+Scale.m */,
+				F178BC27187D79C2006E7EFE /* UINavigationController+Autorotate.h */,
+				F178BC28187D79C2006E7EFE /* UINavigationController+Autorotate.m */,
+				F178BC2A187D7CA5006E7EFE /* UINavigationController+NoAutoRotate.h */,
+				F178BC2B187D7CA5006E7EFE /* UINavigationController+NoAutoRotate.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -455,6 +494,10 @@
 				F14D1EB71877641000391AC8 /* RestaurantCollectionViewCell.xib */,
 				F134F6EB187929E900207650 /* listLayout.xib */,
 				F134F6EF18792A2F00207650 /* DetailLayout.xib */,
+				F178BC1A187D1C55006E7EFE /* RestaurantListCollectionView.h */,
+				F178BC1B187D1C55006E7EFE /* RestaurantListCollectionView.m */,
+				F178BC2D187E18D6006E7EFE /* RestaurantListSectionHeaderView.h */,
+				F178BC2E187E18D7006E7EFE /* RestaurantListSectionHeaderView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -468,6 +511,7 @@
 				F1B3E646185D08B7008EC150 /* RestaurantDetailViewController.m */,
 				F1AA1DFC187A514700173A2C /* RestaurantMapViewController.h */,
 				F1AA1DFD187A514700173A2C /* RestaurantMapViewController.m */,
+				F178BC26187D67BD006E7EFE /* RestaurantMapViewControllerDelegate.h */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -578,6 +622,7 @@
 				F134F6F718796F7900207650 /* hours@2x.png in Resources */,
 				F134F6F818796F7900207650 /* hours.png in Resources */,
 				F13469AA187BC4420050CAD2 /* satellite.png in Resources */,
+				F17F4562187EBC62004F0ACE /* GreatVibes-Regular.ttf in Resources */,
 				F13469AF187BCBC90050CAD2 /* fitBound@2x.png in Resources */,
 				F1B3E63B185D08B6008EC150 /* Main_iPhone.storyboard in Resources */,
 				F1B3E632185D08B6008EC150 /* InfoPlist.strings in Resources */,
@@ -591,6 +636,7 @@
 				F14D1ED71877C0AF00391AC8 /* gridlayout@2x.png in Resources */,
 				F14D1EE41877C44F00391AC8 /* mapit.png in Resources */,
 				F14D1ED41877BD2300391AC8 /* listlayout@2x.png in Resources */,
+				F178BC23187D5D09006E7EFE /* fswatermark.png in Resources */,
 				F14D1ED31877BD2300391AC8 /* listlayout.png in Resources */,
 				F134F6E91879240200207650 /* quote.png in Resources */,
 				F13469AB187BC4420050CAD2 /* satellite@2x.png in Resources */,
@@ -601,6 +647,7 @@
 				F14D1EC218776D6700391AC8 /* resta_placeholder@2x.png in Resources */,
 				F14D1E541869661500391AC8 /* parsed_data.txt in Resources */,
 				F14D1EDB1877C10600391AC8 /* griddetaillayout.png in Resources */,
+				F178BC21187D5C56006E7EFE /* fswatermark@2x.png in Resources */,
 				F14D1EDC1877C10600391AC8 /* griddetaillayout@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -666,14 +713,19 @@
 				F1B3E641185D08B6008EC150 /* UW_Food_Services.xcdatamodeld in Sources */,
 				F1B3E638185D08B6008EC150 /* AppDelegate.m in Sources */,
 				F14D1EB3187633DA00391AC8 /* RestaurantCollectionViewCell.m in Sources */,
+				F178BC1C187D1C55006E7EFE /* RestaurantListCollectionView.m in Sources */,
 				F13469A3187BB2490050CAD2 /* NSDate+dateToHHmmString.m in Sources */,
+				F178BC2C187D7CA5006E7EFE /* UINavigationController+NoAutoRotate.m in Sources */,
 				F1FC75A81866A99E00133C82 /* Restaurant.m in Sources */,
 				F1FC75AC1866AE0E00133C82 /* UWServerAPIClient.m in Sources */,
+				F178BC2F187E18D7006E7EFE /* RestaurantListSectionHeaderView.m in Sources */,
 				F1AA1DEB187A20A100173A2C /* NSString+HTML.m in Sources */,
 				F1B3E634185D08B6008EC150 /* main.m in Sources */,
 				F1997B7F1867D7F4006B9231 /* NSDate+ISO8601WeekNumber.m in Sources */,
 				F1AA1DF0187A213600173A2C /* GTMNSString+HTML.m in Sources */,
+				F178BC1F187D4AA5006E7EFE /* UIImage+Scale.m in Sources */,
 				F14D1E4F186953FF00391AC8 /* DailyOpeningHours.m in Sources */,
+				F178BC29187D79C2006E7EFE /* UINavigationController+Autorotate.m in Sources */,
 				F1AA1DFE187A514700173A2C /* RestaurantMapViewController.m in Sources */,
 				F14D1E52186964A900391AC8 /* SpecialHours.m in Sources */,
 			);
