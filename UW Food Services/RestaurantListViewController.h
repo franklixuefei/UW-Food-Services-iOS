@@ -11,8 +11,9 @@
 @class RestaurantDetailViewController;
 
 #import <CoreData/CoreData.h>
+#import "RestaurantMapViewControllerDelegate.h"
 
-@interface RestaurantListViewController : UICollectionViewController <NSFetchedResultsControllerDelegate, UICollectionViewDelegateFlowLayout>
+@interface RestaurantListViewController : UICollectionViewController <NSFetchedResultsControllerDelegate, UICollectionViewDelegateFlowLayout, RestaurantMapViewControllerDelegate>
 
 @property (strong, nonatomic) RestaurantDetailViewController *detailViewController;
 
