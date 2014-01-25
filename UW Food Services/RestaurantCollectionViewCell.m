@@ -9,6 +9,7 @@
 #import "RestaurantCollectionViewCell.h"
 #import <QuartzCore/QuartzCore.h>
 #import "UIImageView+AFNetworking.h"
+#import "UIImage+Scale.h"
 #import "UIColor+HexColor.h"
 
 @interface RestaurantCollectionViewCell ()
@@ -84,20 +85,16 @@
     _imageURL = imageURL;
     __weak typeof(_restaurantImageView) weakSelf = _restaurantImageView;
     [_restaurantImageView setImageWithURLRequest:[NSURLRequest requestWithURL:_imageURL] placeholderImage:_placeholder success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-        [weakSelf setImage:image];
+        [weakSelf setImage:[image scaleToMaxWidth:292.0f maxHeight:180.0f]];
         // TODO: maybe fade in the image
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
         NSLog(@"Image for request %@ not loaded. Response: %@", [request URL], response);
     }];
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+- (void)prepareForReuse
 {
-    // Drawing code
+    // Only do cleanup work here.
 }
-*/
 
 @end
