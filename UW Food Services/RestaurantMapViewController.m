@@ -10,6 +10,7 @@
 #import "Restaurant.h"
 #import "OpeningHours.h"
 #import "NSDate+dateToHHmmString.h"
+#import "UINavigationController+Autorotate.h"
 
 #define kOverlayHeightTop (SYSTEM_VERSION_LESS_THAN(@"7.0") ? 44.0f : 64.0f)
 
@@ -37,6 +38,17 @@
 }
 @synthesize restaurantsInfo = _restaurantsInfo;
 @synthesize hybridEnabled = _hybridEnabled;
+@synthesize delegate = _delegate;
+
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    if (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight || toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) {
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+    } else {
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+    }
+}
 
 #pragma mark - ViewController Life Cycle
 
@@ -49,6 +61,18 @@
     
     _hybridEnabled = NO;
     marker_tapped_ = NO;
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    if ([_delegate respondsToSelector:@selector(restaurantMapViewWillAppear)]) {
+        [_delegate restaurantMapViewWillAppear];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:43.4749848
                                                             longitude:-80.5523327
                                                                  zoom:14];
@@ -63,6 +87,9 @@
     self.view = mapView_;
     [self performSelector:@selector(fitBoundWithSender:) withObject:[self.navigationItem.rightBarButtonItems lastObject] afterDelay:0.3f];
     [self addTopOverlay];
+    if ([_delegate respondsToSelector:@selector(restaurantMapViewDidAppear)]) {
+        [_delegate restaurantMapViewDidAppear];
+    }
 }
 
 - (void)initialize
