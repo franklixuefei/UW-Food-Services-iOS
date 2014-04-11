@@ -47,7 +47,6 @@ enum RestaurantsTableSection {
 - (void)mapThem:(__unused id)sender;
 - (void)handleSubviewsLayoutForCell:(RestaurantCollectionViewCell *)cell animated:(BOOL)animated;
 - (void)handleShadowAndCornerRadiusForCell:(RestaurantCollectionViewCell *)cell animated:(BOOL)animated;
-- (void)applyCustomizationToCell:(RestaurantListSectionHeaderView *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @implementation RestaurantListViewController {
@@ -212,8 +211,8 @@ enum RestaurantsTableSection {
     [_refreshControl beginRefreshing];
     
     // init background view
-    UIImage *watermark = [UIImage imageNamed:@"fswatermark"];
-    self.collectionView.backgroundView = [[UIImageView alloc] initWithImage:watermark];
+    UIImage *bgImage = [UIImage imageNamed:@"delicious_food.jpg"];
+    self.collectionView.backgroundView = [[UIImageView alloc] initWithImage:bgImage];
     self.collectionView.backgroundView.layer.opacity = 0.6f;
     self.collectionView.backgroundView.autoresizingMask =UIViewAutoresizingNone;
     self.collectionView.backgroundView.contentMode = UIViewContentModeCenter;
@@ -495,26 +494,12 @@ enum RestaurantsTableSection {
     
     if (kind == UICollectionElementKindSectionHeader) {
         RestaurantListSectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"restaurant_list_header" forIndexPath:indexPath];
-        
-        [self applyCustomizationToCell:headerView atIndexPath:indexPath];
         reusableview = headerView;
     }
     
     return reusableview;
 }
 
-- (void)applyCustomizationToCell:(RestaurantListSectionHeaderView *)cell atIndexPath:(NSIndexPath *)indexPath
-{
-    CGRect headerFrame = cell.frame;
-    headerFrame.size.height = kHeaderFrameHeight;
-    [cell setFrame:headerFrame];
-    UIView *separator = [[UIView alloc] initWithFrame:CGRectMake(10, 15, 300, 1)];
-    separator.backgroundColor = [UIColor colorWithHexValue:0xcccccc andAlpha:1];
-    [cell addSubview:separator];
-    UILabel *sectionLabel = [[UILabel alloc] initWithFrame:CGRectMake(110, 0, 80, 30)];
-    
-//    cell.backgroundColor = [UIColor yellowColor];
-}
 
 
 #pragma mark - Configure Cell

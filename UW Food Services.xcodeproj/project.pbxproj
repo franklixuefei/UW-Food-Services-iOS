@@ -48,13 +48,13 @@
 		F14D1EE41877C44F00391AC8 /* mapit.png in Resources */ = {isa = PBXBuildFile; fileRef = F14D1EE21877C44F00391AC8 /* mapit.png */; };
 		F178BC1C187D1C55006E7EFE /* RestaurantListCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F178BC1B187D1C55006E7EFE /* RestaurantListCollectionView.m */; };
 		F178BC1F187D4AA5006E7EFE /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = F178BC1E187D4AA5006E7EFE /* UIImage+Scale.m */; };
-		F178BC21187D5C56006E7EFE /* fswatermark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F178BC20187D5C56006E7EFE /* fswatermark@2x.png */; };
-		F178BC23187D5D09006E7EFE /* fswatermark.png in Resources */ = {isa = PBXBuildFile; fileRef = F178BC22187D5D09006E7EFE /* fswatermark.png */; };
 		F178BC29187D79C2006E7EFE /* UINavigationController+Autorotate.m in Sources */ = {isa = PBXBuildFile; fileRef = F178BC28187D79C2006E7EFE /* UINavigationController+Autorotate.m */; };
 		F178BC2C187D7CA5006E7EFE /* UINavigationController+NoAutoRotate.m in Sources */ = {isa = PBXBuildFile; fileRef = F178BC2B187D7CA5006E7EFE /* UINavigationController+NoAutoRotate.m */; };
 		F178BC2F187E18D7006E7EFE /* RestaurantListSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F178BC2E187E18D7006E7EFE /* RestaurantListSectionHeaderView.m */; };
 		F17F4562187EBC62004F0ACE /* GreatVibes-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F17F4561187EBC62004F0ACE /* GreatVibes-Regular.ttf */; };
 		F1997B7F1867D7F4006B9231 /* NSDate+ISO8601WeekNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = F1997B7E1867D7F4006B9231 /* NSDate+ISO8601WeekNumber.m */; };
+		F19D6E7C18F87DD400CB47D8 /* delicious_food.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F19D6E7A18F87DD400CB47D8 /* delicious_food.jpg */; };
+		F19D6E7D18F87DD400CB47D8 /* delicious_food@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F19D6E7B18F87DD400CB47D8 /* delicious_food@2x.jpg */; };
 		F1AA1DEB187A20A100173A2C /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AA1DEA187A20A100173A2C /* NSString+HTML.m */; };
 		F1AA1DF0187A213600173A2C /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AA1DED187A213600173A2C /* GTMNSString+HTML.m */; };
 		F1AA1DF1187A213600173A2C /* NSString+XMLEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AA1DEF187A213600173A2C /* NSString+XMLEntities.m */; };
@@ -161,8 +161,6 @@
 		F178BC1B187D1C55006E7EFE /* RestaurantListCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantListCollectionView.m; sourceTree = "<group>"; };
 		F178BC1D187D4AA5006E7EFE /* UIImage+Scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Scale.h"; sourceTree = "<group>"; };
 		F178BC1E187D4AA5006E7EFE /* UIImage+Scale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Scale.m"; sourceTree = "<group>"; };
-		F178BC20187D5C56006E7EFE /* fswatermark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fswatermark@2x.png"; sourceTree = "<group>"; };
-		F178BC22187D5D09006E7EFE /* fswatermark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fswatermark.png; sourceTree = "<group>"; };
 		F178BC26187D67BD006E7EFE /* RestaurantMapViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantMapViewControllerDelegate.h; sourceTree = "<group>"; };
 		F178BC27187D79C2006E7EFE /* UINavigationController+Autorotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Autorotate.h"; sourceTree = "<group>"; };
 		F178BC28187D79C2006E7EFE /* UINavigationController+Autorotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Autorotate.m"; sourceTree = "<group>"; };
@@ -173,6 +171,8 @@
 		F17F4561187EBC62004F0ACE /* GreatVibes-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GreatVibes-Regular.ttf"; sourceTree = "<group>"; };
 		F1997B7D1867D7F4006B9231 /* NSDate+ISO8601WeekNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601WeekNumber.h"; sourceTree = "<group>"; };
 		F1997B7E1867D7F4006B9231 /* NSDate+ISO8601WeekNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601WeekNumber.m"; sourceTree = "<group>"; };
+		F19D6E7A18F87DD400CB47D8 /* delicious_food.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = delicious_food.jpg; sourceTree = "<group>"; };
+		F19D6E7B18F87DD400CB47D8 /* delicious_food@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "delicious_food@2x.jpg"; sourceTree = "<group>"; };
 		F1AA1DE9187A20A100173A2C /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
 		F1AA1DEA187A20A100173A2C /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
 		F1AA1DEC187A213600173A2C /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
@@ -308,8 +308,8 @@
 		F14D1EBA18776AF000391AC8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				F178BC22187D5D09006E7EFE /* fswatermark.png */,
-				F178BC20187D5C56006E7EFE /* fswatermark@2x.png */,
+				F19D6E7A18F87DD400CB47D8 /* delicious_food.jpg */,
+				F19D6E7B18F87DD400CB47D8 /* delicious_food@2x.jpg */,
 				F14D1ED11877BD2300391AC8 /* listlayout.png */,
 				F14D1ED21877BD2300391AC8 /* listlayout@2x.png */,
 				F14D1EBF18776D6700391AC8 /* resta_placeholder.png */,
@@ -616,6 +616,7 @@
 			files = (
 				F13469B6187BE8130050CAD2 /* GoogleMaps.bundle in Resources */,
 				F14D1EB81877641100391AC8 /* RestaurantCollectionViewCell.xib in Resources */,
+				F19D6E7D18F87DD400CB47D8 /* delicious_food@2x.jpg in Resources */,
 				F1B3E63E185D08B6008EC150 /* Main_iPad.storyboard in Resources */,
 				F14D1EC118776D6700391AC8 /* resta_placeholder.png in Resources */,
 				F1B3E649185D08B7008EC150 /* Images.xcassets in Resources */,
@@ -635,8 +636,8 @@
 				F14D1EE01877C39E00391AC8 /* mapthem@2x.png in Resources */,
 				F14D1ED71877C0AF00391AC8 /* gridlayout@2x.png in Resources */,
 				F14D1EE41877C44F00391AC8 /* mapit.png in Resources */,
+				F19D6E7C18F87DD400CB47D8 /* delicious_food.jpg in Resources */,
 				F14D1ED41877BD2300391AC8 /* listlayout@2x.png in Resources */,
-				F178BC23187D5D09006E7EFE /* fswatermark.png in Resources */,
 				F14D1ED31877BD2300391AC8 /* listlayout.png in Resources */,
 				F134F6E91879240200207650 /* quote.png in Resources */,
 				F13469AB187BC4420050CAD2 /* satellite@2x.png in Resources */,
@@ -647,7 +648,6 @@
 				F14D1EC218776D6700391AC8 /* resta_placeholder@2x.png in Resources */,
 				F14D1E541869661500391AC8 /* parsed_data.txt in Resources */,
 				F14D1EDB1877C10600391AC8 /* griddetaillayout.png in Resources */,
-				F178BC21187D5C56006E7EFE /* fswatermark@2x.png in Resources */,
 				F14D1EDC1877C10600391AC8 /* griddetaillayout@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

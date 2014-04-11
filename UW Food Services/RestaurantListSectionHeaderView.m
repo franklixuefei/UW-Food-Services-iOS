@@ -35,6 +35,13 @@
 #warning never do frame/alpha initialization here. dequeueReusableCell method will reset these two properties.
 - (void)initialize
 {
+    CGRect headerFrame = self.frame;
+    headerFrame.size.height = kHeaderFrameHeight;
+    [self setFrame:headerFrame];
+    UIView *separator = [[UIView alloc] initWithFrame:CGRectMake(10, 15, 300, 1)];
+    separator.backgroundColor = [UIColor colorWithHexValue:0xcccccc andAlpha:1];
+    [self addSubview:separator];
+    UILabel *sectionLabel = [[UILabel alloc] initWithFrame:CGRectMake(110, 0, 80, 30)];
     
 }
 
