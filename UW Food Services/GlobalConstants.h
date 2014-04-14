@@ -38,6 +38,8 @@
 #define SUNDAY                  @"sunday"
 
 #define RESTAURANT_COLLECTION_VIEW_CELL_ID  @"restaurant_collection_view_cell_id"
+#define RESTAURANT_COLLECTION_VIEW_HEADER_ID @"restaurant_list_header"
+#define RESTAURANT_COLLECTION_VIEW_FOOTER_ID @"restaurant_list_footer"
 
 #define RESTAURANT_COLLECTION_VIEW_INSETS_GRID              (UIEdgeInsetsMake(0, 10, 0, 10))
 #define RESTAURANT_COLLECTION_VIEW_INSETS_LIST              (UIEdgeInsetsMake(0, 0, 0, 0))

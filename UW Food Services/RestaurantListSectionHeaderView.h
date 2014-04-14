@@ -11,5 +11,6 @@
 #define kHeaderFrameHeight (30)
 
 @interface RestaurantListSectionHeaderView : UICollectionReusableView
+@property (strong, nonatomic) IBOutlet UILabel *header_title;
 
 @end

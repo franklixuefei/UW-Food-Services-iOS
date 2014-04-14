@@ -15,9 +15,7 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
+    if (self = [super initWithFrame:frame]) {
         [self initialize];
     }
     return self;
@@ -26,23 +24,15 @@
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super initWithCoder:aDecoder]) {
-        // Initialization code
         [self initialize];
     }
     return self;
 }
 
-#warning never do frame/alpha initialization here. dequeueReusableCell method will reset these two properties.
+#warning never do frame/alpha initialization here (it will not work). dequeueReusableCell method will reset these two properties.
 - (void)initialize
 {
-    CGRect headerFrame = self.frame;
-    headerFrame.size.height = kHeaderFrameHeight;
-    [self setFrame:headerFrame];
-    UIView *separator = [[UIView alloc] initWithFrame:CGRectMake(10, 15, 300, 1)];
-    separator.backgroundColor = [UIColor colorWithHexValue:0xcccccc andAlpha:1];
-    [self addSubview:separator];
-    UILabel *sectionLabel = [[UILabel alloc] initWithFrame:CGRectMake(110, 0, 80, 30)];
-    
+
 }
 
 
