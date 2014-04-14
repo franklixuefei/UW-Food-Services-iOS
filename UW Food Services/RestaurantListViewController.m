@@ -487,9 +487,10 @@ enum RestaurantsTableSection {
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-//        NSLog(@"collectionView subviews: %@", self.collectionView.subviews);
+// a hack to put the refresh control behind other views.
     [_refreshControl removeFromSuperview];
     [self.collectionView insertSubview:_refreshControl atIndex:0];
+    
     RestaurantCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:RESTAURANT_COLLECTION_VIEW_CELL_ID forIndexPath:indexPath];
     [self handleSubviewsLayoutForCell:cell animated:NO];
     [self handleShadowAndCornerRadiusForCell:cell animated:YES];
