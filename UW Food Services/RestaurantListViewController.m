@@ -277,6 +277,7 @@ enum RestaurantsTableSection {
     
 }
 
+#pragma mark - core method for layout animation
 - (void)handleSubviewsLayoutForCell:(RestaurantCollectionViewCell *)cell animated:(BOOL)animated
 {
     CGRect newLogoFrame = CGRectZero;
@@ -442,14 +443,22 @@ enum RestaurantsTableSection {
     NSLog(@"collectionView: %@ didDeselectItemAtIndexPath: %@", collectionView, indexPath);
 }
 
+
+#pragma mark - toggle highlight
 - (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"collectionView: %@ didHighlightItemAtIndexPath: %@", collectionView, indexPath);
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    [UIView animateWithDuration:0.05f animations:^{
+        cell.transform = CGAffineTransformMakeScale(0.95f, 0.95f);
+    }];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"collectionView: %@ didUnhighlightItemAtIndexPath: %@", collectionView, indexPath);
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    [UIView animateWithDuration:0.05f animations:^{
+        cell.transform = CGAffineTransformIdentity;
+    }];
 }
 
 
@@ -493,10 +502,20 @@ enum RestaurantsTableSection {
     UICollectionReusableView *reusableview = nil;
     
     if (kind == UICollectionElementKindSectionHeader) {
-        RestaurantListSectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"restaurant_list_header" forIndexPath:indexPath];
+        RestaurantListSectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:RESTAURANT_COLLECTION_VIEW_HEADER_ID forIndexPath:indexPath];
+        [headerView.header_title setFont:[UIFont fontWithName:@"Cookie" size:20.0f]];
+        if (indexPath.section == 0) { // restaurants with menu
+            headerView.header_title.text = @"Restaurants with menu";
+        } else if (indexPath.section == 1) { // without menu
+            headerView.header_title.text = @"Other restaurants";
+        }
+        
         reusableview = headerView;
     }
-    
+    if (kind == UICollectionElementKindSectionFooter) {
+        UICollectionReusableView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:RESTAURANT_COLLECTION_VIEW_FOOTER_ID forIndexPath:indexPath];
+        reusableview = footerView;
+    } 
     return reusableview;
 }
 
@@ -506,7 +525,7 @@ enum RestaurantsTableSection {
 
 - (void)configureCell:(RestaurantCollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         Restaurant *r = nil;
         switch (indexPath.section) {
             case RestaurantsTableWithMenuSection:
@@ -518,7 +537,7 @@ enum RestaurantsTableSection {
             default:
                 break;
         }
-//        dispatch_async(dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
             [cell setImageURL:r.logoURL];
             [cell.buildingLabel setText:[NSString stringWithFormat:@"Today @ %@", r.building]];
             [cell.hoursLabel setTextColor:[UIColor blackColor]];
@@ -542,8 +561,8 @@ enum RestaurantsTableSection {
                 [cell.hoursLabel setTextColor:[UIColor lightGrayColor]];
             }
 
-//        });
-//    });
+        });
+    });
     
     
 }
