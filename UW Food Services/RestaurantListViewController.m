@@ -243,6 +243,7 @@ enum RestaurantsTableSection {
     [self.collectionView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
     NSLog(@"change layout button pressed.");
     _currentLayoutState = _nextLayoutState;
+    [self.collectionView reloadData]; 
     [self.collectionView performBatchUpdates:^{
         for (int i = 0; i < [_cells count]; ++i) { // reset cell size corresponding to current layout
             switch (_currentLayoutState) {

@@ -48,3 +48,21 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 0
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 3
 
+// AHEasing
+#define COCOAPODS_POD_AVAILABLE_AHEasing
+#define COCOAPODS_VERSION_MAJOR_AHEasing 1
+#define COCOAPODS_VERSION_MINOR_AHEasing 2
+#define COCOAPODS_VERSION_PATCH_AHEasing 0
+
+// TLIndexPathTools
+#define COCOAPODS_POD_AVAILABLE_TLIndexPathTools
+#define COCOAPODS_VERSION_MAJOR_TLIndexPathTools 0
+#define COCOAPODS_VERSION_MINOR_TLIndexPathTools 2
+#define COCOAPODS_VERSION_PATCH_TLIndexPathTools 1
+
+// TLLayoutTransitioning
+#define COCOAPODS_POD_AVAILABLE_TLLayoutTransitioning
+#define COCOAPODS_VERSION_MAJOR_TLLayoutTransitioning 0
+#define COCOAPODS_VERSION_MINOR_TLLayoutTransitioning 0
+#define COCOAPODS_VERSION_PATCH_TLLayoutTransitioning 2
+

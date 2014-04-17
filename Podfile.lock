@@ -17,11 +17,26 @@ PODS:
   - AFNetworking/Serialization (2.0.3)
   - AFNetworking/UIKit (2.0.3):
     - AFNetworking/NSURLConnection
+  - AHEasing (1.2)
+  - TLIndexPathTools (0.2.1)
+  - TLLayoutTransitioning (0.0.2):
+    - AHEasing
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - TLIndexPathTools (from `https://github.com/wtmoose/TLIndexPathTools.git`)
+  - TLLayoutTransitioning (from `https://github.com/wtmoose/TLLayoutTransitioning.git`)
+
+EXTERNAL SOURCES:
+  TLIndexPathTools:
+    :git: https://github.com/wtmoose/TLIndexPathTools.git
+  TLLayoutTransitioning:
+    :git: https://github.com/wtmoose/TLLayoutTransitioning.git
 
 SPEC CHECKSUMS:
   AFNetworking: e499052cbf3d743e9bb727bb37adb9dc2547ba15
+  AHEasing: 539ed2ec2d50bf14e0ad66789b4e5a5b048aff8b
+  TLIndexPathTools: 396e76177d4e8343d693fa5049aae1be58cefb95
+  TLLayoutTransitioning: 90e59a4bf84c361a2bd4af88167264a61df9c220
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.32.1
