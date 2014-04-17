@@ -85,8 +85,11 @@
     _imageURL = imageURL;
     __weak typeof(_restaurantImageView) weakSelf = _restaurantImageView;
     [_restaurantImageView setImageWithURLRequest:[NSURLRequest requestWithURL:_imageURL] placeholderImage:_placeholder success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-        [weakSelf setImage:[image scaleToMaxWidth:292.0f maxHeight:180.0f]];
-        // TODO: maybe fade in the image
+        if (request) {
+            [UIView transitionWithView:weakSelf duration:0.3f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+                [weakSelf setImage:[image scaleToMaxWidth:292.0f maxHeight:180.0f]];
+            } completion:nil];
+        }
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
         NSLog(@"Image for request %@ not loaded. Response: %@", [request URL], response);
     }];

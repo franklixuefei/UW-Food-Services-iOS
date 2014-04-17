@@ -448,8 +448,8 @@ enum RestaurantsTableSection {
 - (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
-    [UIView animateWithDuration:0.05f animations:^{
-        cell.transform = CGAffineTransformMakeScale(0.95f, 0.95f);
+    [UIView animateWithDuration:0.1f animations:^{
+        cell.transform = CGAffineTransformMakeScale(0.9f, 0.9f);
     }];
 }
 
@@ -506,9 +506,9 @@ enum RestaurantsTableSection {
         RestaurantListSectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:RESTAURANT_COLLECTION_VIEW_HEADER_ID forIndexPath:indexPath];
         [headerView.header_title setFont:[UIFont fontWithName:@"Cookie" size:20.0f]];
         if (indexPath.section == 0) { // restaurants with menu
-            headerView.header_title.text = @"Restaurants with menu";
+            headerView.header_title.text = @"Restaurants with Menu";
         } else if (indexPath.section == 1) { // without menu
-            headerView.header_title.text = @"Other restaurants";
+            headerView.header_title.text = @"Other Restaurants";
         }
         
         reusableview = headerView;
