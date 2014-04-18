@@ -1,25 +1,26 @@
 PODS:
-  - AFNetworking (2.0.3):
+  - AFNetworking (2.2.2):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
     - AFNetworking/UIKit
-  - AFNetworking/NSURLConnection (2.0.3):
+  - AFNetworking/NSURLConnection (2.2.2):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.0.3):
+  - AFNetworking/NSURLSession (2.2.2):
     - AFNetworking/NSURLConnection
-  - AFNetworking/Reachability (2.0.3)
-  - AFNetworking/Security (2.0.3)
-  - AFNetworking/Serialization (2.0.3)
-  - AFNetworking/UIKit (2.0.3):
+  - AFNetworking/Reachability (2.2.2)
+  - AFNetworking/Security (2.2.2)
+  - AFNetworking/Serialization (2.2.2)
+  - AFNetworking/UIKit (2.2.2):
     - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
   - AHEasing (1.2)
   - TLIndexPathTools (0.2.1)
-  - TLLayoutTransitioning (0.0.2):
+  - TLLayoutTransitioning (1.0.0):
     - AHEasing
 
 DEPENDENCIES:
@@ -34,9 +35,9 @@ EXTERNAL SOURCES:
     :git: https://github.com/wtmoose/TLLayoutTransitioning.git
 
 SPEC CHECKSUMS:
-  AFNetworking: e499052cbf3d743e9bb727bb37adb9dc2547ba15
+  AFNetworking: dd8c1868e57451e3d17ebd3516f2a8c16f9646fe
   AHEasing: 539ed2ec2d50bf14e0ad66789b4e5a5b048aff8b
   TLIndexPathTools: 396e76177d4e8343d693fa5049aae1be58cefb95
-  TLLayoutTransitioning: 90e59a4bf84c361a2bd4af88167264a61df9c220
+  TLLayoutTransitioning: 925d8fbcc9964eea933e93600067f759cb823780
 
 COCOAPODS: 0.32.1
