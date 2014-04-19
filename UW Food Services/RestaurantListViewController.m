@@ -38,6 +38,7 @@ enum RestaurantsTableSection {
 @property (strong, nonatomic) UICollectionViewFlowLayout *listLayout;
 @property (strong, nonatomic) UICollectionViewFlowLayout *detailLayout;
 
+- (BOOL)isTodayWithinClosedListOfRestaurant:(Restaurant*)restaurant;
 - (void)configureCell:(RestaurantCollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)reload:(__unused id)sender;
 - (void)didEndReload;
@@ -76,6 +77,7 @@ enum RestaurantsTableSection {
 }
  */
 
+
 - (void)reload:(__unused id)sender {
     self.navigationItem.leftBarButtonItem.enabled = NO;
     self.navigationItem.rightBarButtonItem.enabled = NO;
@@ -89,6 +91,7 @@ enum RestaurantsTableSection {
         NSDictionary *restaurants_menu_date_info = [parsedData valueForKey:RESTA_MENU_DATE_INFO];
         NSMutableArray *mutableRestaurantsWithMenu = [NSMutableArray arrayWithCapacity:[restaurants_with_menu count]];
         NSMutableArray *mutableRestaurantsWithoutMenu = [NSMutableArray arrayWithCapacity:[restaurants_without_menu count]];
+        // convert parsed raw data into array of Restaurants;
         for (NSDictionary *restaurant_info in restaurants_with_menu) {
             Restaurant *restaurant = [[Restaurant alloc] initWithAttributes:restaurant_info];
             [mutableRestaurantsWithMenu addObject:restaurant];
@@ -247,7 +250,7 @@ enum RestaurantsTableSection {
     // init background view
     UIImage *bgImage = [UIImage imageNamed:@"delicious_food.jpg"];
     self.collectionView.backgroundView = [[UIImageView alloc] initWithImage:bgImage];
-    self.collectionView.backgroundView.layer.opacity = 0.6f;
+//    self.collectionView.backgroundView.layer.opacity = 0.8f;
     self.collectionView.backgroundView.autoresizingMask =UIViewAutoresizingNone;
     self.collectionView.backgroundView.contentMode = UIViewContentModeCenter;
     
@@ -520,6 +523,19 @@ enum RestaurantsTableSection {
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"collectionView: %@ didSelectItemAtIndexPath: %@", collectionView, indexPath);
+    RestaurantDetailViewController *detailController = [self.storyboard instantiateViewControllerWithIdentifier:@"restaurant_detail"];
+    switch (indexPath.section) {
+        case RestaurantsTableWithMenuSection:
+            detailController.restaurant = [_restaurantsWithMenu objectAtIndex:indexPath.item];
+            break;
+        case RestaurantsTableWithoutMenuSection:
+            detailController.restaurant = [_restaurantsWithoutMenu objectAtIndex:indexPath.item];
+            break;
+        default:
+            break;
+    }
+	[self.navigationController popToRootViewControllerAnimated:NO];
+	[self.navigationController pushViewController:detailController animated:YES];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -614,6 +630,30 @@ enum RestaurantsTableSection {
 
 #pragma mark - Configure Cell
 
+- (BOOL)isTodayWithinClosedListOfRestaurant:(Restaurant*)restaurant
+{
+    for (NSDate *date in restaurant.dates_closed) {
+        
+        NSDateComponents *components = [[NSCalendar currentCalendar]
+                                        components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
+                                        fromDate:[NSDate date]];
+        NSDate *today = [[NSCalendar currentCalendar]
+                         dateFromComponents:components];
+        
+        NSComparisonResult result = [today compare:date];
+        switch (result)
+        {
+            case NSOrderedSame:
+                NSLog(@"restaurant that is closed today due to dates_closed: %@, at %@", restaurant.outletName, restaurant.building);
+                return YES;
+                break;
+            default:
+                break;
+        }
+    }
+    return NO;
+}
+
 - (void)configureCell:(RestaurantCollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -629,12 +669,13 @@ enum RestaurantsTableSection {
                 break;
         }
         dispatch_async(dispatch_get_main_queue(), ^{
+            BOOL withinClosedList = [self isTodayWithinClosedListOfRestaurant:r];
             [cell setImageURL:r.logoURL];
             [cell.buildingLabel setText:[NSString stringWithFormat:@"Today @ %@", r.building]];
             [cell.hoursLabel setTextColor:[UIColor blackColor]];
             [cell.hoursLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:12.0f]];
             [cell.titleLabel setText:r.outletName];
-            [cell.openCloseLabel setTextColor:r.is_open_now?[UIColor greenColor]:[UIColor lightGrayColor]];
+            [cell.openCloseLabel setTextColor:r.is_open_now&&!withinClosedList?[UIColor greenColor]:[UIColor lightGrayColor]];
             [cell.descriptionLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:12.0f]];
             [cell.descriptionLabel setTextColor:[UIColor darkGrayColor]];
             if ([FoodNull isNSNullOrNil:r.outletDescription]) {
@@ -644,7 +685,7 @@ enum RestaurantsTableSection {
             } else {
                 [cell.descriptionLabel setText:[r.outletDescription stringByDecodingHTMLEntities]];
             }
-            if (!r.opening_hours.today.is_closed) {
+            if (!r.opening_hours.today.is_closed && !withinClosedList) {
                 [cell.hoursLabel setText:[NSString stringWithFormat:@"%@ - %@", r.opening_hours.today.opening_hour.dateToStringWithHHmmFormat, r.opening_hours.today.closing_hour.dateToStringWithHHmmFormat]];
             } else {
                 [cell.hoursLabel setText:@"Closed today"];
@@ -654,8 +695,7 @@ enum RestaurantsTableSection {
 
         });
     });
-    
-    
+
 }
 
 
@@ -729,6 +769,8 @@ enum RestaurantsTableSection {
         RestaurantMapViewController *mapViewController = [segue destinationViewController];
         mapViewController.delegate = self;
         mapViewController.restaurantsInfo = [_restaurantsWithMenu arrayByAddingObjectsFromArray:_restaurantsWithoutMenu];
+    } else if ([[segue identifier] isEqualToString:@"restaDetail"]) {
+
     }
 }
 
