@@ -22,7 +22,7 @@
 #import "NSDate+dateToHHmmString.h"
 #import <UIKit/UIKit.h>
 #import "UINavigationController+NoAutorotate.h"
-
+#import "TLTransitionLayout.h"
 enum State {Grid = 0, SmallList, DetailedList, TotalNumLayouts};
 
 enum RestaurantsTableSection {
@@ -32,12 +32,11 @@ enum RestaurantsTableSection {
 };
 
 @interface RestaurantListViewController ()
-@property (readwrite, nonatomic, strong) NSArray *restaurantsWithMenu;
-@property (readwrite, nonatomic, strong) NSArray *restaurantsWithoutMenu;
-@property (readwrite, nonatomic, strong) NSArray *restaurantsMenu;
-@property (readwrite, nonatomic, strong) NSArray *menuDate;
-@property (readwrite, nonatomic) enum State nextLayoutState;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
+@property (nonatomic) enum State nextLayoutState;
+@property (strong, nonatomic) UICollectionViewFlowLayout *gridLayout;
+@property (strong, nonatomic) UICollectionViewFlowLayout *listLayout;
+@property (strong, nonatomic) UICollectionViewFlowLayout *detailLayout;
 
 - (void)configureCell:(RestaurantCollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)reload:(__unused id)sender;
@@ -45,28 +44,28 @@ enum RestaurantsTableSection {
 - (void)initBasicUI;
 - (void)changeLayout:(__unused id)sender;
 - (void)mapThem:(__unused id)sender;
-- (void)handleSubviewsLayoutForCell:(RestaurantCollectionViewCell *)cell animated:(BOOL)animated;
-- (void)handleShadowAndCornerRadiusForCell:(RestaurantCollectionViewCell *)cell animated:(BOOL)animated;
+- (void)handleSubviewsLayoutForCell:(RestaurantCollectionViewCell *)cell withProgress:(CGFloat)progress;
+- (void)handleShadowAndCornerRadiusForCells:(NSArray *)cells;
 @end
 
 @implementation RestaurantListViewController {
+    NSArray *_restaurantsWithMenu;
+    NSArray *_restaurantsWithoutMenu;
+    NSArray *_restaurantsMenu;
+    NSArray *_menuDate;
     NSMutableArray *_cells;
-    UIImage *_listLayout;
-    UIImage *_gridLayout;
-    UIImage *_gridDetailLayout;
+    UIImage *_listLayoutImg;
+    UIImage *_gridLayoutImg;
+    UIImage *_gridDetailLayoutImg;
     enum State _currentLayoutState;
     BOOL _layoutAnimating;
     CGRect _cellImageViewFrame;
-//    UIActivityIndicatorView *_indicator;
+    NSIndexPath *_indexPathForFirstVisibleItem;
+/*    UIActivityIndicatorView *_indicator; */
 }
 
-@synthesize restaurantsWithMenu = _restaurantsWithMenu;
-@synthesize restaurantsWithoutMenu = _restaurantsWithoutMenu;
-@synthesize restaurantsMenu = _restaurantsMenu;
-@synthesize menuDate = _menuDate;
-@synthesize nextLayoutState = _nextLayoutState;
-@synthesize refreshControl = _refreshControl;
 
+/*
 - (void)awakeFromNib
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -75,6 +74,7 @@ enum RestaurantsTableSection {
     }
     [super awakeFromNib];
 }
+ */
 
 - (void)reload:(__unused id)sender {
     self.navigationItem.leftBarButtonItem.enabled = NO;
@@ -93,12 +93,12 @@ enum RestaurantsTableSection {
             Restaurant *restaurant = [[Restaurant alloc] initWithAttributes:restaurant_info];
             [mutableRestaurantsWithMenu addObject:restaurant];
         }
-        self.restaurantsWithMenu = [NSArray arrayWithArray:mutableRestaurantsWithMenu];
+        _restaurantsWithMenu = [NSArray arrayWithArray:mutableRestaurantsWithMenu];
         for (NSDictionary *restaurant_info in restaurants_without_menu) {
             Restaurant *restaurant = [[Restaurant alloc] initWithAttributes:restaurant_info];
             [mutableRestaurantsWithoutMenu addObject:restaurant];
         }
-        self.restaurantsWithoutMenu = [NSArray arrayWithArray:mutableRestaurantsWithoutMenu];
+        _restaurantsWithoutMenu = [NSArray arrayWithArray:mutableRestaurantsWithoutMenu];
         
         // TODO: initiate Menu objects.
         [_cells removeAllObjects];
@@ -168,34 +168,68 @@ enum RestaurantsTableSection {
 	// Do any additional setup after loading the view, typically from a nib.
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+    self.gridLayout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
+    self.listLayout = [[UICollectionViewFlowLayout alloc] init];
+    self.detailLayout = [[UICollectionViewFlowLayout alloc] init];
+    
+    // initialize all layouts
+    self.gridLayout.itemSize = RESTAURANT_COLLECTION_VIEW_CELL_SIZE_GRID;
+    self.gridLayout.sectionInset = RESTAURANT_COLLECTION_VIEW_INSETS_GRID;
+    self.gridLayout.minimumLineSpacing = RESTAURANT_COLLECTION_VIEW_MIN_LINE_SPACING_GRID;
+    
+    self.listLayout.itemSize = RESTAURANT_COLLECTION_VIEW_CELL_SIZE_LIST;
+    self.listLayout.sectionInset = RESTAURANT_COLLECTION_VIEW_INSETS_LIST;
+    self.listLayout.minimumLineSpacing = RESTAURANT_COLLECTION_VIEW_MIN_LINE_SPACING_LIST;
+    
+    self.detailLayout.itemSize = RESTAURANT_COLLECTION_VIEW_CELL_SIZE_DETAILED_LIST;
+    self.detailLayout.sectionInset = RESTAURANT_COLLECTION_VIEW_INSETS_DETAILED_LIST;
+    self.detailLayout.minimumLineSpacing = RESTAURANT_COLLECTION_VIEW_MIN_LINE_SPACING_DETAILED_LIST;
+    
+    self.gridLayout.minimumInteritemSpacing = self.listLayout.minimumInteritemSpacing = self.detailLayout.minimumInteritemSpacing = RESTAURANT_COLLECTION_VIEW_MIN_CELL_SPACING;
+    self.listLayout.headerReferenceSize = self.detailLayout.headerReferenceSize = _gridLayout.headerReferenceSize;
+    self.listLayout.footerReferenceSize = self.detailLayout.footerReferenceSize = _gridLayout.footerReferenceSize;
+    
+    self.listLayout.scrollDirection = self.detailLayout.scrollDirection = _gridLayout.scrollDirection;
+    
+    
     _cells = [NSMutableArray array];
     _layoutAnimating = NO;
     UINib *cellNib = [UINib nibWithNibName:@"RestaurantCollectionViewCell" bundle:nil];
     [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:RESTAURANT_COLLECTION_VIEW_CELL_ID];
     [self initBasicUI];
-//    self.detailViewController = (RestaurantDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    /* // for ipad version.
+    self.detailViewController = (RestaurantDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+     */
 
     [self reload:nil];
 }
 
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    _indexPathForFirstVisibleItem = [self findMinIndexPathForArray:self.collectionView.indexPathsForVisibleItems];
+}
+
 - (void)initBasicUI
 {
-    _listLayout = [[UIImage imageNamed:@"listlayout"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    _gridLayout = [[UIImage imageNamed:@"gridlayout"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    _gridDetailLayout = [[UIImage imageNamed:@"griddetaillayout"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    _listLayoutImg = [[UIImage imageNamed:@"listlayout"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    _gridLayoutImg = [[UIImage imageNamed:@"gridlayout"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    _gridDetailLayoutImg = [[UIImage imageNamed:@"griddetaillayout"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     _nextLayoutState = SmallList;
     _currentLayoutState = Grid;
     
     // init navigation controller
-    UIBarButtonItem *layoutButton = [[UIBarButtonItem alloc] initWithImage:_listLayout style:UIBarButtonItemStylePlain target:self action:@selector(changeLayout:)];
+    UIBarButtonItem *layoutButton = [[UIBarButtonItem alloc] initWithImage:_listLayoutImg style:UIBarButtonItemStylePlain target:self action:@selector(changeLayout:)];
     self.navigationItem.rightBarButtonItem = layoutButton;
     self.navigationItem.rightBarButtonItem.enabled = NO;
     UIBarButtonItem *mapThemButton = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"mapthem"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(mapThem:)];
     [layoutButton setImageInsets:BAR_BUTTON_ITEM_INSETS];
     [mapThemButton setImageInsets:BAR_BUTTON_ITEM_INSETS];
-//    _indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-//    _indicator.hidesWhenStopped = YES;
-//    UIBarButtonItem *indicatorItem = [[UIBarButtonItem alloc] initWithCustomView:_indicator];
+    /*
+    _indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    _indicator.hidesWhenStopped = YES;
+    UIBarButtonItem *indicatorItem = [[UIBarButtonItem alloc] initWithCustomView:_indicator];
+     */
     self.navigationItem.leftBarButtonItems = @[mapThemButton/*, indicatorItem*/];
     self.navigationItem.leftBarButtonItem.enabled = NO;
     self.collectionView.backgroundColor = [UIColor colorWithHexValue:0xdddddd andAlpha:1];
@@ -224,26 +258,77 @@ enum RestaurantsTableSection {
     _nextLayoutState = nextLayoutState;
     switch (_nextLayoutState) {
         case Grid:
-            [self.navigationItem.rightBarButtonItem setImage:_gridLayout];
+            [self.navigationItem.rightBarButtonItem setImage:_gridLayoutImg];
             break;
         case SmallList:
-            [self.navigationItem.rightBarButtonItem setImage:_listLayout];
+            [self.navigationItem.rightBarButtonItem setImage:_listLayoutImg];
             break;
         case DetailedList:
-            [self.navigationItem.rightBarButtonItem setImage:_gridDetailLayout];
+            [self.navigationItem.rightBarButtonItem setImage:_gridDetailLayoutImg];
             break;
         default:
             break;
     }
 }
 
+- (NSIndexPath*)findMinIndexPathForArray:(NSArray*)indexPaths
+{
+    if ([indexPaths count] <= 1) {
+        return indexPaths.firstObject;
+    }
+    NSIndexPath *minIndexPath = indexPaths.firstObject;
+    for (NSIndexPath *indexPath in indexPaths) {
+        if ([indexPath compare:minIndexPath] == NSOrderedAscending) {
+            minIndexPath = indexPath;
+        }
+    }
+    return minIndexPath;
+}
+
 - (void)changeLayout:(id)sender
 {
     if (_layoutAnimating) return;
-    [self.collectionView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
     NSLog(@"change layout button pressed.");
     _currentLayoutState = _nextLayoutState;
-    [self.collectionView reloadData]; 
+    _indexPathForFirstVisibleItem = [self findMinIndexPathForArray:self.collectionView.indexPathsForVisibleItems];
+    
+    UICollectionViewLayout *toLayout = nil;
+    switch (_currentLayoutState) {
+        case Grid:
+            toLayout = _gridLayout;
+            break;
+        case SmallList:
+            toLayout = _listLayout;
+            break;
+        case DetailedList:
+            toLayout = _detailLayout;
+            break;
+        default:
+            break;
+    }
+    _layoutAnimating = YES;
+    [self handleShadowAndCornerRadiusForCells:self.collectionView.visibleCells];
+    TLTransitionLayout *layout = (TLTransitionLayout *)[self.collectionView transitionToCollectionViewLayout:toLayout duration:0.3f easing:CubicEaseInOut completion:^(BOOL completed, BOOL finish) {
+        _layoutAnimating = NO;
+        [self handleShadowAndCornerRadiusForCells:self.collectionView.visibleCells];
+        if (completed && finish) {
+            _indexPathForFirstVisibleItem = [self findMinIndexPathForArray:self.collectionView.indexPathsForVisibleItems];
+        }
+    }];
+    
+    CGPoint toOffset = [self.collectionView toContentOffsetForLayout:layout indexPaths:@[_indexPathForFirstVisibleItem] placement:TLTransitionLayoutIndexPathPlacementMinimal placementAnchor:kTLPlacementAnchorDefault placementInset:UIEdgeInsetsZero toSize:self.collectionView.bounds.size toContentInset:self.collectionView.contentInset];
+    
+    layout.toContentOffset = toOffset;
+    [layout setUpdateLayoutAttributes:^UICollectionViewLayoutAttributes *(UICollectionViewLayoutAttributes *pose, UICollectionViewLayoutAttributes *fromPose, UICollectionViewLayoutAttributes *toPose, CGFloat progress) {
+
+        RestaurantCollectionViewCell *cell = (RestaurantCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:pose.indexPath];
+        if (cell) {
+            [self handleSubviewsLayoutForCell:cell withProgress:progress];
+            
+        }
+        return nil;
+    }];
+    /*
     [self.collectionView performBatchUpdates:^{
         for (int i = 0; i < [_cells count]; ++i) { // reset cell size corresponding to current layout
             switch (_currentLayoutState) {
@@ -274,12 +359,32 @@ enum RestaurantsTableSection {
             [self handleShadowAndCornerRadiusForCell:cell animated:NO];
         }
     }];
+     */
     self.nextLayoutState = (_nextLayoutState + 1) % TotalNumLayouts;
     
 }
 
 #pragma mark - core method for layout animation
-- (void)handleSubviewsLayoutForCell:(RestaurantCollectionViewCell *)cell animated:(BOOL)animated
+
+- (CGRect)calculateIntermediateFrameForCurrentFrame:(CGRect)currentFrame
+                                          nextFrame:(CGRect)nextFrame
+                                        andProgress:(CGFloat)progress
+{
+    return CGRectMake(
+                      currentFrame.origin.x + (nextFrame.origin.x - currentFrame.origin.x) * progress,
+                      currentFrame.origin.y + (nextFrame.origin.y - currentFrame.origin.y) * progress,
+                      currentFrame.size.width + (nextFrame.size.width - currentFrame.size.width) * progress ,
+                      currentFrame.size.height + (nextFrame.size.height - currentFrame.size.height) * progress);
+}
+
+- (CGFloat)calculateIntermediateAlphaForCurrentAlpha:(CGFloat)currentAlpha
+                                           nextAlpha:(CGFloat)nextAlpha
+                                         andProgress:(CGFloat)progress
+{
+    return currentAlpha + (nextAlpha - currentAlpha) * progress;
+}
+
+- (void)handleSubviewsLayoutForCell:(RestaurantCollectionViewCell *)cell withProgress:(CGFloat)progress
 {
     CGRect newLogoFrame = CGRectZero;
     CGRect newSeparatorFrame = CGRectZero;
@@ -347,61 +452,58 @@ enum RestaurantsTableSection {
         default:
             break;
     }
-    [UIView animateWithDuration:animated?0.3f:0 animations:^{
-        cell.restaurantImageView.frame = newLogoFrame;
-        cell.separator.frame = newSeparatorFrame;
-        cell.separator.alpha = separatorAlpha;
-        cell.titleLabel.frame = newTitleFrame;
-        cell.titleLabel.alpha = titleAlpha;
-        cell.buildingLabel.frame = newBuildingFrame;
-        cell.buildingIcon.frame = newBuildingIconFrame;
-        cell.hoursLabel.frame = newHourFrame;
-        cell.hoursIcon.frame = newHourIconFrame;
-        cell.openCloseLabel.frame = newDotFrame;
-        cell.quote.frame = newQuoteFrame;
-        cell.quote.alpha = quoteAlpha;
-        cell.descriptionLabel.frame = newDescriptionFrame;
-        cell.descriptionLabel.alpha = descriptionAlpha;
-    }];
+        
+    cell.restaurantImageView.frame = [self calculateIntermediateFrameForCurrentFrame:cell.restaurantImageView.frame nextFrame:newLogoFrame andProgress:progress];
+    cell.separator.frame = [self calculateIntermediateFrameForCurrentFrame:cell.separator.frame nextFrame:newSeparatorFrame andProgress:progress];
+    cell.separator.alpha = [self calculateIntermediateAlphaForCurrentAlpha:cell.separator.alpha nextAlpha:separatorAlpha andProgress:progress];
+    cell.titleLabel.frame = [self calculateIntermediateFrameForCurrentFrame:cell.titleLabel.frame nextFrame:newTitleFrame andProgress:progress];
+    cell.titleLabel.alpha = [self calculateIntermediateAlphaForCurrentAlpha:cell.titleLabel.alpha nextAlpha:titleAlpha andProgress:progress];
+    cell.buildingLabel.frame = [self calculateIntermediateFrameForCurrentFrame:cell.buildingLabel.frame nextFrame:newBuildingFrame andProgress:progress];
+    cell.buildingIcon.frame = [self calculateIntermediateFrameForCurrentFrame:cell.buildingIcon.frame nextFrame:newBuildingIconFrame andProgress:progress];
+    cell.hoursLabel.frame = [self calculateIntermediateFrameForCurrentFrame:cell.hoursLabel.frame nextFrame:newHourFrame andProgress:progress];
+    cell.hoursIcon.frame = [self calculateIntermediateFrameForCurrentFrame:cell.hoursIcon.frame nextFrame:newHourIconFrame andProgress:progress];
+    cell.openCloseLabel.frame = [self calculateIntermediateFrameForCurrentFrame:cell.openCloseLabel.frame nextFrame:newDotFrame andProgress:progress];
+    cell.quote.frame = [self calculateIntermediateFrameForCurrentFrame:cell.quote.frame nextFrame:newQuoteFrame andProgress:progress];
+    cell.quote.alpha = [self calculateIntermediateAlphaForCurrentAlpha:cell.quote.alpha nextAlpha:quoteAlpha andProgress:progress];
+    cell.descriptionLabel.frame = [self calculateIntermediateFrameForCurrentFrame:cell.descriptionLabel.frame nextFrame:newDescriptionFrame andProgress:progress];
+    cell.descriptionLabel.alpha = [self calculateIntermediateAlphaForCurrentAlpha:cell.descriptionLabel.alpha nextAlpha:descriptionAlpha andProgress:progress];
 }
 
-- (void)handleShadowAndCornerRadiusForCell:(RestaurantCollectionViewCell *)cell animated:(BOOL)animated
+- (void)handleShadowAndCornerRadiusForCells:(NSArray *)cells
 {
-    cell.layer.shadowPath = [UIBezierPath bezierPathWithRect:cell.bounds].CGPath;
-    [UIView animateWithDuration:animated?0.3f:0 animations:^{
-        
-        if (_layoutAnimating) {
-            cell.layer.shadowOpacity = 0.0f;
-            cell.layer.cornerRadius = 2.0f;
-        } else if (_currentLayoutState != SmallList) {
+    for (RestaurantCollectionViewCell *cell in cells) {
+        cell.layer.shadowPath = [UIBezierPath bezierPathWithRect:cell.bounds].CGPath;
+        if (!_layoutAnimating) {
             cell.layer.shadowOpacity = 0.8f;
-            cell.layer.cornerRadius = 2.0f;
         } else {
-            cell.layer.cornerRadius = 0.0f;
+            cell.layer.shadowOpacity = 0.0f;
         }
-        
-        if (_currentLayoutState == SmallList) {
+        if (_currentLayoutState != SmallList) {
+            cell.layer.cornerRadius = 2.0f;
             cell.restaurantImageView.layer.cornerRadius = 2.0f;
         } else {
+            cell.layer.cornerRadius = 0.0f;
             cell.restaurantImageView.layer.cornerRadius = 0.0f;
         }
-        
-    }];
+    }
+    
 }
 
 
 - (void)mapThem:(id)sender
 {
     NSLog(@"mapThem button pressed.");
-//    [_indicator startAnimating];
-
+/*    
+    [_indicator startAnimating];
+ */
     
-    /* First way */
-//    RestaurantMapViewController *mapController = [self.storyboard instantiateViewControllerWithIdentifier:@"showMap"];
-//	[self.navigationController popToRootViewControllerAnimated:NO];
-//	[self.navigationController pushViewController:mapController animated:YES];
+/* // First way - pushViewController
+    RestaurantMapViewController *mapController = [self.storyboard instantiateViewControllerWithIdentifier:@"showMap"];
+	[self.navigationController popToRootViewControllerAnimated:NO];
+	[self.navigationController pushViewController:mapController animated:YES];
+ */
     
-    /* Second way */
+/* // Second way - performSegueWithIdentifier */
     [self performSegueWithIdentifier:@"showMap" sender:sender];
 }
 
@@ -411,25 +513,6 @@ enum RestaurantsTableSection {
     // Dispose of any resources that can be recreated.
 }
 
-//- (void)insertNewObject:(id)sender
-//{
-//    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-//    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-//    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-//    
-//    // If appropriate, configure the new managed object.
-//    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-//    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-//    
-//    // Save the context.
-//    NSError *error = nil;
-//    if (![context save:&error]) {
-//         // Replace this implementation with code to handle the error appropriately.
-//         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-//        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-//        abort();
-//    }
-//}
 
 
 #pragma mark - UICollectionViewDelegate
@@ -442,6 +525,12 @@ enum RestaurantsTableSection {
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"collectionView: %@ didDeselectItemAtIndexPath: %@", collectionView, indexPath);
+}
+
+- (UICollectionViewTransitionLayout *)collectionView:(UICollectionView *)collectionView transitionLayoutForOldLayout:(UICollectionViewLayout *)fromLayout newLayout:(UICollectionViewLayout *)toLayout
+{
+    TLTransitionLayout *layout = [[TLTransitionLayout alloc] initWithCurrentLayout:fromLayout nextLayout:toLayout supplementaryKinds:@[UICollectionElementKindSectionHeader, UICollectionElementKindSectionFooter]];
+    return layout;
 }
 
 
@@ -493,8 +582,8 @@ enum RestaurantsTableSection {
     [self.collectionView insertSubview:_refreshControl atIndex:0];
     
     RestaurantCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:RESTAURANT_COLLECTION_VIEW_CELL_ID forIndexPath:indexPath];
-    [self handleSubviewsLayoutForCell:cell animated:NO];
-    [self handleShadowAndCornerRadiusForCell:cell animated:YES];
+    [self handleSubviewsLayoutForCell:cell withProgress:1.0f];
+    [self handleShadowAndCornerRadiusForCells:@[cell]];
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
@@ -569,8 +658,20 @@ enum RestaurantsTableSection {
     
 }
 
-#pragma mark - UICollectionViewDelegateFlowLayout
 
+
+#pragma mark - UICollectionViewDelegateFlowLayout
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    return CGSizeMake(50, 53);
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
+{
+    return CGSizeMake(50, 15);
+}
+
+/*
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSValue *sizeValue = [_cells objectAtIndex:indexPath.item];
@@ -619,7 +720,9 @@ enum RestaurantsTableSection {
 {
     return RESTAURANT_COLLECTION_VIEW_MIN_CELL_SPACING;
 }
+*/
 
+#pragma mark
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showMap"]) {
@@ -629,206 +732,22 @@ enum RestaurantsTableSection {
     }
 }
 
-#pragma mark - RestaurantMapViewControllerDelegate methods
+#pragma mark - RestaurantMapViewControllerDelegate
 
 - (void)restaurantMapViewDidAppear
 {
-//    [_indicator stopAnimating];
+    /*
+    [_indicator stopAnimating];
+     */
 }
-
-//-(void) performSegueWithIdentifier:(NSString *)identifier sender:(id)sender
-//{
-//    
-//}
-
-//
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
-//{
-//    
-//}
-//
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
-//{
-//    
-//}
-
-
-#pragma mark - Table View
-
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-////    return [[self.fetchedResultsController sections] count];
-//    return RestaurantsTableTotalSections;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//    NSInteger numRows = 0;
-//    switch (section) {
-//        case RestaurantsTableWithMenuSection:
-//            numRows = [_restaurantsWithMenu count];
-//            break;
-//        case RestaurantsTableWithoutMenuSection:
-//            numRows = [_restaurantsWithoutMenu count];
-//            break;
-//        default:
-//            break;
-//    }
-////    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-////    return [sectionInfo numberOfObjects];
-//    return numRows;
-//}
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-//    [self configureCell:cell atIndexPath:indexPath];
-//    return cell;
-//}
-//
-//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    // Return NO if you do not want the specified item to be editable.
-//    return YES;
-//}
-//
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    if (editingStyle == UITableViewCellEditingStyleDelete) {
-//        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-//        [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-//        
-//        NSError *error = nil;
-//        if (![context save:&error]) {
-//             // Replace this implementation with code to handle the error appropriately.
-//             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-//            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-//            abort();
-//        }
-//    }   
-//}
-//
-//- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    // The table view should not be re-orderable.
-//    return NO;
-//}
-//
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-//        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-//        self.detailViewController.detailItem = object;
-//    }
-//}
-//
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-//        [[segue destinationViewController] setDetailItem:object];
-//    }
-//}
-//
-//#pragma mark - Fetched results controller
-//
-//- (NSFetchedResultsController *)fetchedResultsController
-//{
-//    if (_fetchedResultsController != nil) {
-//        return _fetchedResultsController;
-//    }
-//    
-//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-//    // Edit the entity name as appropriate.
-//    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
-//    [fetchRequest setEntity:entity];
-//    
-//    // Set the batch size to a suitable number.
-//    [fetchRequest setFetchBatchSize:20];
-//    
-//    // Edit the sort key as appropriate.
-//    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO];
-//    NSArray *sortDescriptors = @[sortDescriptor];
-//    
-//    [fetchRequest setSortDescriptors:sortDescriptors];
-//    
-//    // Edit the section name key path and cache name if appropriate.
-//    // nil for section name key path means "no sections".
-//    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
-//    aFetchedResultsController.delegate = self;
-//    self.fetchedResultsController = aFetchedResultsController;
-//    
-//	NSError *error = nil;
-//	if (![self.fetchedResultsController performFetch:&error]) {
-//	     // Replace this implementation with code to handle the error appropriately.
-//	     // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-//	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-//	    abort();
-//	}
-//    
-//    return _fetchedResultsController;
-//}    
-//
-//- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
-//{
-//    [self.tableView beginUpdates];
-//}
-//
-//- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
-//           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
-//{
-//    switch(type) {
-//        case NSFetchedResultsChangeInsert:
-//            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
-//            break;
-//            
-//        case NSFetchedResultsChangeDelete:
-//            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
-//            break;
-//    }
-//}
-//
-//- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
-//       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
-//      newIndexPath:(NSIndexPath *)newIndexPath
-//{
-//    UITableView *tableView = self.tableView;
-//    
-//    switch(type) {
-//        case NSFetchedResultsChangeInsert:
-//            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-//            break;
-//            
-//        case NSFetchedResultsChangeDelete:
-//            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//            break;
-//            
-//        case NSFetchedResultsChangeUpdate:
-//            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
-//            break;
-//            
-//        case NSFetchedResultsChangeMove:
-//            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-//            break;
-//    }
-//}
-//
-//- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-//{
-//    [self.tableView endUpdates];
-//}
 
 /*
-// Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed. 
- 
- - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+-(void) performSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
-    // In the simplest, most efficient, case, reload the table view.
-    [self.tableView reloadData];
+    
 }
- */
+*/
+
 
 
 

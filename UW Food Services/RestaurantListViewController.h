@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <TLIndexPathTools/TLCollectionViewController.h>
+#import <TLLayoutTransitioning/UICollectionView+TLTransitioning.h>
+#import "easing.h"
 
 @class RestaurantDetailViewController;
 
 #import <CoreData/CoreData.h>
 #import "RestaurantMapViewControllerDelegate.h"
 
-@interface RestaurantListViewController : UICollectionViewController <NSFetchedResultsControllerDelegate, UICollectionViewDelegateFlowLayout, RestaurantMapViewControllerDelegate>
+@interface RestaurantListViewController : TLCollectionViewController <NSFetchedResultsControllerDelegate, UICollectionViewDelegateFlowLayout, RestaurantMapViewControllerDelegate>
 
 @property (strong, nonatomic) RestaurantDetailViewController *detailViewController;
 
