@@ -21,8 +21,8 @@ TODO:
         12. Add "sort by name/opening hour/closing hour/opening now/with/without menu."
         13. [Nice to have] Add a search bar like in eBay app.
         14. do not show supplementary views on first load. Show some pic instead.
-
-
+        15. [Done]Integrate data_closed from outlet API into opening_hours.
+        16. instead of using two sections, use one section only, and decorate the cells that have menus with [menu inside]
 	- MapThem! Page:
 
 		1. Push to detail view controller when tapped on info windows.

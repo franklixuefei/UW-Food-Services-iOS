@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Restaurant.h"
 
 @interface RestaurantDetailViewController : UIViewController <UISplitViewControllerDelegate>
 
-@property (strong, nonatomic) id detailItem;
-
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (strong, nonatomic) Restaurant* restaurant;
 @end
