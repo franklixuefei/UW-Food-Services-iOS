@@ -20,6 +20,7 @@ TODO:
         11. Add open/closed tag for table view cell only.
         12. Add "sort by name/opening hour/closing hour/opening now/with/without menu."
         13. [Nice to have] Add a search bar like in eBay app.
+        14. do not show supplementary views on first load. Show some pic instead.
 
 
 	- MapThem! Page:
